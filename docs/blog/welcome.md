@@ -2,6 +2,15 @@
 title: Welcome to My Blog
 description: The first post on qiankun.co.uk
 date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+head:
+  - - meta
+    - property: og:title
+      content: Welcome to My Blog
+  - - meta
+    - property: og:description
+      content: The first post on qiankun.co.uk
 ---
 
 # Welcome to My Blog

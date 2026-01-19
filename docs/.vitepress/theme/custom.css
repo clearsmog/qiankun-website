@@ -308,3 +308,42 @@
     font-size: 1rem;
   }
 }
+
+/* ==================== WIP Badge ==================== */
+.wip-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+  color: var(--vp-c-brand-1);
+  border: 1px solid var(--vp-c-brand-soft);
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.dark .wip-badge {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(244, 114, 182, 0.15) 100%);
+  color: var(--vp-c-brand-1);
+}
+
+/* WIP notice box */
+.wip-notice {
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+  border: 1px solid var(--vp-c-brand-soft);
+}
+
+.wip-notice p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+}
+
+.wip-notice strong {
+  color: var(--vp-c-brand-1);
+}

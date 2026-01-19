@@ -2,16 +2,15 @@
 title: Contact
 description: Get in touch with Qiankun
 ---
-
 # Contact
 
 I'd love to hear from you! Here are the best ways to reach me:
 
 ## Connect Online
 
-- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
-- **LinkedIn**: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- **Email**: hello@qiankun.co.uk
+- **GitHub**: [github.com/](https://github.com/yourusername)clearsmog
+- **LinkedIn**: [linkedin.com/in/](https://linkedin.com/in/yourusername)kennyzhu
+- **Email**: qiankun0908@gmail.coqian
 
 ## Let's Chat
 
