@@ -8,7 +8,7 @@ export default defineConfig({
   // SEO and Meta
   lang: 'en-GB',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'author', content: 'Qiankun' }],
     ['meta', { name: 'keywords', content: 'qiankun, blog, technology, development, software' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -31,8 +31,9 @@ export default defineConfig({
 
   // Theme configuration
   themeConfig: {
-    // Logo (add your logo to docs/public/logo.svg)
-    // logo: '/logo.svg',
+    // Logo
+    logo: '/logo.svg',
+    siteTitle: 'Qiankun',
 
     // Navigation bar
     nav: [

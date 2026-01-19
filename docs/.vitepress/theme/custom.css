@@ -1,0 +1,310 @@
+/**
+ * Qiankun (乾坤) Cosmic Theme
+ * A universe-inspired color scheme with deep blues, purples, and cosmic gradients
+ */
+
+/* ==================== Color Palette ==================== */
+:root {
+  /* Brand Colors - Cosmic Purple/Blue */
+  --vp-c-brand-1: #7c3aed;
+  --vp-c-brand-2: #8b5cf6;
+  --vp-c-brand-3: #6d28d9;
+  --vp-c-brand-soft: rgba(124, 58, 237, 0.14);
+
+  /* Accent - Cosmic Pink/Magenta */
+  --qk-accent: #ec4899;
+  --qk-accent-light: #f472b6;
+
+  /* Cosmic Gradients */
+  --qk-gradient-brand: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ec4899 100%);
+  --qk-gradient-cosmic: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --qk-gradient-aurora: linear-gradient(135deg, #7c3aed 0%, #2dd4bf 50%, #a855f7 100%);
+
+  /* Background enhancements */
+  --vp-c-bg-alt: #f8f7fc;
+  --vp-c-bg-soft: #f3f0fa;
+
+  /* Button styling */
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-3);
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
+
+  /* Home hero name gradient */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #ec4899 100%);
+
+  /* Feature card icon colors */
+  --vp-c-text-1: #1a1a2e;
+  --vp-c-text-2: #4a4a6a;
+}
+
+/* ==================== Dark Mode ==================== */
+.dark {
+  --vp-c-brand-1: #a78bfa;
+  --vp-c-brand-2: #8b5cf6;
+  --vp-c-brand-3: #c4b5fd;
+  --vp-c-brand-soft: rgba(167, 139, 250, 0.14);
+
+  --vp-c-bg: #0f0f1a;
+  --vp-c-bg-alt: #1a1a2e;
+  --vp-c-bg-soft: #16162a;
+  --vp-c-bg-elv: #1f1f3a;
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #a0aec0;
+
+  --vp-home-hero-name-background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 40%, #f472b6 100%);
+
+  /* Subtle cosmic glow */
+  --vp-c-divider: rgba(167, 139, 250, 0.12);
+}
+
+/* ==================== Hero Section ==================== */
+.VPHero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cosmic background effect for hero */
+.VPHero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(45, 212, 191, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .VPHero::before {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(45, 212, 191, 0.1) 0%, transparent 40%);
+}
+
+/* Hero name styling */
+.VPHero .name {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.VPHero .clip {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Hero text styling */
+.VPHero .text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.VPHero .tagline {
+  font-size: 1.25rem;
+  color: var(--vp-c-text-2);
+  max-width: 500px;
+}
+
+/* ==================== Feature Cards ==================== */
+.VPFeature {
+  background: linear-gradient(135deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-alt) 100%);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPFeature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--qk-gradient-brand);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
+  border-color: var(--vp-c-brand-soft);
+}
+
+.VPFeature:hover::before {
+  opacity: 1;
+}
+
+.dark .VPFeature {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(31, 31, 58, 0.6) 100%);
+  border-color: rgba(167, 139, 250, 0.1);
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 12px 40px rgba(167, 139, 250, 0.2);
+}
+
+/* Feature icons */
+.VPFeature .icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.VPFeature .title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--vp-c-text-1);
+}
+
+.VPFeature .details {
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+/* ==================== Navigation ==================== */
+.VPNav {
+  backdrop-filter: blur(12px);
+}
+
+.VPNavBar .title {
+  font-weight: 700;
+  background: var(--vp-home-hero-name-background);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav links hover effect */
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* ==================== Buttons ==================== */
+.VPButton.brand {
+  background: var(--qk-gradient-brand);
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+}
+
+.VPButton.alt {
+  border: 2px solid var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.VPButton.alt:hover {
+  background: var(--vp-c-brand-soft);
+  transform: translateY(-2px);
+}
+
+/* ==================== Footer ==================== */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+}
+
+/* ==================== Content ==================== */
+/* Links */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.vp-doc a:hover {
+  border-bottom-color: var(--vp-c-brand-1);
+}
+
+/* Code blocks */
+.vp-doc div[class*='language-'] {
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* ==================== Custom Stars Animation (Dark Mode) ==================== */
+.dark .VPHero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 200px 50px, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(1px 1px at 250px 90px, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(2px 2px at 300px 60px, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 350px 150px;
+  animation: twinkle 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ==================== Scrollbar ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-soft);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-1);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .VPHero .text {
+    font-size: 1.75rem;
+  }
+
+  .VPHero .tagline {
+    font-size: 1rem;
+  }
+}
