@@ -9,6 +9,7 @@ Welcome to my blog! Here you'll find articles about technology, development, and
 
 ## Recent Posts
 
+- [Energy Trading and Risk Management (ETRM) Systems](/blog/etrm-systems) - A comprehensive report on ETRM software, market trends, and implementation
 - [Welcome to My Blog](/blog/welcome) - A first post to kick things off
 
 ---

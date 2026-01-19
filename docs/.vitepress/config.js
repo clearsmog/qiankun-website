@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { RssPlugin } from 'vitepress-plugin-rss'
+import imagemin from 'vite-plugin-imagemin'
 
 // RSS Feed Configuration
 const RSS_CONFIG = {
@@ -23,7 +24,21 @@ export default defineConfig({
 
   // Vite plugins
   vite: {
-    plugins: [RssPlugin(RSS_CONFIG)]
+    plugins: [
+      RssPlugin(RSS_CONFIG),
+      imagemin({
+        gifsicle: { optimizationLevel: 3 },
+        optipng: { optimizationLevel: 5 },
+        mozjpeg: { quality: 80 },
+        svgo: {
+          plugins: [
+            { name: 'removeViewBox', active: false },
+            { name: 'removeEmptyAttrs', active: false }
+          ]
+        },
+        webp: { quality: 80 }
+      })
+    ]
   },
 
   // SEO and Meta
@@ -86,6 +101,7 @@ export default defineConfig({
         {
           text: 'Blog Posts',
           items: [
+            { text: 'ETRM Systems', link: '/blog/etrm-systems' },
             { text: 'Welcome Post', link: '/blog/welcome' }
           ]
         }

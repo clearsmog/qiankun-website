@@ -11,6 +11,7 @@
     "deploy:quick": "./deploy.sh --skip-build"
   },
   "devDependencies": {
+    "vite-plugin-imagemin": "^0.6.1",
     "vitepress": "^1.6.4",
     "vitepress-plugin-rss": "^0.4.2"
   }
