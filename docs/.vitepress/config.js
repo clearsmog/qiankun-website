@@ -118,6 +118,7 @@ export default withMermaid(defineConfig({
       { text: 'About', link: '/about' },
       { text: 'AI Workflow', link: '/ai-workflow/' },
       { text: 'Blog', link: '/blog/' },
+      { text: 'Photos', link: '/photos/' },
       { text: 'Contact', link: '/contact' }
     ],
 
@@ -139,6 +140,7 @@ export default withMermaid(defineConfig({
         {
           text: 'Blog Posts',
           items: [
+            { text: 'Vite Plugins', link: '/blog/vite-plugins' },
             { text: 'ETRM Systems', link: '/blog/etrm-systems' },
             { text: 'Welcome Post', link: '/blog/welcome' }
           ]
