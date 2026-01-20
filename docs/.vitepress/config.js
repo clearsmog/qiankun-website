@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress'
 import { RssPlugin } from 'vitepress-plugin-rss'
 import imagemin from 'vite-plugin-imagemin'
+import { withMermaid } from 'vitepress-plugin-mermaid'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { VitePWA } from 'vite-plugin-pwa'
+import Icons from 'unplugin-icons/vite'
 
 // RSS Feed Configuration
 const RSS_CONFIG = {
@@ -18,7 +23,7 @@ const RSS_CONFIG = {
 }
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: "Qiankun",
   description: "Personal website and blog - thoughts on technology, development, and more",
 
@@ -26,6 +31,26 @@ export default defineConfig({
   vite: {
     plugins: [
       RssPlugin(RSS_CONFIG),
+      groupIconVitePlugin(),
+      Icons({ compiler: 'vue3', autoInstall: true }),
+      VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['favicon.svg', 'logo.svg', 'og-image.svg'],
+        manifest: {
+          name: 'Qiankun',
+          short_name: 'Qiankun',
+          description: 'Personal website and blog',
+          theme_color: '#1a1a2e',
+          background_color: '#1a1a2e',
+          display: 'standalone',
+          icons: [
+            { src: '/logo.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }
+          ]
+        },
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,woff2}']
+        }
+      }),
       imagemin({
         gifsicle: { optimizationLevel: 3 },
         optipng: { optimizationLevel: 5 },
@@ -39,6 +64,19 @@ export default defineConfig({
         webp: { quality: 80 }
       })
     ]
+  },
+
+  // Markdown plugins
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+      md.use(groupIconMdPlugin)
+    }
+  },
+
+  // Mermaid configuration
+  mermaid: {
+    // Optional: customize mermaid theme
   },
 
   // SEO and Meta
@@ -140,4 +178,4 @@ export default defineConfig({
       }
     }
   }
-})
+}))

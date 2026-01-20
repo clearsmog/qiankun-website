@@ -7,6 +7,10 @@ import JsonLd from './JsonLd.vue'
 import NotFound from './NotFound.vue'
 import './custom.css'
 
+// Content & DX plugins
+import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
+import 'virtual:group-icons.css'
+
 export default {
   extends: DefaultTheme,
   Layout() {
@@ -14,5 +18,8 @@ export default {
       'doc-top': () => h(JsonLd),
       'not-found': () => h(NotFound)
     })
+  },
+  enhanceApp({ app }) {
+    enhanceAppWithTabs(app)
   }
 }

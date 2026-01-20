@@ -11,8 +11,16 @@
     "deploy:quick": "./deploy.sh --skip-build"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.430",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
+    "mermaid": "^11.12.2",
+    "unplugin-icons": "^23.0.1",
     "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-pwa": "^1.2.0",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-rss": "^0.4.2"
+    "vitepress-plugin-group-icons": "^1.7.1",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vitepress-plugin-rss": "^0.4.2",
+    "vitepress-plugin-tabs": "^0.7.3"
   }
 }
