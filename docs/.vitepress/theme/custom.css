@@ -1,349 +1,558 @@
 /**
- * Qiankun (乾坤) Cosmic Theme
- * A universe-inspired color scheme with deep blues, purples, and cosmic gradients
+ * Qiankun (乾坤) Apple-Inspired Theme
+ * Clean, minimalist design with subtle animations and premium feel
  */
+
+/* ==================== Typography Import ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ==================== Color Palette ==================== */
 :root {
-  /* Brand Colors - Cosmic Purple/Blue */
-  --vp-c-brand-1: #7c3aed;
-  --vp-c-brand-2: #8b5cf6;
-  --vp-c-brand-3: #6d28d9;
-  --vp-c-brand-soft: rgba(124, 58, 237, 0.14);
+  /* Brand Colors - Apple Blue */
+  --vp-c-brand-1: #0071e3;
+  --vp-c-brand-2: #0077ed;
+  --vp-c-brand-3: #0066cc;
+  --vp-c-brand-soft: rgba(0, 113, 227, 0.1);
 
-  /* Accent - Cosmic Pink/Magenta */
-  --qk-accent: #ec4899;
-  --qk-accent-light: #f472b6;
+  /* Neutral Grays - Apple Style */
+  --apple-gray-50: #fbfbfd;
+  --apple-gray-100: #f5f5f7;
+  --apple-gray-200: #e8e8ed;
+  --apple-gray-300: #d2d2d7;
+  --apple-gray-400: #86868b;
+  --apple-gray-500: #6e6e73;
+  --apple-gray-600: #1d1d1f;
 
-  /* Cosmic Gradients */
-  --qk-gradient-brand: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ec4899 100%);
-  --qk-gradient-cosmic: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  --qk-gradient-aurora: linear-gradient(135deg, #7c3aed 0%, #2dd4bf 50%, #a855f7 100%);
+  /* Backgrounds */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: var(--apple-gray-100);
+  --vp-c-bg-soft: var(--apple-gray-50);
+  --vp-c-bg-elv: #ffffff;
 
-  /* Background enhancements */
-  --vp-c-bg-alt: #f8f7fc;
-  --vp-c-bg-soft: #f3f0fa;
+  /* Text */
+  --vp-c-text-1: var(--apple-gray-600);
+  --vp-c-text-2: var(--apple-gray-500);
+  --vp-c-text-3: var(--apple-gray-400);
+
+  /* Dividers */
+  --vp-c-divider: var(--apple-gray-200);
+
+  /* Hero name */
+  --vp-home-hero-name-color: var(--apple-gray-600);
+  --vp-home-hero-name-background: var(--apple-gray-600);
 
   /* Button styling */
   --vp-button-brand-bg: var(--vp-c-brand-1);
   --vp-button-brand-hover-bg: var(--vp-c-brand-3);
-  --vp-button-brand-active-bg: var(--vp-c-brand-3);
 
-  /* Home hero name gradient */
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #ec4899 100%);
+  /* Glassmorphism */
+  --apple-glass-bg: rgba(255, 255, 255, 0.72);
+  --apple-glass-border: rgba(0, 0, 0, 0.04);
+  --apple-blur: saturate(180%) blur(20px);
 
-  /* Feature card icon colors */
-  --vp-c-text-1: #1a1a2e;
-  --vp-c-text-2: #4a4a6a;
+  /* Shadows */
+  --apple-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --apple-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --apple-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --apple-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* ==================== Dark Mode ==================== */
 .dark {
-  --vp-c-brand-1: #a78bfa;
-  --vp-c-brand-2: #8b5cf6;
-  --vp-c-brand-3: #c4b5fd;
-  --vp-c-brand-soft: rgba(167, 139, 250, 0.14);
+  --vp-c-brand-1: #2997ff;
+  --vp-c-brand-2: #0077ed;
+  --vp-c-brand-3: #6ac4ff;
+  --vp-c-brand-soft: rgba(41, 151, 255, 0.12);
 
-  --vp-c-bg: #0f0f1a;
-  --vp-c-bg-alt: #1a1a2e;
-  --vp-c-bg-soft: #16162a;
-  --vp-c-bg-elv: #1f1f3a;
+  --vp-c-bg: #000000;
+  --vp-c-bg-alt: #161617;
+  --vp-c-bg-soft: #0d0d0d;
+  --vp-c-bg-elv: #1c1c1e;
 
-  --vp-c-text-1: #e2e8f0;
-  --vp-c-text-2: #a0aec0;
+  --vp-c-text-1: #f5f5f7;
+  --vp-c-text-2: #a1a1a6;
+  --vp-c-text-3: #86868b;
 
-  --vp-home-hero-name-background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 40%, #f472b6 100%);
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
 
-  /* Subtle cosmic glow */
-  --vp-c-divider: rgba(167, 139, 250, 0.12);
+  --vp-home-hero-name-color: #f5f5f7;
+  --vp-home-hero-name-background: #f5f5f7;
+
+  --apple-glass-bg: rgba(29, 29, 31, 0.72);
+  --apple-glass-border: rgba(255, 255, 255, 0.08);
+
+  --apple-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --apple-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --apple-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== Global Styles ==================== */
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  transition: background-color 0.3s var(--apple-ease),
+    border-color 0.3s var(--apple-ease),
+    color 0.3s var(--apple-ease),
+    box-shadow 0.3s var(--apple-ease),
+    transform 0.3s var(--apple-ease),
+    opacity 0.3s var(--apple-ease);
 }
 
 /* ==================== Hero Section ==================== */
 .VPHero {
-  position: relative;
-  overflow: hidden;
+  padding: 80px 24px 64px !important;
 }
 
-/* Cosmic background effect for hero */
-.VPHero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(45, 212, 191, 0.08) 0%, transparent 40%);
-  pointer-events: none;
-  z-index: 0;
+.VPHero .container {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.dark .VPHero::before {
-  background:
-    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(45, 212, 191, 0.1) 0%, transparent 40%);
+.VPHero .main .name {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--vp-c-text-1);
 }
 
-/* Hero name styling */
-.VPHero .name {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.VPHero .clip {
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-/* Hero text styling */
 .VPHero .text {
-  font-size: 2.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 600;
   color: var(--vp-c-text-1);
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
 .VPHero .tagline {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
   color: var(--vp-c-text-2);
-  max-width: 500px;
+  max-width: 600px;
+  margin: 1rem auto 0;
+  line-height: 1.5;
+}
+
+/* Hero animations */
+.VPHero .main .name,
+.VPHero .text,
+.VPHero .tagline,
+.VPHero .actions {
+  opacity: 0;
+  animation: fadeUp 0.8s var(--apple-ease) forwards;
+}
+
+.VPHero .main .name {
+  animation-delay: 0s;
+}
+
+.VPHero .text {
+  animation-delay: 0.1s;
+}
+
+.VPHero .tagline {
+  animation-delay: 0.2s;
+}
+
+.VPHero .actions {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==================== Feature Cards ==================== */
-.VPFeature {
-  background: linear-gradient(135deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-alt) 100%);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.VPFeatures {
+  padding: 64px 24px !important;
 }
 
-.VPFeature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--qk-gradient-brand);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.VPFeature {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  padding: 32px 28px !important;
+  transition: all 0.4s var(--apple-ease);
+  box-shadow: var(--apple-shadow-sm);
 }
 
 .VPFeature:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.15);
-  border-color: var(--vp-c-brand-soft);
-}
-
-.VPFeature:hover::before {
-  opacity: 1;
+  transform: scale(1.02);
+  box-shadow: var(--apple-shadow-lg);
+  border-color: transparent;
 }
 
 .dark .VPFeature {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(31, 31, 58, 0.6) 100%);
-  border-color: rgba(167, 139, 250, 0.1);
+  background: var(--vp-c-bg-elv);
 }
 
-.dark .VPFeature:hover {
-  box-shadow: 0 12px 40px rgba(167, 139, 250, 0.2);
-}
-
-/* Feature icons */
 .VPFeature .icon {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-  display: inline-block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .VPFeature .title {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--vp-c-text-1);
+  letter-spacing: -0.01em;
 }
 
 .VPFeature .details {
+  font-size: 0.9375rem;
   color: var(--vp-c-text-2);
-  line-height: 1.6;
+  line-height: 1.55;
+  margin-top: 0.5rem;
 }
 
-/* ==================== Navigation ==================== */
+/* ==================== Navigation - Frosted Glass ==================== */
 .VPNav {
-  backdrop-filter: blur(12px);
+  background: var(--apple-glass-bg) !important;
+  backdrop-filter: var(--apple-blur);
+  -webkit-backdrop-filter: var(--apple-blur);
+  border-bottom: 1px solid var(--apple-glass-border) !important;
+}
+
+.VPNavBar {
+  background: transparent !important;
 }
 
 .VPNavBar .title {
-  font-weight: 700;
-  background: var(--vp-home-hero-name-background);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Nav links hover effect */
-.VPNavBarMenuLink:hover {
-  color: var(--vp-c-brand-1) !important;
-}
-
-/* ==================== Buttons ==================== */
-.VPButton.brand {
-  background: var(--qk-gradient-brand);
-  border: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.01em;
+}
+
+/* Nav links */
+.VPNavBarMenuLink {
+  font-weight: 400 !important;
+  font-size: 0.875rem !important;
+  color: var(--vp-c-text-2) !important;
+  transition: color 0.2s var(--apple-ease) !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-text-1) !important;
+  font-weight: 500 !important;
+}
+
+/* ==================== Buttons - Apple Style ==================== */
+.VPButton {
+  border-radius: 980px !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  padding: 12px 24px !important;
+  transition: all 0.2s var(--apple-ease) !important;
+}
+
+.VPButton.brand {
+  background: var(--vp-c-brand-1) !important;
+  color: #fff !important;
+  border: none !important;
 }
 
 .VPButton.brand:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+  background: var(--vp-c-brand-3) !important;
+  transform: scale(1.02);
+}
+
+.VPButton.brand:active {
+  transform: scale(0.98);
 }
 
 .VPButton.alt {
-  border: 2px solid var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-  transition: all 0.3s ease;
+  background: transparent !important;
+  color: var(--vp-c-brand-1) !important;
+  border: none !important;
 }
 
 .VPButton.alt:hover {
-  background: var(--vp-c-brand-soft);
-  transform: translateY(-2px);
+  text-decoration: underline;
 }
 
-/* ==================== Footer ==================== */
-.VPFooter {
-  border-top: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg-alt);
+/* ==================== Sidebar ==================== */
+.VPSidebar {
+  background: var(--apple-glass-bg) !important;
+  backdrop-filter: var(--apple-blur);
+  -webkit-backdrop-filter: var(--apple-blur);
+  border-right: 1px solid var(--apple-glass-border) !important;
+}
+
+.VPSidebarItem .text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--vp-c-text-2);
+}
+
+.VPSidebarItem.is-active>.item .text {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.VPSidebarItem.is-active>.item .indicator {
+  background: var(--vp-c-brand-1) !important;
+  width: 3px;
+  border-radius: 3px;
 }
 
 /* ==================== Content ==================== */
+.vp-doc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+
+.vp-doc h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
 /* Links */
 .vp-doc a {
   color: var(--vp-c-brand-1);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
+  transition: opacity 0.2s var(--apple-ease);
 }
 
 .vp-doc a:hover {
-  border-bottom-color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Inline code */
+.vp-doc :not(pre)>code {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 0.875em;
+  font-weight: 500;
 }
 
 /* Code blocks */
 .vp-doc div[class*='language-'] {
   border-radius: 12px;
   border: 1px solid var(--vp-c-divider);
+  box-shadow: var(--apple-shadow-sm);
 }
 
-/* Inline code */
-.vp-doc :not(pre) > code {
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border-radius: 4px;
-  padding: 2px 6px;
+/* ==================== Footer ==================== */
+.VPFooter {
+  background: var(--vp-c-bg-alt) !important;
+  border-top: 1px solid var(--vp-c-divider);
 }
 
-/* ==================== Custom Stars Animation (Dark Mode) ==================== */
-.dark .VPHero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
-    radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.2), transparent),
-    radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.3), transparent),
-    radial-gradient(2px 2px at 200px 50px, rgba(255, 255, 255, 0.25), transparent),
-    radial-gradient(1px 1px at 250px 90px, rgba(255, 255, 255, 0.35), transparent),
-    radial-gradient(2px 2px at 300px 60px, rgba(255, 255, 255, 0.2), transparent);
-  background-size: 350px 150px;
-  animation: twinkle 8s ease-in-out infinite alternate;
-  pointer-events: none;
-  z-index: 0;
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
 }
 
-@keyframes twinkle {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* ==================== Scrollbar ==================== */
+/* ==================== Scrollbar - Minimal ==================== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--vp-c-bg-alt);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--vp-c-brand-soft);
+  background: var(--apple-gray-300);
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--vp-c-brand-1);
+  background: var(--apple-gray-400);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Selection ==================== */
+::selection {
+  background: rgba(0, 113, 227, 0.2);
+}
+
+.dark ::selection {
+  background: rgba(41, 151, 255, 0.3);
+}
+
+/* ==================== Page Transitions ==================== */
+.VPDoc {
+  animation: pageIn 0.4s var(--apple-ease);
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== Local Nav ==================== */
+.VPLocalNav {
+  background: var(--apple-glass-bg) !important;
+  backdrop-filter: var(--apple-blur);
+  -webkit-backdrop-filter: var(--apple-blur);
+  border-bottom: 1px solid var(--apple-glass-border) !important;
+}
+
+/* ==================== Doc Aside ==================== */
+.VPDocAsideOutline .outline-link {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--vp-c-text-3);
+  transition: color 0.2s var(--apple-ease);
+}
+
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--vp-c-text-1);
+}
+
+.VPDocAsideOutline .outline-link.active {
+  color: var(--vp-c-text-1);
+  font-weight: 500;
+}
+
+/* ==================== Custom Blocks ==================== */
+.vp-doc .custom-block {
+  border-radius: 12px;
+  border-left: 4px solid;
+  padding: 16px 20px;
+}
+
+.vp-doc .custom-block.tip {
+  background: rgba(0, 113, 227, 0.06);
+  border-left-color: var(--vp-c-brand-1);
+}
+
+.dark .vp-doc .custom-block.tip {
+  background: rgba(41, 151, 255, 0.1);
 }
 
 /* ==================== Responsive ==================== */
 @media (max-width: 768px) {
-  .VPHero .text {
-    font-size: 1.75rem;
+  .VPHero {
+    padding: 48px 20px !important;
   }
 
-  .VPHero .tagline {
-    font-size: 1rem;
+  .VPFeatures {
+    padding: 40px 20px !important;
+  }
+
+  .VPFeature {
+    padding: 24px 20px !important;
   }
 }
 
-/* ==================== WIP Badge ==================== */
+/* ==================== WIP Badge - Apple Style ==================== */
 .wip-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 4px 10px;
+  font-size: 0.6875rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
-  color: var(--vp-c-brand-1);
-  border: 1px solid var(--vp-c-brand-soft);
-  border-radius: 20px;
-  margin-left: 0.5rem;
+  letter-spacing: 0.02em;
+  background: var(--apple-gray-100);
+  color: var(--vp-c-text-2);
+  border-radius: 980px;
+  margin-left: 8px;
   vertical-align: middle;
 }
 
 .dark .wip-badge {
-  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(244, 114, 182, 0.15) 100%);
-  color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-elv);
+  color: var(--vp-c-text-2);
 }
 
 /* WIP notice box */
 .wip-notice {
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
+  padding: 20px 24px;
+  margin: 24px 0;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
-  border: 1px solid var(--vp-c-brand-soft);
+  background: var(--apple-gray-100);
+}
+
+.dark .wip-notice {
+  background: var(--vp-c-bg-elv);
 }
 
 .wip-notice p {
   margin: 0;
   color: var(--vp-c-text-2);
+  font-size: 0.9375rem;
 }
 
 .wip-notice strong {
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+}
+
+/* ==================== Focus States ==================== */
+*:focus-visible {
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ==================== Print ==================== */
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .VPNav,
+  .VPSidebar,
+  .VPLocalNav {
+    display: none !important;
+  }
 }

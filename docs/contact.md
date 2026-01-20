@@ -8,9 +8,9 @@ I'd love to hear from you! Here are the best ways to reach me:
 
 ## Connect Online
 
-- **GitHub**: [github.com/](https://github.com/yourusername)clearsmog
-- **LinkedIn**: [linkedin.com/in/](https://linkedin.com/in/yourusername)kennyzhu
-- **Email**: qiankun0908@gmail.coqian
+- **GitHub**: [github.com/clearsmog](https://github.com/yourusername)
+- **LinkedIn**: [linkedin.com/in/kennyzhu0908](https://linkedin.com/in/yourusername)
+- **Email**: qiankun0908@gmail.com
 
 ## Let's Chat
 
