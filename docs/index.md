@@ -46,3 +46,65 @@ features:
     title: Open Source
     details: Contributing to and learning from the global developer community — because the best code is shared code.
 ---
+
+## Recent Posts
+
+<div class="recent-posts">
+  <a href="/blog/vite-plugins" class="post-card">
+    <span class="post-title">Vite Plugins Reference</span>
+    <span class="post-desc">A complete guide to all Vite plugins configured for this VitePress site</span>
+  </a>
+  <a href="/blog/etrm-systems" class="post-card">
+    <span class="post-title">ETRM Systems</span>
+    <span class="post-desc">A comprehensive report on Energy Trading and Risk Management software</span>
+  </a>
+  <a href="/blog/welcome" class="post-card">
+    <span class="post-title">Welcome to My Blog</span>
+    <span class="post-desc">The first post on qiankun.co.uk</span>
+  </a>
+</div>
+
+<style>
+.recent-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 32px auto;
+  max-width: 1152px;
+  padding: 0 24px;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.dark .post-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.post-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 8px;
+}
+
+.post-desc {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.5;
+}
+</style>
