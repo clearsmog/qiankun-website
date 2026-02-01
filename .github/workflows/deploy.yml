@@ -22,7 +22,8 @@ jobs:
 
       - run: npm run docs:build
 
-      - uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy docs/.vitepress/dist --project-name=qiankun-website
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 0a5ceee99ef2f0c3f66bb55ff5adf359
+        run: npx wrangler pages deploy docs/.vitepress/dist --project-name=qiankun-website
