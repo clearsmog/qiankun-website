@@ -13,7 +13,7 @@ I'm passionate about technology and software development. This site serves as a 
 
 ## The Name
 
-"Qiankun" (乾坤) is a Chinese term that represents the universe, heaven and earth, or the fundamental forces of yin and yang. It symbolises completeness and the balance of all things.
+"Qiankun" is a Chinese philosophical term representing the universe, heaven and earth, and the fundamental forces of yin and yang — a symbol of completeness and balance.
 
 ## Get in Touch
 
