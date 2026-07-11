@@ -1,3 +1,11 @@
+---
+title: Vite Plugins Reference
+description: A complete guide to all Vite plugins configured for this VitePress site — RSS, PWA, Mermaid, Tabs, Group Icons, Imagemin, and Icons
+date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+---
+
 # Vite Plugins Reference
 
 This document covers all Vite plugins configured for this VitePress site.

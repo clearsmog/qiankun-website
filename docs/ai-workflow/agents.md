@@ -1,3 +1,11 @@
+---
+title: AI Agents
+description: How autonomous AI agents differ from workflows — the observe-think-act loop, ReAct pattern, and multi-agent systems
+date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+---
+
 # AI Agents
 
 Agents differ from workflows in their autonomy. While a workflow follows a pre-defined path, an agent decides its own path.

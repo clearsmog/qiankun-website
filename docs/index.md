@@ -47,20 +47,16 @@ features:
     details: Contributing to and learning from the global developer community — because the best code is shared code.
 ---
 
+<script setup>
+import { data as posts } from './.vitepress/data/blog-posts.data.js'
+</script>
+
 ## Recent Posts
 
 <div class="recent-posts">
-  <a href="/blog/vite-plugins" class="post-card">
-    <span class="post-title">Vite Plugins Reference</span>
-    <span class="post-desc">A complete guide to all Vite plugins configured for this VitePress site</span>
-  </a>
-  <a href="/blog/etrm-systems" class="post-card">
-    <span class="post-title">ETRM Systems</span>
-    <span class="post-desc">A comprehensive report on Energy Trading and Risk Management software</span>
-  </a>
-  <a href="/blog/welcome" class="post-card">
-    <span class="post-title">Welcome to My Blog</span>
-    <span class="post-desc">The first post on qiankun.co.uk</span>
+  <a v-for="post in posts" :key="post.url" :href="post.url" class="post-card">
+    <span class="post-title">{{ post.title }}</span>
+    <span class="post-desc">{{ post.description }}</span>
   </a>
 </div>
 

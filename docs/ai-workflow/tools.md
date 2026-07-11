@@ -1,3 +1,11 @@
+---
+title: AI Tooling Ecosystem
+description: The evolving landscape of AI workflow frameworks — LangChain, LlamaIndex, AutoGen, vector databases, and evaluation tools
+date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+---
+
 # AI Tooling Ecosystem
 
 The landscape for building AI workflows is vast and evolving.

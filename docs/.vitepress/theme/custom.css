@@ -97,13 +97,20 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-* {
+/* Smooth theme switching on root-level containers */
+.VPNav,
+.VPNavBar,
+.VPSidebar,
+.VPLocalNav,
+.VPDoc,
+.VPFooter,
+.vp-doc,
+.VPFeature,
+.VPButton {
   transition: background-color 0.3s var(--apple-ease),
     border-color 0.3s var(--apple-ease),
     color 0.3s var(--apple-ease),
-    box-shadow 0.3s var(--apple-ease),
-    transform 0.3s var(--apple-ease),
-    opacity 0.3s var(--apple-ease);
+    box-shadow 0.3s var(--apple-ease);
 }
 
 /* ==================== Hero Section ==================== */
@@ -143,28 +150,30 @@ html {
 }
 
 /* Hero animations */
-.VPHero .main .name,
-.VPHero .text,
-.VPHero .tagline,
-.VPHero .actions {
-  opacity: 0;
-  animation: fadeUp 0.8s var(--apple-ease) forwards;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .VPHero .main .name,
+  .VPHero .text,
+  .VPHero .tagline,
+  .VPHero .actions {
+    opacity: 0;
+    animation: fadeUp 0.8s var(--apple-ease) forwards;
+  }
 
-.VPHero .main .name {
-  animation-delay: 0s;
-}
+  .VPHero .main .name {
+    animation-delay: 0s;
+  }
 
-.VPHero .text {
-  animation-delay: 0.1s;
-}
+  .VPHero .text {
+    animation-delay: 0.1s;
+  }
 
-.VPHero .tagline {
-  animation-delay: 0.2s;
-}
+  .VPHero .tagline {
+    animation-delay: 0.2s;
+  }
 
-.VPHero .actions {
-  animation-delay: 0.3s;
+  .VPHero .actions {
+    animation-delay: 0.3s;
+  }
 }
 
 @keyframes fadeUp {
@@ -424,8 +433,10 @@ html {
 }
 
 /* ==================== Page Transitions ==================== */
-.VPDoc {
-  animation: pageIn 0.4s var(--apple-ease);
+@media (prefers-reduced-motion: no-preference) {
+  .VPDoc {
+    animation: pageIn 0.4s var(--apple-ease);
+  }
 }
 
 @keyframes pageIn {

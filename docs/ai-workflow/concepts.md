@@ -1,3 +1,11 @@
+---
+title: Core Concepts
+description: Understanding the fundamental building blocks of modern AI applications — LLMs, prompts, RAG, and structured output
+date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+---
+
 # Core Concepts
 
 Before building complex workflows, it's essential to understand the fundamental components of modern AI applications.

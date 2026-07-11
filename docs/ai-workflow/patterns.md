@@ -1,3 +1,11 @@
+---
+title: Workflow Patterns
+description: Standard architectural patterns for building reliable AI systems — chains, routing, parallelization, and evaluator-optimizer loops
+date: 2026-01-19
+author: Qiankun
+lastUpdated: true
+---
+
 # Workflow Patterns
 
 Building reliable AI systems often involves standard architectural patterns.

@@ -45,8 +45,8 @@ export default withMermaid(
             name: "Qiankun",
             short_name: "Qiankun",
             description: "Personal website and blog",
-            theme_color: "#1a1a2e",
-            background_color: "#1a1a2e",
+            theme_color: "#0071e3",
+            background_color: "#000000",
             display: "standalone",
             icons: [
               {
@@ -217,12 +217,8 @@ export default withMermaid(
       },
 
       // Last updated
-      lastUpdated: {
-        text: "Last updated",
-        formatOptions: {
-          dateStyle: "medium",
-        },
-      },
+      lastUpdated: true,
+      lastUpdatedText: "Last updated",
     },
   }),
 );

@@ -8,8 +8,8 @@ I'd love to hear from you! Here are the best ways to reach me:
 
 ## Connect Online
 
-- **GitHub**: [github.com/clearsmog](https://github.com/yourusername)
-- **LinkedIn**: [linkedin.com/in/kenny0908](https://linkedin.com/in/yourusername)
+- **GitHub**: [github.com/KennyZhu](https://github.com/KennyZhu)
+- **LinkedIn**: [linkedin.com/in/KennyZhu](https://linkedin.com/in/KennyZhu)
 - **Email**: qiankun0908@gmail.com
 
 ## Let's Chat
