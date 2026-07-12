@@ -11,13 +11,22 @@ hero:
     alt: Qiankun
   actions:
     - theme: brand
+      text: View Projects
+      link: /projects/
+    - theme: alt
       text: Read the Blog
       link: /blog/
-    - theme: alt
-      text: About Me
-      link: /about
 
 features:
+  - icon: |
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#proj-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <defs><linearGradient id="proj-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
+        <path d="M3 3v18h18"></path>
+        <path d="M7 14l4-4 4 4 5-6"></path>
+      </svg>
+    title: Projects
+    details: Case studies for hiring managers — portfolio construction, systematic alpha research, ESG, valuation, and data storytelling.
+    link: /projects/
   - icon: |
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#tech-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <defs><linearGradient id="tech-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
@@ -36,15 +45,6 @@ features:
       </svg>
     title: Writing
     details: Sharing insights, tutorials, and lessons learned — transforming complex ideas into accessible knowledge.
-  - icon: |
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#globe-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <defs><linearGradient id="globe-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
-    title: Open Source
-    details: Contributing to and learning from the global developer community — because the best code is shared code.
 ---
 
 <script setup>

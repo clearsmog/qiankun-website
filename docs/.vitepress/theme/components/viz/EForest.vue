@@ -1,0 +1,153 @@
+<script setup>
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+import VizEChart from './VizEChart.vue'
+import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+
+const props = defineProps({
+  items: {
+    type: Array,
+    required: true,
+    // [{ label, value, se?, primary?, stars? }]
+  },
+  height: { type: Number, default: 320 },
+})
+
+const tick = ref(0)
+let obs
+onMounted(() => {
+  obs = new MutationObserver(() => {
+    tick.value++
+  })
+  obs.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
+})
+onBeforeUnmount(() => obs?.disconnect())
+
+const option = computed(() => {
+  void tick.value
+  const t = themeTokens()
+  const labels = props.items.map((i) => i.label).reverse()
+  const rows = [...props.items].reverse()
+
+  return {
+    animationDuration: 700,
+    tooltip: {
+      ...baseTooltip(t),
+      trigger: 'item',
+      formatter: (p) => {
+        const it = rows[p.dataIndex]
+        if (!it) return ''
+        const ci =
+          it.se != null
+            ? `<br/>95% CI ≈ [${(it.value - 1.96 * it.se).toFixed(2)}, ${(it.value + 1.96 * it.se).toFixed(2)}]`
+            : ''
+        return `<b>${it.label}</b><br/>β = <b>${it.value.toFixed(3)}${it.stars || ''}</b>${ci}`
+      },
+    },
+    grid: { ...baseGrid(), left: 20, right: 36, top: 20, bottom: 20 },
+    xAxis: {
+      type: 'value',
+      axisLabel: { color: t.text3, fontSize: 11 },
+      splitLine: { lineStyle: { color: t.divider, type: 'dashed' } },
+      axisLine: { show: false },
+      axisTick: { show: false },
+    },
+    yAxis: {
+      type: 'category',
+      data: labels,
+      axisLabel: { color: t.text1, fontSize: 12, fontWeight: 650 },
+      axisLine: { show: false },
+      axisTick: { show: false },
+    },
+    series: [
+      {
+        type: 'scatter',
+        symbolSize: (val, p) => (rows[p.dataIndex]?.primary ? 16 : 13),
+        data: rows.map((it) => ({
+          value: it.value,
+          itemStyle: {
+            color: it.primary ? '#34c759' : '#ff9500',
+            shadowBlur: 10,
+            shadowColor: it.primary
+              ? 'rgba(52,199,89,0.4)'
+              : 'rgba(255,149,0,0.35)',
+            borderColor: t.bg,
+            borderWidth: 2,
+          },
+        })),
+        // custom CI whiskers via markLine per point is awkward; use custom series for error bars
+        z: 3,
+      },
+      {
+        type: 'custom',
+        renderItem(params, api) {
+          const it = rows[params.dataIndex]
+          if (!it || it.se == null) return
+          const y = api.coord([0, params.dataIndex])[1]
+          const x0 = api.coord([it.value - 1.96 * it.se, params.dataIndex])[0]
+          const x1 = api.coord([it.value + 1.96 * it.se, params.dataIndex])[0]
+          const color = it.primary ? '#34c759' : '#ff9500'
+          return {
+            type: 'group',
+            children: [
+              {
+                type: 'line',
+                shape: { x1: x0, y1: y, x2: x1, y2: y },
+                style: { stroke: color, lineWidth: 3, opacity: 0.75 },
+              },
+              {
+                type: 'line',
+                shape: { x1: x0, y1: y - 6, x2: x0, y2: y + 6 },
+                style: { stroke: color, lineWidth: 2 },
+              },
+              {
+                type: 'line',
+                shape: { x1: x1, y1: y - 6, x2: x1, y2: y + 6 },
+                style: { stroke: color, lineWidth: 2 },
+              },
+            ],
+          }
+        },
+        data: rows.map((it) => it.value),
+        z: 2,
+        silent: true,
+      },
+    ],
+    // zero reference
+    markLine: undefined,
+  }
+})
+
+// add zero line via markLine on scatter - restructure option to put markLine on xAxis isn't available
+// use graphic or series markLine on scatter
+const optionWithZero = computed(() => {
+  const o = option.value
+  o.series[0].markLine = {
+    symbol: 'none',
+    label: { show: true, formatter: '0', color: themeTokens().text3, fontSize: 10 },
+    lineStyle: { color: themeTokens().text3, type: 'dashed', width: 1.25 },
+    data: [{ xAxis: 0 }],
+  }
+  return o
+})
+</script>
+
+<template>
+  <div>
+    <VizEChart :option="optionWithZero" :height="height" />
+    <p class="note">
+      Points = FE coefficients; whiskers ≈ 95% CI (1.96 × SE). Green = primary outcomes (E, S).
+    </p>
+  </div>
+</template>
+
+<style scoped>
+.note {
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+</style>

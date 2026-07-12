@@ -107,7 +107,8 @@ export default withMermaid(
         "meta",
         {
           name: "keywords",
-          content: "qiankun, blog, technology, development, software",
+          content:
+            "qiankun, blog, technology, development, software, portfolio, quantitative finance",
         },
       ],
       ["meta", { property: "og:type", content: "website" }],
@@ -159,6 +160,7 @@ export default withMermaid(
       nav: [
         { text: "Home", link: "/" },
         { text: "About", link: "/about" },
+        { text: "Projects", link: "/projects/" },
         { text: "AI Workflow", link: "/ai-workflow/" },
         { text: "Blog", link: "/blog/" },
         { text: "Photos", link: "/photos/" },
@@ -167,6 +169,34 @@ export default withMermaid(
 
       // Sidebar configuration
       sidebar: {
+        "/projects/": [
+          {
+            text: "Projects",
+            items: [
+              { text: "Overview", link: "/projects/" },
+              {
+                text: "Global Equity Portfolio",
+                link: "/projects/global-equity-portfolio",
+              },
+              {
+                text: "WQ Alpha Research",
+                link: "/projects/wq-alpha-research",
+              },
+              {
+                text: "Board Diversity & ESG",
+                link: "/projects/board-diversity-esg",
+              },
+              {
+                text: "Cisco Equity Valuation",
+                link: "/projects/cisco-equity-valuation",
+              },
+              {
+                text: "UK Finance Pay",
+                link: "/projects/uk-finance-pay",
+              },
+            ],
+          },
+        ],
         "/ai-workflow/": [
           {
             text: "AI Workflow",

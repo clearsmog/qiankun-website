@@ -490,6 +490,36 @@ html {
   background: rgba(41, 151, 255, 0.1);
 }
 
+/* ==================== Project case-study assets ==================== */
+.vp-doc img[src*="/projects/"] {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  margin: 1.25rem auto 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  box-shadow: var(--apple-shadow-sm);
+}
+
+/* Project viz kit */
+.vp-doc .metric-cards,
+.vp-doc .project-chart,
+.vp-doc .process-steps,
+.vp-doc .viz-panel,
+.vp-doc .hero-metrics,
+.vp-doc .viz-grid,
+.vp-doc .rail {
+  max-width: 100%;
+}
+
+.vp-doc h3.viz-panel__title {
+  border-top: none;
+  margin: 0;
+  padding-top: 0;
+}
+
 /* ==================== Responsive ==================== */
 @media (max-width: 768px) {
   .VPHero {

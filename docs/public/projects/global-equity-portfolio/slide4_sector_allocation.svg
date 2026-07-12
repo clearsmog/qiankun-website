@@ -1,0 +1,75 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" x="0" y="0" fill="none"></rect>
+<path d="M584.5 151.2L584.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M736.5 151.2L736.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M889.5 151.2L889.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1041.5 151.2L1041.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1194.5 151.2L1194.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1346.5 151.2L1346.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1499.5 151.2L1499.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1651.5 151.2L1651.5 947.6" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M584.5 947.6L584.5 151.2" fill="none" stroke="#E2E8F0" stroke-linecap="round"></path>
+<text dy="0.35em" text-anchor="start" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(1666.2 947.6)" fill="#718096">Weight (%)</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 911.4)" fill="#2D3748">Consumer Staples</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 839)" fill="#2D3748">Real Estate</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 766.6)" fill="#2D3748">Energy</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 694.2)" fill="#2D3748">Utilities</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 621.8)" fill="#2D3748">Materials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 549.4)" fill="#2D3748">Health Care</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 477)" fill="#2D3748">Consumer Discretionary</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 404.6)" fill="#2D3748">Communication Services</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 332.2)" fill="#2D3748">Industrials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 259.8)" fill="#2D3748">Financials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 187.4)" fill="#2D3748">Information Technology</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(584.08 955.6)" fill="#718096">0%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(736.5257 955.6)" fill="#718096">5%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(888.9714 955.6)" fill="#718096">10%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1041.4171 955.6)" fill="#718096">15%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1193.8629 955.6)" fill="#718096">20%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1346.3086 955.6)" fill="#718096">25%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1498.7543 955.6)" fill="#718096">30%</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1651.2 955.6)" fill="#718096">35%</text>
+<path d="M584.1 885L584.1 909L584.1 885" fill="#4E8B6B"></path>
+<path d="M584.1 812.6L584.1 836.6L584.1 812.6" fill="#7A8899"></path>
+<path d="M584.1 740.2L637 740.2A2 2 0 0 1 639 742.2L639 762.2A2 2 0 0 1 637 764.2L584.1 764.2L584.1 740.2" fill="#9E6B5A"></path>
+<path d="M584.1 667.8L673.5 667.8A2 2 0 0 1 675.5 669.8L675.5 689.8A2 2 0 0 1 673.5 691.8L584.1 691.8L584.1 667.8" fill="#7E7BA5"></path>
+<path d="M584.1 595.4L734.5 595.4A2 2 0 0 1 736.5 597.4L736.5 617.4A2 2 0 0 1 734.5 619.4L584.1 619.4L584.1 595.4" fill="#C49A5C"></path>
+<path d="M584.1 523L795.5 523A2 2 0 0 1 797.5 525L797.5 545A2 2 0 0 1 795.5 547L584.1 547L584.1 523" fill="#5A9E7A"></path>
+<path d="M584.1 450.6L795.5 450.6A2 2 0 0 1 797.5 452.6L797.5 472.6A2 2 0 0 1 795.5 474.6L584.1 474.6L584.1 450.6" fill="#C4854A"></path>
+<path d="M584.1 378.2L795.5 378.2A2 2 0 0 1 797.5 380.2L797.5 400.2A2 2 0 0 1 795.5 402.2L584.1 402.2L584.1 378.2" fill="#4A8E8E"></path>
+<path d="M584.1 305.8L920.5 305.8A2 2 0 0 1 922.5 307.8L922.5 327.8A2 2 0 0 1 920.5 329.8L584.1 329.8L584.1 305.8" fill="#6B7CA5"></path>
+<path d="M584.1 233.4L1353.5 233.4A2 2 0 0 1 1355.5 235.4L1355.5 255.4A2 2 0 0 1 1353.5 257.4L584.1 257.4L584.1 233.4" fill="#B45A5A"></path>
+<path d="M584.1 161L1582.1 161A2 2 0 0 1 1584.1 163L1584.1 183A2 2 0 0 1 1582.1 185L584.1 185L584.1 161" fill="#3B6FA0"></path>
+<path d="M584.3 914.1L786.1 914.1A2 2 0 0 1 788.1 916.1L788.1 935.6A2 2 0 0 1 786.1 937.6L584.3 937.6L584.3 914.1" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 841.7L661.1 841.7A2 2 0 0 1 663.1 843.7L663.1 863.2A2 2 0 0 1 661.1 865.2L584.3 865.2L584.3 841.7" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 769.3L706.8 769.3A2 2 0 0 1 708.8 771.3L708.8 790.8A2 2 0 0 1 706.8 792.8L584.3 792.8L584.3 769.3" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 696.9L676.3 696.9A2 2 0 0 1 678.3 698.9L678.3 718.4A2 2 0 0 1 676.3 720.4L584.3 720.4L584.3 696.9" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 624.5L706.8 624.5A2 2 0 0 1 708.8 626.5L708.8 646A2 2 0 0 1 706.8 648L584.3 648L584.3 624.5" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 552.1L944.7 552.1A2 2 0 0 1 946.7 554.1L946.7 573.6A2 2 0 0 1 944.7 575.6L584.3 575.6L584.3 552.1" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 479.7L911.1 479.7A2 2 0 0 1 913.1 481.7L913.1 501.2A2 2 0 0 1 911.1 503.2L584.3 503.2L584.3 479.7" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 407.3L722.1 407.3A2 2 0 0 1 724.1 409.3L724.1 428.8A2 2 0 0 1 722.1 430.8L584.3 430.8L584.3 407.3" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 334.9L911.1 334.9A2 2 0 0 1 913.1 336.9L913.1 356.4A2 2 0 0 1 911.1 358.4L584.3 358.4L584.3 334.9" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 262.5L1100.1 262.5A2 2 0 0 1 1102.1 264.5L1102.1 284A2 2 0 0 1 1100.1 286L584.3 286L584.3 262.5" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<path d="M584.3 190.1L1319.7 190.1A2 2 0 0 1 1321.7 192.1L1321.7 211.6A2 2 0 0 1 1319.7 213.6L584.3 213.6L584.3 190.1" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="0.5"></path>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(793.3573 925.8142)" fill="#B94444">-6.7pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(668.3518 853.4142)" fill="#B94444">-2.6pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(714.0855 781.0142)" fill="#B94444">-2.3pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(683.5963 708.6142)" fill="#B94444">-0.1pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(714.0855 636.2142)" fill="#3A7D6E">+0.9pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(951.9008 563.8142)" fill="#B94444">-4.9pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(918.3627 491.4142)" fill="#B94444">-3.8pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(729.3301 419.0142)" fill="#3A7D6E">+2.4pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(918.3627 346.6142)" fill="#3A7D6E">+0.3pp</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1107.3954 274.2142)" fill="#3A7D6E">+8.3pp rate thesis</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1326.9173 201.8142)" fill="#3A7D6E">+8.6pp AI/semi</text>
+<path d="M-5 -5l300.8 0l0 36l-300.8 0Z" transform="translate(1528.18 50)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<path d="M2.5 0L11.5 0A2.5 2.5 0 0 1 14 2.5L14 7.5A2.5 2.5 0 0 1 11.5 10L2.5 10A2.5 2.5 0 0 1 0 7.5L0 2.5A2.5 2.5 0 0 1 2.5 0" transform="translate(1528.18 58)" fill="#1B2A4A"></path>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" x="19" y="5" transform="translate(1528.18 58)" fill="#2D3748">Portfolio</text>
+<path d="M0 -8l114.7 0l0 26l-114.7 0Z" transform="translate(1528.18 58)" fill="none"></path>
+<path d="M2.5 0L11.5 0A2.5 2.5 0 0 1 14 2.5L14 7.5A2.5 2.5 0 0 1 11.5 10L2.5 10A2.5 2.5 0 0 1 0 7.5L0 2.5A2.5 2.5 0 0 1 2.5 0" transform="translate(1659.86 58)" fill="#CBD5E0" stroke="#A0AEC0" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10"></path>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" x="19" y="5" transform="translate(1659.86 58)" fill="#2D3748">MSCI World</text>
+<path d="M-1 -8l160.1 0l0 26l-160.1 0Z" transform="translate(1659.86 58)" fill="none"></path>
+<path d="M-355 0l709.9 0l0 56l-709.9 0Z" transform="translate(960 0)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<text dy="0.35em" text-anchor="middle" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="18" transform="translate(960 0)" fill="#1B2A4A">Sector Allocation — Portfolio vs MSCI World</text>
+
+</svg>

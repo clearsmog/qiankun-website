@@ -1,0 +1,37 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" x="0" y="0" fill="none"></rect>
+<text dy="0.35em" text-anchor="middle" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="18" transform="translate(960 506)" fill="#1B2A4A">5.3%</text>
+<text dy="0.35em" text-anchor="middle" font-size="30px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="15" transform="translate(960 544)" fill="#718096">Tracking Error</text>
+<polyline points="1326.7 613 1348.7 614.1 1364.7 614.1" fill="none" stroke="#1B2A4A"></polyline>
+<polyline points="637.9 770.2 618.6 780.8 602.6 780.8" fill="none" stroke="#3A7D6E"></polyline>
+<polyline points="709.7 325.3 694.7 309.3 678.7 309.3" fill="none" stroke="#C45D3E"></polyline>
+<polyline points="887.9 234 883.5 212.4 867.5 212.4" fill="none" stroke="#D4956A"></polyline>
+<path d="M960 226.8A367.2 367.2 0 1 1 922 959.2L940.5 782A189 189 0 1 0 960 405Z" fill="#1B2A4A"></path>
+<path d="M922 959.2A367.2 367.2 0 0 1 632 429L791.2 509.1A189 189 0 0 0 940.5 782Z" fill="#3A7D6E"></path>
+<path d="M632 429A367.2 367.2 0 0 1 818.5 255.1L887.2 419.6A189 189 0 0 0 791.2 509.1Z" fill="#C45D3E"></path>
+<path d="M818.5 255.1A367.2 367.2 0 0 1 960 226.8L960 405A189 189 0 0 0 887.2 419.6Z" fill="#D4956A"></path>
+<path d="M0 -23l167.1 0l0 46l-167.1 0Z" transform="translate(1369.6783 614.1455)" fill="none"></path>
+<path d="M0 -27l167.1 0l0 30l-167.1 0Z" transform="translate(1369.6783 614.1455)" fill="none"></path>
+<text dy="0.35em" text-anchor="start" font-size="30px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="-12" transform="translate(1369.6783 614.1455)" fill="#2D3748">Idiosyncratic</text>
+<path d="M0 -7l102.6 0l0 36l-102.6 0Z" transform="translate(1369.6783 614.1455)" fill="none"></path>
+<text dy="0.35em" text-anchor="start" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="11" transform="translate(1369.6783 614.1455)" fill="#2D3748">51.7%</text>
+<path d="M-102.6 -23l102.6 0l0 46l-102.6 0Z" transform="translate(597.5538 780.7917)" fill="none"></path>
+<path d="M-66.9 -27l66.9 0l0 30l-66.9 0Z" transform="translate(597.5538 780.7917)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="30px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="-12" transform="translate(597.5538 780.7917)" fill="#2D3748">Style</text>
+<path d="M-102.6 -7l102.6 0l0 36l-102.6 0Z" transform="translate(597.5538 780.7917)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="11" transform="translate(597.5538 780.7917)" fill="#2D3748">30.8%</text>
+<path d="M-107.1 -23l107.1 0l0 46l-107.1 0Z" transform="translate(673.6804 309.2507)" fill="none"></path>
+<path d="M-107.1 -27l107.1 0l0 30l-107.1 0Z" transform="translate(673.6804 309.2507)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="30px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="-12" transform="translate(673.6804 309.2507)" fill="#2D3748">Industry</text>
+<path d="M-102.6 -7l102.6 0l0 36l-102.6 0Z" transform="translate(673.6804 309.2507)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="11" transform="translate(673.6804 309.2507)" fill="#2D3748">11.3%</text>
+<path d="M-91.8 -23l91.8 0l0 46l-91.8 0Z" transform="translate(862.5468 212.383)" fill="none"></path>
+<path d="M-91.8 -27l91.8 0l0 30l-91.8 0Z" transform="translate(862.5468 212.383)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="30px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="-12" transform="translate(862.5468 212.383)" fill="#2D3748">Market</text>
+<path d="M-82.4 -7l82.4 0l0 36l-82.4 0Z" transform="translate(862.5468 212.383)" fill="none"></path>
+<text dy="0.35em" text-anchor="end" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="11" transform="translate(862.5468 212.383)" fill="#2D3748">6.3%</text>
+<path d="M-251.7 0l503.5 0l0 58l-503.5 0Z" transform="translate(960 0)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="19" transform="translate(960 0)" fill="#1B2A4A">Tracking Error Decomposition</text>
+
+
+</svg>

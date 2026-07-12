@@ -9,7 +9,11 @@ Welcome! I'm Qiankun, and this is my personal website.
 
 ## What I Do
 
-I'm passionate about technology and software development. This site serves as a place to share my thoughts, projects, and learnings.
+I'm passionate about technology, quantitative systems, and software development. This site shares writing, projects, and learnings.
+
+## Portfolio
+
+Case studies for hiring managers and interviewers are under [Projects](/projects/), including a [GBP 10M global equity portfolio](/projects/global-equity-portfolio), [WorldQuant BRAIN alpha research](/projects/wq-alpha-research) (Gold), [board gender diversity and ESG](/projects/board-diversity-esg), a [Cisco equity valuation](/projects/cisco-equity-valuation), and a [UK finance pay](/projects/uk-finance-pay) data story.
 
 ## The Name
 

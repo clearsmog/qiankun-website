@@ -1,0 +1,30 @@
+<svg width="1920" height="500" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 500">
+<rect width="1920" height="500" x="0" y="0" fill="none"></rect>
+<path d="M53 170L317 170A8 8 0 0 1 325 178L325 322A8 8 0 0 1 317 330L53 330A8 8 0 0 1 45 322L45 178A8 8 0 0 1 53 170" fill="#FFFFFF"></path>
+<path d="M50 170L320 170A5 5 0 0 1 325 175L45 175A5 5 0 0 1 50 170" fill="#1B2A4A"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="185" y="251" fill="#1B2A4A">0.37</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="185" y="301" fill="#718096">Sharpe Ratio</text>
+<path d="M363 170L627 170A8 8 0 0 1 635 178L635 322A8 8 0 0 1 627 330L363 330A8 8 0 0 1 355 322L355 178A8 8 0 0 1 363 170" fill="#FFFFFF"></path>
+<path d="M360 170L630 170A5 5 0 0 1 635 175L355 175A5 5 0 0 1 360 170" fill="#3A7D6E"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="495" y="251" fill="#3A7D6E">1.5-3%</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="495" y="301" fill="#718096">Expected Alpha</text>
+<path d="M673 170L937 170A8 8 0 0 1 945 178L945 322A8 8 0 0 1 937 330L673 330A8 8 0 0 1 665 322L665 178A8 8 0 0 1 673 170" fill="#FFFFFF"></path>
+<path d="M670 170L940 170A5 5 0 0 1 945 175L665 175A5 5 0 0 1 670 170" fill="#3B6FA0"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="805" y="251" fill="#3B6FA0">0.87</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="805" y="301" fill="#718096">Portfolio Beta</text>
+<path d="M983 170L1247 170A8 8 0 0 1 1255 178L1255 322A8 8 0 0 1 1247 330L983 330A8 8 0 0 1 975 322L975 178A8 8 0 0 1 983 170" fill="#FFFFFF"></path>
+<path d="M980 170L1250 170A5 5 0 0 1 1255 175L975 175A5 5 0 0 1 980 170" fill="#5A9E7A"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="1115" y="251" fill="#5A9E7A">7.1/10</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="1115" y="301" fill="#718096">ESG Score</text>
+<path d="M1293 170L1557 170A8 8 0 0 1 1565 178L1565 322A8 8 0 0 1 1557 330L1293 330A8 8 0 0 1 1285 322L1285 178A8 8 0 0 1 1293 170" fill="#FFFFFF"></path>
+<path d="M1290 170L1560 170A5 5 0 0 1 1565 175L1285 175A5 5 0 0 1 1290 170" fill="#C45D3E"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="1425" y="251" fill="#C45D3E">6.8%</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="1425" y="301" fill="#718096">Tracking Error</text>
+<path d="M1603 170L1867 170A8 8 0 0 1 1875 178L1875 322A8 8 0 0 1 1867 330L1603 330A8 8 0 0 1 1595 322L1595 178A8 8 0 0 1 1603 170" fill="#FFFFFF"></path>
+<path d="M1600 170L1870 170A5 5 0 0 1 1875 175L1595 175A5 5 0 0 1 1600 170" fill="#6B7CA5"></path>
+<text dy="0.35em" text-anchor="middle" font-size="52px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" x="1735" y="251" fill="#6B7CA5">29</text>
+<text dy="0.35em" text-anchor="middle" font-size="22px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" x="1735" y="301" fill="#718096">Holdings</text>
+<text dy="0.35em" text-anchor="middle" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" x="960" y="403" fill="#2D3748">Systematic factor scoring across 1,800 MSCI World + EM stocks, filtered by ESG, optimised against benchmark risk.</text>
+
+
+</svg>

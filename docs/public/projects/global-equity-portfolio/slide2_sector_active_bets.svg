@@ -1,0 +1,55 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+<rect width="1920" height="1080" x="0" y="0" fill="none"></rect>
+<path d="M584.5 151.2L584.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M768.5 151.2L768.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M952.5 151.2L952.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1137.5 151.2L1137.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1321.5 151.2L1321.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1505.5 151.2L1505.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1689.5 151.2L1689.5 926" fill="none" stroke="#EDF2F7" stroke-dasharray="4,2"></path>
+<path d="M1137 926L1137 151.2" fill="none" stroke="#1B2A4A" stroke-width="1.5" stroke-linecap="round"></path>
+<text dy="0.35em" text-anchor="start" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(1704.6 926)" fill="#718096">Active Bet (pp)</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 890.7818)" fill="#2D3748">Consumer Staples</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 820.3455)" fill="#2D3748">Health Care</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 749.9091)" fill="#2D3748">Consumer Discretionary</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 679.4727)" fill="#2D3748">Real Estate</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 609.0364)" fill="#2D3748">Energy</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 538.6)" fill="#2D3748">Utilities</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 468.1636)" fill="#2D3748">Industrials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 397.7273)" fill="#2D3748">Materials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 327.2909)" fill="#2D3748">Communication Services</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 256.8545)" fill="#2D3748">Financials</text>
+<text dy="0.35em" text-anchor="end" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" transform="translate(576.08 186.4182)" fill="#2D3748">Information Technology</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(584.08 934)" fill="#718096">-9</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(768.3333 934)" fill="#718096">-6</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(952.5867 934)" fill="#718096">-3</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1136.84 934)" fill="#718096">0</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1321.0933 934)" fill="#718096">+3</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1505.3467 934)" fill="#718096">+6</text>
+<text dy="0.35em" text-anchor="middle" font-size="38px" font-family="Inter, Helvetica Neue, Arial, sans-serif" y="19" transform="translate(1689.6 934)" fill="#718096">+9</text>
+<path d="M727.3 871.4L1136.8 871.4L1136.8 910.2L727.3 910.2A2 2 0 0 1 725.3 908.2L725.3 873.4A2 2 0 0 1 727.3 871.4" fill="#B94444"></path>
+<path d="M840.3 801L1136.8 801L1136.8 839.7L840.3 839.7A2 2 0 0 1 838.3 837.7L838.3 803A2 2 0 0 1 840.3 801" fill="#B94444"></path>
+<path d="M904.2 730.5L1136.8 730.5L1136.8 769.3L904.2 769.3A2 2 0 0 1 902.2 767.3L902.2 732.5A2 2 0 0 1 904.2 730.5" fill="#B94444"></path>
+<path d="M980.4 660.1L1136.8 660.1L1136.8 698.8L980.4 698.8A2 2 0 0 1 978.4 696.8L978.4 662.1A2 2 0 0 1 980.4 660.1" fill="#B94444"></path>
+<path d="M995.7 589.7L1136.8 589.7L1136.8 628.4L995.7 628.4A2 2 0 0 1 993.7 626.4L993.7 591.7A2 2 0 0 1 995.7 589.7" fill="#B94444"></path>
+<path d="M1131.5 519.2L1136.8 519.2L1136.8 558L1131.5 558A2 2 0 0 1 1129.5 556L1129.5 521.2A2 2 0 0 1 1131.5 519.2" fill="#B94444"></path>
+<path d="M1136.8 448.8L1152.7 448.8A2 2 0 0 1 1154.7 450.8L1154.7 485.5A2 2 0 0 1 1152.7 487.5L1136.8 487.5L1136.8 448.8" fill="#3A7D6E"></path>
+<path d="M1136.8 378.4L1188.3 378.4A2 2 0 0 1 1190.3 380.4L1190.3 415.1A2 2 0 0 1 1188.3 417.1L1136.8 417.1L1136.8 378.4" fill="#3A7D6E"></path>
+<path d="M1136.8 307.9L1279.8 307.9A2 2 0 0 1 1281.8 309.9L1281.8 344.7A2 2 0 0 1 1279.8 346.7L1136.8 346.7L1136.8 307.9" fill="#3A7D6E"></path>
+<path d="M1136.8 237.5L1644 237.5A2 2 0 0 1 1646 239.5L1646 274.2A2 2 0 0 1 1644 276.2L1136.8 276.2L1136.8 237.5" fill="#3A7D6E"></path>
+<path d="M1136.8 167L1662.4 167A2 2 0 0 1 1664.4 169L1664.4 203.8A2 2 0 0 1 1662.4 205.8L1136.8 205.8L1136.8 167" fill="#3A7D6E"></path>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 890.7818)" fill="#2D3748">-6.7pp (Port: 0.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 820.3455)" fill="#2D3748">-4.9pp (Port: 7.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 749.9091)" fill="#2D3748">-3.8pp (Port: 7.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 679.4727)" fill="#2D3748">-2.6pp (Port: 0.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 609.0364)" fill="#2D3748">-2.3pp (Port: 1.8%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1141.84 538.6)" fill="#2D3748">-0.1pp (Port: 3.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1159.6512 468.1636)" fill="#2D3748">+0.3pp (Port: 11.1%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1195.2735 397.7273)" fill="#2D3748">+0.9pp (Port: 5.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1286.786 327.2909)" fill="#2D3748">+2.4pp (Port: 7.0%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1650.9934 256.8545)" fill="#2D3748">+8.3pp (Port: 25.3%)</text>
+<text dy="0.35em" text-anchor="start" font-size="26px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="500" transform="translate(1669.4187 186.4182)" fill="#2D3748">+8.6pp (Port: 32.8%)</text>
+<path d="M-272.7 0l545.4 0l0 56l-545.4 0Z" transform="translate(960 0)" fill="none" stroke="#ccc" stroke-width="0"></path>
+<text dy="0.35em" text-anchor="middle" font-size="36px" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="bold" y="18" transform="translate(960 0)" fill="#1B2A4A">Sector Active Bets vs MSCI World</text>
+
+</svg>
