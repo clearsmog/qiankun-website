@@ -39,9 +39,9 @@ Work samples intended for **hiring managers and interviewers**. Each page is a c
     <span class="project-tag">Equity research · Valuation</span>
     <span class="project-title">Cisco Systems Equity Valuation (CSCO)</span>
     <span class="project-desc">
-      Full FCFF DCF and peer multiples of Cisco — WACC, 10-year forecast, reverse DCF, scenarios, and Monte Carlo. Base intrinsic ~$49 vs market ~$120 at valuation date.
+      Full FCFF DCF and peer multiples of Cisco — bottom-up WACC, 10-year segment forecast, reverse DCF, Monte Carlo, and a formula-driven Excel audit model. Base intrinsic $48.56 vs market ~$120.
     </span>
-    <span class="project-meta">University of Edinburgh · Equity Valuation · June 2026</span>
+    <span class="project-meta">University of Edinburgh · Equity Valuation · June 2026 · Mark 73</span>
   </a>
   <a href="/projects/uk-finance-pay" class="project-card">
     <span class="project-tag">Data storytelling · Labour market</span>
