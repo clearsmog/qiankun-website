@@ -20,6 +20,10 @@ import EDonut from './components/viz/EDonut.vue'
 import EForest from './components/viz/EForest.vue'
 import EFootball from './components/viz/EFootball.vue'
 import EScorePath from './components/viz/EScorePath.vue'
+import EHeatmap from './components/viz/EHeatmap.vue'
+import EHistogram from './components/viz/EHistogram.vue'
+import EGroupBar from './components/viz/EGroupBar.vue'
+import ECombo from './components/viz/ECombo.vue'
 // Legacy custom SVG (kept available if needed)
 import SvgAreaChart from './components/viz/SvgAreaChart.vue'
 import SvgHBars from './components/viz/SvgHBars.vue'
@@ -56,6 +60,10 @@ export default {
     app.component('EForest', EForest)
     app.component('EFootball', EFootball)
     app.component('EScorePath', EScorePath)
+    app.component('EHeatmap', EHeatmap)
+    app.component('EHistogram', EHistogram)
+    app.component('EGroupBar', EGroupBar)
+    app.component('ECombo', ECombo)
     app.component('SvgAreaChart', SvgAreaChart)
     app.component('SvgHBars', SvgHBars)
     app.component('SvgDonut', SvgDonut)

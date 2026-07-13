@@ -13,6 +13,10 @@ head:
 ---
 
 <script setup>
+// All chart data below is dumped directly from the project's Python model
+// (model/forecast.py, model/sensitivity.py, model/probabilistic.py,
+// model/multiples.py, data/processed/*.csv) — computed, not transcribed.
+
 const metrics = [
   { label: 'Base intrinsic', value: '$48.56', hint: 'FCFF DCF, per share', accent: '#0071e3' },
   { label: 'Market price', value: '$120.16', hint: '≈2.5× intrinsic (+146%)', accent: '#ff3b30' },
@@ -20,13 +24,46 @@ const metrics = [
   { label: 'P(undervalued)', value: '0%', hint: '50,000-trial Monte Carlo', accent: '#af52de' },
 ]
 
-const ranges = [
-  { label: 'Bear DCF', low: 30, high: 40, mid: 34.87, color: '#ff3b30' },
-  { label: 'Base DCF', low: 43, high: 54, mid: 48.56, color: '#0071e3' },
-  { label: 'Bull DCF', low: 54, high: 66, mid: 59.63, color: '#34c759' },
-  { label: 'Naive peer multiples', low: 123, high: 185, mid: 154, color: '#af52de' },
+// §1 — FY2025 segment & geographic mix ($B), data/processed/segment_mix.csv + geo_split.csv
+const segmentMix = [
+  { label: 'Networking', value: 28.3, color: '#0071e3' },
+  { label: 'Services', value: 15.0, color: '#5856d6' },
+  { label: 'Security', value: 8.1, color: '#34c759' },
+  { label: 'Collaboration', value: 4.2, color: '#ff9500' },
+  { label: 'Observability', value: 1.1, color: '#af52de' },
+]
+const geoMix = [
+  { label: 'Americas', value: 33.7, color: '#0071e3' },
+  { label: 'EMEA', value: 14.8, color: '#5ac8fa' },
+  { label: 'APJC', value: 8.2, color: '#5856d6' },
 ]
 
+// §2 — bull/base/bear revenue trajectories ($B), model/forecast.py run_forecast()
+const scenarioLabels = ['TTM', 'Yr1', 'Yr2', 'Yr3', 'Yr4', 'Yr5', 'Yr6', 'Yr7', 'Yr8', 'Yr9', 'Yr10']
+const scenarioSeries = [
+  {
+    name: 'Bull — sustained AI strength',
+    color: '#34c759',
+    data: [60.75, 66.71, 72.85, 78.91, 84.71, 90.19, 95.01, 99.87, 104.82, 109.25, 113.73],
+  },
+  {
+    name: 'Base — structural but moderated',
+    color: '#0071e3',
+    data: [60.75, 64.81, 68.69, 72.27, 75.82, 79.4, 82.98, 86.61, 90.21, 94.02, 97.88],
+  },
+  {
+    name: 'Bear — AI pull-forward reversal',
+    color: '#ff3b30',
+    data: [60.75, 60.55, 60.91, 62.57, 64.47, 66.71, 68.95, 71.76, 74.67, 77.61, 80.79],
+  },
+]
+
+// §3 — revenue & GAAP operating margin FY2021–FY2025, data/processed/is_clean.csv
+const trendLabels = ['FY2021', 'FY2022', 'FY2023', 'FY2024', 'FY2025']
+const trendBars = { name: 'Revenue ($B)', data: [49.8, 51.6, 57.0, 53.8, 56.7], color: '#0071e3', unit: 'B' }
+const trendLine = { name: 'GAAP op. margin (%)', data: [25.8, 27.1, 26.4, 22.6, 20.8], color: '#ff9500', unit: '%' }
+
+// §4 — WACC build, model/wacc.py
 const wacc = [
   { label: 'Risk-free (adj.)', value: 4.10, sub: '10Y UST 4.50% − 40 bp sovereign spread', color: '#5ac8fa' },
   { label: 'ERP contribution', value: 5.14, sub: 'β 1.067 × geo-blended ERP 4.82%', color: '#5856d6' },
@@ -35,24 +72,70 @@ const wacc = [
   { label: 'WACC', value: 8.93, sub: '94.2% equity / 5.8% debt (market values)', color: '#ff9500' },
 ]
 
+// §5 — base-case revenue & FCFF path ($B), model/forecast.py
 const pathSeries = [
   {
     name: 'Revenue ($B)',
     color: '#0071e3',
-    data: [60.7, 64.8, 72, 80, 88, 97.9],
+    data: [60.75, 64.81, 68.69, 72.27, 75.82, 79.4, 82.98, 86.61, 90.21, 94.02, 97.88],
   },
   {
     name: 'FCFF ($B)',
     color: '#34c759',
-    data: [null, 12.7, 13.8, 15.0, 16.2, 17.6],
+    data: [null, 12.69, 13.33, 13.9, 14.45, 14.98, 15.5, 16.02, 16.52, 17.04, 17.56],
   },
 ]
-const pathLabels = ['TTM', 'Y1', 'Y3', 'Y5', 'Y7', 'Y10']
 
-const scenarioWeights = [
-  { label: 'Base (45%)', value: 45, color: '#0071e3' },
-  { label: 'Bull (30%)', value: 30, color: '#34c759' },
-  { label: 'Bear (25%)', value: 25, color: '#ff3b30' },
+// §6 — football field, model/sensitivity.py build_triangulation()
+const ranges = [
+  { label: 'DCF scenarios', low: 34.87, high: 59.63, mid: 48.56, color: '#0071e3' },
+  { label: 'Multiples range', low: 90.76, high: 123.05, mid: 106.9, color: '#af52de' },
+  { label: '52-week range', low: 62.71, high: 121.43, mid: 92.07, color: '#86868b' },
+]
+
+// §7 — peer multiples, model/multiples.py (peer medians, Cisco, Damodaran regression)
+const multipleCategories = ['EV/EBITDA', 'EV/Sales', 'P/E']
+const multipleSeries = [
+  { name: 'Cisco', color: '#ff9500', data: [29.6, 8.1, 25.4] },
+  { name: 'Peer median (NTM)', color: '#34c759', data: [30.3, 14.4, 39.1] },
+  { name: 'Damodaran predicted (trailing)', color: '#0071e3', data: [22.6, 7.7, 33.6] },
+]
+
+// §8 — 5×5 WACC × terminal-g grid ($/share), model/sensitivity.py compute_wacc_g_grid()
+const sensRows = ['7.43%', '8.18%', '8.93%', '9.68%', '10.43%']
+const sensCols = ['3.10%', '3.60%', '4.10%', '4.60%', '5.10%']
+const sensValues = [
+  [60.75, 63.49, 67.05, 71.86, 78.75],
+  [52.41, 54.13, 56.27, 59.0, 62.62],
+  [46.06, 47.19, 48.56, 50.25, 52.37],
+  [41.03, 41.81, 42.73, 43.83, 45.18],
+  [36.81, 37.33, 37.93, 38.64, 39.48],
+]
+
+// §8 — reverse DCF, model/sensitivity.py run_reverse_dcf()
+const impliedGrowth = [
+  { label: 'Market-implied constant growth', value: 17.8, color: '#ff3b30' },
+  { label: 'Base-case 10-yr CAGR', value: 4.9, color: '#0071e3' },
+]
+const impliedWacc = [
+  { label: 'Market-implied WACC', value: 5.79, color: '#ff3b30' },
+  { label: 'Bottom-up WACC', value: 8.93, color: '#0071e3' },
+]
+
+// Probabilistic — 50k-trial MC histogram, model/probabilistic.py run_probabilistic()
+const mcEdges = [25.25, 26.94, 28.63, 30.32, 32.01, 33.7, 35.4, 37.09, 38.78, 40.47, 42.16, 43.85, 45.54, 47.23, 48.93, 50.62, 52.31, 54.0, 55.69, 57.38, 59.07, 60.77, 62.46, 64.15, 65.84, 67.53, 69.22, 70.91, 72.6, 74.3, 75.99, 77.68, 79.37, 81.06, 82.75, 84.44, 86.14, 87.83, 89.52, 91.21, 92.9, 94.59, 96.28, 97.97, 99.67, 101.36, 103.05, 104.74, 106.43]
+const mcCounts = [24, 57, 136, 293, 583, 922, 1446, 1889, 2570, 2957, 3469, 3672, 3671, 3750, 3524, 3400, 3148, 2742, 2278, 1863, 1622, 1312, 1085, 843, 652, 513, 396, 310, 223, 175, 118, 101, 79, 58, 30, 29, 23, 11, 5, 5, 3, 6, 2, 1, 1, 1, 1, 1]
+const mcMarkers = [
+  { label: 'Median', value: 48.74, color: '#0071e3' },
+  { label: 'P95', value: 66.44, color: '#5856d6', dashed: true },
+]
+
+// Scenario-weighted bridge ($/share contribution), probs from model/assumptions.py
+const bridge = [
+  { label: 'Base 45% × $48.56', value: 21.85, color: '#0071e3' },
+  { label: 'Bull 30% × $59.63', value: 17.89, color: '#34c759' },
+  { label: 'Bear 25% × $34.87', value: 8.72, color: '#ff3b30' },
+  { label: 'Weighted intrinsic', value: 48.46, color: '#af52de' },
 ]
 
 const steps = [
@@ -71,7 +154,7 @@ const steps = [
 
 University of Edinburgh · Equity Valuation (CMSE11664) · June 2026 · **Mark: 73 (A band)**
 
-Full **buy-side style** valuation of **Cisco Systems (NASDAQ: CSCO)** — FCFF DCF, peer multiples, scenarios, reverse DCF, Monte Carlo — built as a reproducible Python model with a formula-driven Excel audit workbook and a Typst report. This page follows the report section by section, at the same depth.
+Full **buy-side style** valuation of **Cisco Systems (NASDAQ: CSCO)** — FCFF DCF, peer multiples, scenarios, reverse DCF, Monte Carlo — built as a reproducible Python model with a formula-driven Excel audit workbook and a Typst report. This page follows the report section by section, at the same depth, and **every chart below is rendered live from the model's own output data**.
 
 ## Snapshot
 
@@ -83,13 +166,22 @@ Full **buy-side style** valuation of **Cisco Systems (NASDAQ: CSCO)** — FCFF D
 
 Cisco operates five segments — Networking, Security, Collaboration, Observability, Services — with the **Splunk acquisition (March 2024)**, its largest ever, reshaping the mix. FY2025 revenue was **$56.7B**, with the Americas contributing **59%**. Mid-year FY2026 guidance raised cumulative AI-infrastructure orders to **$9B** and AI-related revenue to **$4B**, with product-order growth running ≈**35% YoY**.
 
-<VizPanel
-  badge="Exhibit 1"
-  title="Segment and geographic revenue mix, FY2025"
-  subtitle="Security (+59% → $8.1B) and Observability (+26% → $1.1B) growth is largely Splunk-driven — the model isolates inorganic contribution before forecasting."
->
-  <div class="report-fig"><img src="/projects/cisco-equity-valuation/segment_geo_mix.svg" alt="Cisco segment and geographic revenue mix FY2025" loading="lazy" /></div>
-</VizPanel>
+<VizGrid :cols="2">
+  <VizPanel
+    badge="Exhibit 1a"
+    title="Segment revenue mix, FY2025"
+    subtitle="Security (+59% → $8.1B) and Observability (+26% → $1.1B) growth is largely Splunk-driven — the model isolates inorganic contribution before forecasting."
+  >
+    <EDonut :items="segmentMix" center-value="$56.7B" center-label="FY2025" unit="B" :height="320" legend-pos="bottom" />
+  </VizPanel>
+  <VizPanel
+    badge="Exhibit 1b"
+    title="Geographic revenue mix, FY2025"
+    subtitle="Americas 59% / EMEA 26% / APJC 14% — the same weights blend the regional equity risk premia in §4."
+  >
+    <EDonut :items="geoMix" center-value="59%" center-label="Americas" unit="B" :height="320" legend-pos="bottom" />
+  </VizPanel>
+</VizGrid>
 
 ## 2 · Industry and business risk
 
@@ -99,10 +191,10 @@ Competitors pressure every segment: Arista (AI fabric), Palo Alto and Fortinet (
 
 <VizPanel
   badge="Exhibit 2"
-  title="Product-order trajectory, FY2022–FY2026"
-  subtitle="Surge, reversal, and AI-driven re-acceleration. The FY2024 reversal anchors the bear case; the base case treats current demand as structural but moderated."
+  title="Revenue trajectories: bull / base / bear, TTM → year 10"
+  subtitle="The bear path embeds the FY2022–24 pull-forward reversal precedent (−20% to −28% product orders, Networking −15.5% YoY); the base case treats AI demand as structural but moderated."
 >
-  <div class="report-fig"><img src="/projects/cisco-equity-valuation/ai_order_trajectory.svg" alt="Cisco product order trajectory FY2022 to FY2026" loading="lazy" /></div>
+  <ELine :labels="scenarioLabels" :series="scenarioSeries" y-suffix="B" :height="320" />
 </VizPanel>
 
 ## 3 · Financial analysis
@@ -111,10 +203,10 @@ FY2025 free cash flow was **$13.3B** on **$56.7B** revenue, with capex of only �
 
 <VizPanel
   badge="Exhibit 3"
-  title="Revenue and operating margin, FY2021–FY2025"
+  title="Revenue and GAAP operating margin, FY2021–FY2025"
   subtitle="Non-linear history: supply-chain surge, order reversal, then stabilisation — the reason the forecast is built segment-by-segment rather than trend-extrapolated."
 >
-  <div class="report-fig"><img src="/projects/cisco-equity-valuation/revenue_margin_trend.svg" alt="Cisco revenue and operating margin FY2021 to FY2025" loading="lazy" /></div>
+  <ECombo :labels="trendLabels" :bars="trendBars" :line="trendLine" :height="320" />
 </VizPanel>
 
 ## 4 · Capital structure and WACC
@@ -143,10 +235,10 @@ Discipline choices that drive the answer: **R&D capitalised** over a 3-year amor
 
 <VizPanel
   badge="Forecast"
-  title="Base-case revenue and FCFF path"
-  subtitle="Revenue $60.7B TTM → $97.9B year 10; FCFF $12.7B → $17.6B. AI demand real but partly front-loaded."
+  title="Base-case revenue and FCFF path, all ten years"
+  subtitle="Revenue $60.7B TTM → $97.9B year 10; FCFF $12.7B → $17.6B."
 >
-  <ELine :labels="pathLabels" :series="pathSeries" y-suffix="" :height="300" />
+  <ELine :labels="scenarioLabels" :series="pathSeries" y-suffix="B" :height="300" />
 </VizPanel>
 
 ## 6 · Intrinsic valuation — DCF
@@ -166,8 +258,8 @@ The EV→equity bridge uses the **Q3-FY2026 Form 10-Q** balance sheet (quarter e
 
 <VizPanel
   badge="Football field"
-  title="Intrinsic and relative ranges vs market"
-  subtitle="Market ≈$120.16 sits above the bull DCF by ~$61. Only naive peer-median multiples reach the price — and §7 shows why they mislead."
+  title="Triangulation: DCF, multiples, and 52-week range vs market"
+  subtitle="Market $120.16 sits ~$61 above the bull DCF and at the top of its own 52-week range. Only the multiples band reaches the price — and §7 shows why it misleads."
 >
   <EFootball :ranges="ranges" :market="120.16" market-label="Mkt" unit="$" />
 </VizPanel>
@@ -178,69 +270,84 @@ Peers screened on business-mix overlap, revenue scale ($3B–$100B), and US list
 
 | Multiple | Peer median (NTM) | Cisco | Damodaran predicted (trailing) |
 | --- | --- | --- | --- |
-| EV/EBITDA | 30.3× | 29.5× | 22.6× |
-| EV/Sales | 14.5× | 8.1× | 7.7× |
+| EV/EBITDA | 30.3× | 29.6× | 22.6× |
+| EV/Sales | 14.4× | 8.1× | 7.7× |
 | P/E (NTM) | 39.1× | 25.4× | — |
-| P/E (GAAP trailing) | — | 46.6× | 34.0× |
+| P/E (GAAP trailing) | — | 46.6× | 33.6× |
 
-Naive peer medians imply **≈$123 (EV/EBITDA)** to **≈$185 (P/E)** per share — but Cisco's blended growth (~9%) is a fraction of peers like Arista (~24%), so peer medians import growth Cisco doesn't have. A **Damodaran 2026 regression cross-check** on fundamentals says Cisco should trade **30–37% below** its actual multiples. The forward-vs-trailing P/E gap (25.4× vs 46.6×) is SBC and acquired-intangible amortisation excluded from consensus EPS.
+Naive peer medians imply **≈$123 (EV/EBITDA)** to **≈$185 (P/E)** per share — but Cisco's blended growth (~9%) is a fraction of peers like Arista (~24%), so peer medians import growth Cisco doesn't have. A **Damodaran 2026 regression cross-check** on fundamentals says Cisco trades **31–39% above** what its own growth, margin, and payout justify. The forward-vs-trailing P/E gap (25.4× vs 46.6×) is SBC and acquired-intangible amortisation excluded from consensus EPS.
 
 <VizPanel
   badge="Exhibit 4"
   title="Cisco vs peer-median vs regression-predicted multiples"
-  subtitle="The relative story agrees with the DCF once multiples are conditioned on fundamentals rather than taken at face value."
+  subtitle="Forward (NTM) basis for Cisco and peer median; trailing basis for the Damodaran regression cross-check — matching Table 4 of the report."
 >
-  <div class="report-fig"><img src="/projects/cisco-equity-valuation/peer_multiple_comparison.svg" alt="Cisco versus peer median and Damodaran predicted multiples" loading="lazy" /></div>
+  <EGroupBar :categories="multipleCategories" :series="multipleSeries" unit="×" :height="320" />
 </VizPanel>
 
 ## 8 · Synthesis, sensitivity, and reverse DCF
 
 No credible parameter change bridges the gap: across WACC **8.2–9.7%** and terminal growth **3.5–4.5%**, base value stays **below $63**. The reverse DCF asks the sharper question — *what must be true for $120.16 to be right?* Either perpetual forward revenue growth of ≈**17.8%** (more than 3.5× the base CAGR, forever), or a WACC of **5.79%** — 314bp below the bottom-up rate.
 
+<VizPanel
+  badge="Exhibit 5"
+  title="Sensitivity: intrinsic value per share, WACC × terminal growth"
+  subtitle="The exact 5×5 grid from the model. Outlined cell = base case ($48.56 at WACC 8.93%, g 4.10%). Even the most generous corner stays $41 below the market."
+>
+  <EHeatmap
+    :rows="sensRows"
+    :cols="sensCols"
+    :values="sensValues"
+    :base-cell="['8.93%', '4.10%']"
+    unit="$"
+    x-name="Terminal growth g"
+    y-name="WACC"
+    :height="340"
+  />
+</VizPanel>
+
 <VizGrid :cols="2">
   <VizPanel
-    badge="Exhibit 5"
-    title="WACC × terminal-growth sensitivity"
-    subtitle="Value below $63 across the entire credible band."
+    badge="Exhibit 6a"
+    title="Implied growth vs base-case CAGR"
+    subtitle="The market prices 17.8% constant revenue growth vs the 4.9% base path."
   >
-    <div class="report-fig"><img src="/projects/cisco-equity-valuation/sensitivity_heatmap.svg" alt="DCF sensitivity heatmap WACC versus terminal growth" loading="lazy" /></div>
+    <EBar :items="impliedGrowth" :horizontal="false" unit="%" :height="260" />
   </VizPanel>
   <VizPanel
-    badge="Exhibit 6"
-    title="Reverse DCF: market-implied assumptions"
-    subtitle="Implied growth ≈17.8% vs base 4.9%; implied WACC 5.79% vs 8.93%."
+    badge="Exhibit 6b"
+    title="Implied WACC vs bottom-up WACC"
+    subtitle="Alternatively: a 5.79% discount rate, 314bp below the bottom-up 8.93%."
   >
-    <div class="report-fig"><img src="/projects/cisco-equity-valuation/reverse_dcf.svg" alt="Reverse DCF implied growth and implied WACC" loading="lazy" /></div>
+    <EBar :items="impliedWacc" :horizontal="false" unit="%" :height="260" />
   </VizPanel>
 </VizGrid>
 
 ### Probabilistic valuation
 
-Scenarios weighted **base 45% / bull 30% / bear 25%** give a probability-weighted intrinsic ≈$48. A seeded **50,000-trial Monte Carlo** over the key drivers — with growth×margin correlated via a Gaussian copula (ρ = 0.5) — puts **P(intrinsic > price) at 0%**.
-
-<VizGrid :cols="2">
-  <VizPanel
-    badge="Exhibit 7"
-    title="Monte Carlo intrinsic-value distribution"
-    subtitle="50,000 trials; the entire distribution sits below the market price."
-  >
-    <div class="report-fig"><img src="/projects/cisco-equity-valuation/mc_histogram.svg" alt="Monte Carlo intrinsic value distribution histogram" loading="lazy" /></div>
-  </VizPanel>
-  <VizPanel
-    badge="Exhibit 8"
-    title="Scenario-weighted value bridge"
-    subtitle="Bull/base/bear probability-weighted contributions to intrinsic value."
-  >
-    <div class="report-fig"><img src="/projects/cisco-equity-valuation/scenario_bridge.svg" alt="Scenario probability weighted value bridge" loading="lazy" /></div>
-  </VizPanel>
-</VizGrid>
+Scenarios weighted **base 45% / bull 30% / bear 25%** give a probability-weighted intrinsic of **$48.46**. A seeded **50,000-trial Monte Carlo** over the key drivers — with growth×margin correlated via a Gaussian copula (ρ = 0.5) — puts **P(intrinsic > price) at 0%**: the distribution's maximum (~$106) never reaches $120.
 
 <VizPanel
-  badge="Scenario weights"
-  title="Probability weighting"
-  subtitle="Weighted intrinsic ≈ $48/share — indistinguishable from the base case."
+  badge="Exhibit 7"
+  title="Monte Carlo intrinsic-value distribution, 50,000 trials"
+  subtitle="The model's actual histogram: median $48.74, mean $49.63, P5–P95 band $36.01–$66.44. The entire distribution sits below the $120.16 market price."
 >
-  <EDonut :items="scenarioWeights" center-value="$48" center-label="Weighted" unit="%" :height="280" />
+  <EHistogram
+    :edges="mcEdges"
+    :counts="mcCounts"
+    :markers="mcMarkers"
+    :band="[36.01, 66.44]"
+    unit="$"
+    :height="320"
+  />
+</VizPanel>
+
+<VizPanel
+  badge="Exhibit 8"
+  title="Scenario-weighted value bridge"
+  subtitle="Probability-weighted contributions to the $48.46 weighted intrinsic value."
+>
+  <EBar :items="bridge" unit="" :height="240" series-name="$/share" />
 </VizPanel>
 
 ## 9 · Conclusion
@@ -251,7 +358,7 @@ Two independent routes reach the same place. The DCF says $48.56 under moderated
 
 <ProcessRail :steps="steps" />
 
-The number you see on any exhibit is computed, never typed. The pipeline is a Python package (`model/`) with a single assumptions module as the source of truth:
+The number you see on any exhibit is computed, never typed — including on this page: every chart above renders the model's own output data. The pipeline is a Python package (`model/`) with a single assumptions module as the source of truth:
 
 | Module | Role |
 | --- | --- |
@@ -263,7 +370,7 @@ The number you see on any exhibit is computed, never typed. The pipeline is a Py
 | `multiples.py` | Median-only peer engine, cash-netted EV/EBITDA, GAAP P/E |
 | `sensitivity.py` | 5×5 grids, scenario table, reverse-DCF root-finders (`brentq`) |
 | `probabilistic.py` | Scenario weighting + seeded 50k Monte Carlo with Gaussian copula |
-| `figures.py` | Every exhibit generated as a side-effect of computation (SVG + PNG) |
+| `figures.py` | Every report exhibit generated as a side-effect of computation |
 | `export.py` + `writers/` | 15-sheet Excel workbook, one tested writer per sheet |
 | `verify.py` | Evaluates the workbook's formulas and asserts they equal the Python engine |
 
@@ -288,16 +395,3 @@ Equity research · FCFF DCF · bottom-up WACC · relative valuation · reverse D
 ---
 
 [← All projects](/projects/)
-
-<style scoped>
-.report-fig {
-  background: #fff;
-  border-radius: 10px;
-  padding: 8px;
-}
-.report-fig img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-</style>

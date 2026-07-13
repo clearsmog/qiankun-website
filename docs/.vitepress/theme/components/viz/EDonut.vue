@@ -12,6 +12,9 @@ const props = defineProps({
   centerValue: { type: String, default: '' },
   unit: { type: String, default: '%' },
   height: { type: Number, default: 320 },
+  // 'right' (default) puts the legend beside the pie; 'bottom' stacks it
+  // underneath — better in narrow half-width grid cells with long labels.
+  legendPos: { type: String, default: 'right' },
 })
 
 const tick = ref(0)
@@ -54,12 +57,11 @@ const option = computed(() => {
         `<b>${p.name}</b><br/>${p.value}${props.unit} · ${p.percent}%`,
     },
     legend: {
-      orient: 'vertical',
-      right: 4,
-      top: 'middle',
+      ...(props.legendPos === 'bottom'
+        ? { orient: 'horizontal', left: 'center', bottom: 0, itemGap: 12 }
+        : { orient: 'vertical', right: 4, top: 'middle', itemGap: 10 }),
       itemWidth: 10,
       itemHeight: 10,
-      itemGap: 10,
       textStyle: { color: t.text2, fontSize: 11, fontFamily: 'Inter, system-ui, sans-serif' },
       formatter: (name) => {
         const it = props.items.find((x) => x.label === name)
@@ -69,8 +71,8 @@ const option = computed(() => {
     series: [
       {
         type: 'pie',
-        radius: ['54%', '78%'],
-        center: ['36%', '50%'],
+        radius: props.legendPos === 'bottom' ? ['46%', '68%'] : ['54%', '78%'],
+        center: props.legendPos === 'bottom' ? ['50%', '42%'] : ['36%', '50%'],
         avoidLabelOverlap: true,
         data,
         label: {

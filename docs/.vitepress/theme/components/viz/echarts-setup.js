@@ -9,6 +9,7 @@ import {
   PieChart,
   ScatterChart,
   CustomChart,
+  HeatmapChart,
 } from 'echarts/charts'
 import {
   GridComponent,
@@ -19,6 +20,7 @@ import {
   TransformComponent,
   MarkLineComponent,
   MarkPointComponent,
+  MarkAreaComponent,
   VisualMapComponent,
   DataZoomComponent,
 } from 'echarts/components'
@@ -35,6 +37,7 @@ export function ensureEcharts() {
     PieChart,
     ScatterChart,
     CustomChart,
+    HeatmapChart,
     GridComponent,
     TooltipComponent,
     LegendComponent,
@@ -43,6 +46,7 @@ export function ensureEcharts() {
     TransformComponent,
     MarkLineComponent,
     MarkPointComponent,
+    MarkAreaComponent,
     VisualMapComponent,
     DataZoomComponent,
     LabelLayout,
