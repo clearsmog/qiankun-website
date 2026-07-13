@@ -152,7 +152,10 @@ const steps = [
 
 # Cisco Systems Equity Valuation (CSCO)
 
-University of Edinburgh · Equity Valuation (CMSE11664) · June 2026 · **Mark: 73 (A band)**
+<div class="brand-row">
+  <span class="brand-chip"><img src="/projects/cisco-equity-valuation/logos/cisco.png" alt="Cisco logo" /></span>
+  <span>University of Edinburgh · Equity Valuation (CMSE11664) · June 2026 · <strong>Mark: 73 (A band)</strong></span>
+</div>
 
 Full **buy-side style** valuation of **Cisco Systems (NASDAQ: CSCO)** — FCFF DCF, peer multiples, scenarios, reverse DCF, Monte Carlo — built as a reproducible Python model with a formula-driven Excel audit workbook and a Typst report. This page follows the report section by section, at the same depth, and **every chart below is rendered live from the model's own output data**.
 
@@ -266,7 +269,15 @@ The EV→equity bridge uses the **Q3-FY2026 Form 10-Q** balance sheet (quarter e
 
 ## 7 · Relative valuation — multiples
 
-Peers screened on business-mix overlap, revenue scale ($3B–$100B), and US listing: **Arista, Palo Alto, Fortinet, HPE (Juniper), Broadcom** — NVIDIA and Super Micro excluded as median-distorting. Aggregation is median-only; EV/EBITDA is cash-netted.
+Peers screened on business-mix overlap, revenue scale ($3B–$100B), and US listing — NVIDIA and Super Micro excluded as median-distorting. Aggregation is median-only; EV/EBITDA is cash-netted.
+
+<div class="logo-strip">
+  <span class="logo-chip"><img src="/projects/cisco-equity-valuation/logos/arista.png" alt="Arista Networks" /><span>ANET</span></span>
+  <span class="logo-chip"><img src="/projects/cisco-equity-valuation/logos/palo-alto.png" alt="Palo Alto Networks" /><span>PANW</span></span>
+  <span class="logo-chip"><img src="/projects/cisco-equity-valuation/logos/fortinet.png" alt="Fortinet" /><span>FTNT</span></span>
+  <span class="logo-chip"><img src="/projects/cisco-equity-valuation/logos/hpe.png" alt="Hewlett Packard Enterprise" /><span>HPE · Juniper</span></span>
+  <span class="logo-chip"><img src="/projects/cisco-equity-valuation/logos/broadcom.png" alt="Broadcom" /><span>AVGO</span></span>
+</div>
 
 | Multiple | Peer median (NTM) | Cisco | Damodaran predicted (trailing) |
 | --- | --- | --- | --- |
@@ -395,3 +406,76 @@ Equity research · FCFF DCF · bottom-up WACC · relative valuation · reverse D
 ---
 
 [← All projects](/projects/)
+
+<style scoped>
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0 4px;
+  color: var(--vp-c-text-2);
+}
+.brand-chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 7px 12px;
+}
+/* !important needed: the theme's `.vp-doc img[src*="/projects/"]` rule
+   forces width:100% + border + background on all project images */
+.brand-chip img {
+  height: 30px !important;
+  width: auto !important;
+  max-width: none;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: block;
+}
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+.logo-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 12px 10px 8px;
+  flex: 1 1 0;
+  min-width: 96px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.logo-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.logo-chip img {
+  height: 18px !important;
+  width: auto !important;
+  max-width: 104px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  object-fit: contain;
+}
+.logo-chip > span {
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  color: #6e6e73;
+}
+</style>
