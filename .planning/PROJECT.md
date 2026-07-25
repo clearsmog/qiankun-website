@@ -65,14 +65,14 @@ A hiring manager who clicks the URL from the CV forms a favourable, accurate imp
 - [ ] Replace Google Analytics with cookieless Cloudflare Web Analytics — removes the ePrivacy consent trigger rather than gating around it
 - [ ] Delete both theme `MutationObserver`s and use VitePress's `useData().isDark` — they manually re-derive a signal the framework already exposes
 - [ ] Audit animations against `prefers-reduced-motion`
-- [ ] Add a proportionate check layer: link checking and build verification against `dist/`. Explicitly no Vue unit-testing framework — over-testing an 11-page static site is a real failure mode
+- [ ] Add a proportionate check layer: link checking and build verification against `dist/`. Explicitly no Vue unit-testing framework — over-testing a ten-page static site is a real failure mode
 
 ### Out of Scope
 
 - **CV PDF hosted on the site** — the CV is tailored per application; a generic one on the site would undercut that
 - **ENN Natural Gas trading detail (employer name, notional figures, commercial outcomes)** — the CV carries the professional story to specific people; a Google-indexed page is a different disclosure surface
 - **Repositioning the site around the energy trading career** — considered and explicitly declined; the site is a project portfolio, not a career narrative
-- **Deeper rewrites of the five case studies** — their content is good enough for this milestone; polish surrounds them rather than replacing them
+- **Rewriting the five case studies' analysis** — their substance is good enough for this milestone. Note the boundary: reframing each case study's *lead* to put the outcome first is IN scope (Phase 4); changing the analysis, methodology, or findings beneath it is not
 - **New energy/commodities case study** — no new project work in this milestone
 - **Error tracking (Sentry), bundle-size CI budgets, and Vue unit tests** — flagged in the codebase audit, but disproportionate for a ten-page static site; over-testing here is its own failure mode
 - **Downgrading VitePress to 1.6.4** — considered and rejected; no meaningfully more stable target exists
