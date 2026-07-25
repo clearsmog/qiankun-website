@@ -1,0 +1,1 @@
+{"content":"Self-hosting Google Fonts: download WOFF2, add @font-face with font-display:swap, preload only the single above-the-fold weight, serve from own domain with long cache headers, ensure correct font/woff2 content-type.","source":"web","provider":"websearch","confidence":"LOW","fetched_at":"2026-07-25T20:10:43.847Z","ttl":86400000,"kind":"web"}
