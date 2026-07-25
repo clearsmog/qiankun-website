@@ -63,8 +63,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- Two items SUMMARY.md flags as needing explicit human sign-off before Phase 1 execution locks in: (1) VitePress pin-vs-downgrade decision, (2) Cloudflare Web Analytics replacing Google Analytics instead of building consent-gating. Both are already reflected in REQUIREMENTS.md as accepted, but confirm with the user before Phase 1 planning if not already done.
 - REQUIREMENTS.md's own header states "52 total" v1 requirements; a direct count of IDs in the file (INFRA/PRUNE/DES/POS/EXH/VER) yields 51. Roadmap coverage below uses the actual count (51/51 mapped). The header count should be corrected during traceability update.
+
+**Resolved 2026-07-25 (user sign-off during autonomous run):**
+- VitePress: pin `2.0.0-alpha.18` exactly. Do not downgrade to 1.6.4.
+- Analytics: replace Google Analytics (G-4PF046MSJJ) with Cloudflare Web Analytics (cookieless, no consent banner).
+- Deploy autonomy: pipeline changes proceed without per-change pause; local `npm run build` must pass before committing.
 
 ## Deferred Items
 
