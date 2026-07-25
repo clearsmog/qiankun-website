@@ -37,7 +37,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `npm install` completes on a clean checkout with no `--legacy-peer-deps` flag remaining anywhere in CI config, deploy scripts, or documentation, and the site builds successfully.
   4. `vite-plugin-pwa` is at `^1.3.0`, `vitepress-plugin-mermaid` and the `mermaid` runtime dependency are gone, and VitePress is pinned to exactly `2.0.0-alpha.18` with no caret range.
   5. The live site serves cookieless Cloudflare Web Analytics instead of Google Analytics, and a short on-site privacy note states what is collected.
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Verify live DNS, disable Amplify auto-build (human checkpoint), then delete the Amplify pipeline files and correct the README deploy path (wave 1)
+- [ ] 01-02-PLAN.md — Fix the dependency set, unwrap the mermaid config wrapper, regenerate the lockfile, and remove the install suppression flag from CI (wave 2)
+- [ ] 01-03-PLAN.md — Enable Cloudflare Web Analytics (human checkpoint), remove Google Analytics, and confirm the beacon in live page source (wave 3)
+- [ ] 01-04-PLAN.md — Publish the privacy page and route its site-wide link through the layout-bottom slot (wave 4)
 
 ### Phase 2: Content Deletion & Redirects
 **Goal**: The site contains only the pages this milestone intends to keep, no stale pointer to a deleted page survives anywhere on the site, and every deleted URL redirects deliberately instead of dead-ending.
