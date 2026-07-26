@@ -63,7 +63,13 @@ Plans:
   4. Grepping all markdown for the six legacy `Svg*` component tag names (not import statements) returns zero matches, and the components and their registrations are deleted.
   5. A sitewide grep for "Work in Progress," "coming soon," and equivalent staleness language returns zero hits, and `/blog/` presents as "Writing" rather than a dated feed of one.
 
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing (wave 1)
+- [ ] 02-02-PLAN.md — Rebuild the homepage features trio, remove the Recent Posts block and its data loader, delete the six retired `Svg*` components (wave 2)
+- [ ] 02-03-PLAN.md — Phase-terminal audit: nav/sidebar and sitewide link sweep, `_redirects` contents, built output, sitemap and feed (wave 3)
+
 **UI hint**: yes
 
 ### Phase 3: Design Token Consolidation
