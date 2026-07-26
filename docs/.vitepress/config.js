@@ -156,7 +156,6 @@ export default defineConfig({
       { text: "Projects", link: "/projects/" },
       { text: "AI Workflow", link: "/ai-workflow/" },
       { text: "Blog", link: "/blog/" },
-      { text: "Photos", link: "/photos/" },
       { text: "Contact", link: "/contact" },
     ],
 

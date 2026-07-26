@@ -1,0 +1,3 @@
+# Maps retired URLs to their nearest surviving page (Cloudflare Pages redirect format)
+/photos/ / 301
+/photos/* / 301
