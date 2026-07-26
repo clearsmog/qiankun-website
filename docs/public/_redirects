@@ -1,7 +1,9 @@
 # Maps retired URLs to their nearest surviving page (Cloudflare Pages redirect format)
-/photos/ / 301
+# Each retired section needs BOTH a bare and a splat rule: a splat only matches after
+# the trailing slash, so `/photos` alone would fall through to a 404 without the bare rule.
+/photos / 301
 /photos/* / 301
-/ai-workflow/ / 301
+/ai-workflow / 301
 /ai-workflow/* / 301
 /blog/welcome /blog/ 301
 /blog/vite-plugins /blog/ 301
