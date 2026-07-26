@@ -23,7 +23,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // letting them silently drift on a future rebrand.
 function assertBrandInSync() {
   const cssPath = join(__dirname, "theme/custom.css");
-  const css = readFileSync(cssPath, "utf-8");
+  const css = readFileSync(cssPath, "utf-8").replace(/\/\*[\s\S]*?\*\//g, "");
   const rootBlock = css.match(/:root\s*{([^}]*)}/)?.[1] ?? "";
   const cssBrand = rootBlock.match(/--vp-c-brand-1:\s*(#[0-9a-fA-F]{3,8})/)?.[1];
   if (!cssBrand || cssBrand.toLowerCase() !== brand.toLowerCase()) {
