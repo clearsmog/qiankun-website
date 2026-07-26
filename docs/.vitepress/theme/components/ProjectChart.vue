@@ -70,18 +70,12 @@ const divider = () =>
     .getPropertyValue('--vp-c-divider')
     .trim() || 'rgba(0,0,0,0.08)'
 
-const palette = [
-  brandToken,
-  '#34c759',
-  '#ff9500',
-  '#af52de',
-  '#ff3b30',
-  '#5ac8fa',
-  '#5856d6',
-  '#ff2d55',
-]
+function paletteFor() {
+  return [brand(), '#34c759', '#ff9500', '#af52de', '#ff3b30', '#5ac8fa', '#5856d6', '#ff2d55']
+}
 
 function paintDatasets(raw) {
+  const palette = paletteFor()
   return raw.map((ds, i) => {
     const color = ds.color || palette[i % palette.length]
     const base = {
