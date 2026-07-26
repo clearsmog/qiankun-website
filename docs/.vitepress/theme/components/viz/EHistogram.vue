@@ -3,14 +3,13 @@ import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
 import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
-import { brand } from '../../tokens.js'
 
 const props = defineProps({
   edges: { type: Array, required: true }, // n+1 bin edges
   counts: { type: Array, required: true }, // n bin counts
   markers: { type: Array, default: () => [] }, // [{ label, value, color, dashed? }]
   band: { type: Array, default: () => [] }, // [lo, hi] shaded band (e.g. P5–P95)
-  color: { type: String, default: brand },
+  color: { type: String, default: undefined },
   unit: { type: String, default: '$' },
   height: { type: Number, default: 320 },
 })
@@ -24,6 +23,7 @@ watch(isDark, () => {
 const option = computed(() => {
   void tick.value
   const t = themeTokens()
+  const barColor = props.color || t.brand
   const mids = props.counts.map((_, i) => (props.edges[i] + props.edges[i + 1]) / 2)
   const labels = mids.map((m) => m.toFixed(1))
   const snap = (v) => {
@@ -93,8 +93,8 @@ const option = computed(() => {
             x2: 0,
             y2: 1,
             colorStops: [
-              { offset: 0, color: props.color },
-              { offset: 1, color: props.color + '66' },
+              { offset: 0, color: barColor },
+              { offset: 1, color: barColor + '66' },
             ],
           },
         },
@@ -105,7 +105,7 @@ const option = computed(() => {
         },
         markArea: {
           silent: true,
-          itemStyle: { color: props.color + '14' },
+          itemStyle: { color: barColor + '14' },
           data: markAreaData,
         },
       },
