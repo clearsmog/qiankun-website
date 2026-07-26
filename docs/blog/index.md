@@ -1,18 +1,13 @@
 ---
-title: Blog
-description: Articles and thoughts on technology and development
+title: Writing
+description: Notes on energy trading systems, from direct implementation experience.
 ---
 
-# Blog
+# Writing
 
-Welcome to my blog! Here you'll find articles about technology, development, and other topics I find interesting.
+### [Energy Trading and Risk Management (ETRM) Systems](/blog/etrm-systems)
 
-## Recent Posts
+A comprehensive look at ETRM software, market trends, and implementation — drawn from
+hands-on work building trading infrastructure.
 
-- [Vite Plugins](/blog/vite-plugins) - Recommended Vite plugins for enhancing your development workflow
-- [Energy Trading and Risk Management (ETRM) Systems](/blog/etrm-systems) - A comprehensive report on ETRM software, market trends, and implementation
-- [Welcome to My Blog](/blog/welcome) - A first post to kick things off
-
----
-
-*More posts coming soon...*
+*19 January 2026*

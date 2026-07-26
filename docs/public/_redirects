@@ -3,3 +3,5 @@
 /photos/* / 301
 /ai-workflow/ / 301
 /ai-workflow/* / 301
+/blog/welcome /blog/ 301
+/blog/vite-plugins /blog/ 301

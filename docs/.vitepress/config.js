@@ -154,7 +154,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "About", link: "/about" },
       { text: "Projects", link: "/projects/" },
-      { text: "Blog", link: "/blog/" },
+      { text: "Writing", link: "/blog/" },
       { text: "Contact", link: "/contact" },
     ],
 
@@ -190,12 +190,8 @@ export default defineConfig({
       ],
       "/blog/": [
         {
-          text: "Blog Posts",
-          items: [
-            { text: "Vite Plugins", link: "/blog/vite-plugins" },
-            { text: "ETRM Systems", link: "/blog/etrm-systems" },
-            { text: "Welcome Post", link: "/blog/welcome" },
-          ],
+          text: "Writing",
+          items: [{ text: "ETRM Systems", link: "/blog/etrm-systems" }],
         },
       ],
     },
