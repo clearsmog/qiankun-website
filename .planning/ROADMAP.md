@@ -63,13 +63,13 @@ Plans:
   4. Grepping all markdown for the six legacy `Svg*` component tag names (not import statements) returns zero matches, and the components and their registrations are deleted.
   5. A sitewide grep for "Work in Progress," "coming soon," and equivalent staleness language returns zero hits, and `/blog/` presents as "Writing" rather than a dated feed of one.
 
-**Plans**: 2/3 plans executed
+**Plans**: 3/3 plans executed
 
 Plans:
 
 - [x] 02-01-PLAN.md — Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing (wave 1)
 - [x] 02-02-PLAN.md — Rebuild the homepage features trio, remove the Recent Posts block and its data loader, delete the six retired `Svg*` components (wave 2)
-- [ ] 02-03-PLAN.md — Phase-terminal audit: nav/sidebar and sitewide link sweep, `_redirects` contents, built output, sitemap and feed (wave 3)
+- [x] 02-03-PLAN.md — Phase-terminal audit: nav/sidebar and sitewide link sweep, `_redirects` contents, built output, sitemap and feed (wave 3)
 
 **UI hint**: yes
 
@@ -128,7 +128,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Technical Foundations | 1/4 | In Progress|  |
-| 2. Content Deletion & Redirects | 2/3 | In Progress|  |
+| 2. Content Deletion & Redirects | 3/3 | In Progress|  |
 | 3. Design Token Consolidation | 0/TBD | Not started | - |
 | 4. Position & Design | 0/TBD | Not started | - |
 | 5. Final Cross-Cutting Audit | 0/TBD | Not started | - |

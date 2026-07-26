@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 2
 current_phase_name: Content Deletion & Redirects
 status: executing
-stopped_at: Completed 02-02-PLAN.md
-last_updated: "2026-07-26T12:08:55.658Z"
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-07-26T12:14:38.848Z"
 last_activity: 2026-07-26
 last_activity_desc: Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
 progress:
   total_phases: 2
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 7
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 ## Current Position
 
 Phase: 2 of 5 (Content Deletion & Redirects)
-Plan: 2 of 3 complete (Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing)
+Plan: 3 of 3 complete (Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing)
 Status: Ready to execute
 
 Phase 1 (Technical Foundations) remains parked at plan 2 of 4 — see Deferred Verification
@@ -37,7 +37,7 @@ so execution proceeded to Phase 2 while they remain outstanding.
 
 Last activity: 2026-07-26 — Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
 
-Progress: [████░░░░░░] 43%
+Progress: [██████░░░░] 57%
 
 ## Performance Metrics
 
@@ -66,6 +66,7 @@ Progress: [████░░░░░░] 43%
 | Phase 01 P02 | 15 | 2 tasks | 5 files |
 | Phase 02 P01 | 16 | 3 tasks | 12 files |
 | Phase 02 P02 | 20min | 2 tasks | 9 files |
+| Phase 02 P03 | 20min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,7 @@ Recent decisions affecting current work:
 - [Phase ?]: 02-01: /blog/ relabelled Writing everywhere (nav, sidebar, title, H1); surviving post presented as a standalone H3-linked entry, not a one-item bulleted feed, per UI-SPEC Surface 2.
 - [Phase ?]: Feature trio chosen: Projects (unchanged) / About / Contact, per UI-SPEC's named safe default
 - [Phase ?]: Six retired Svg components deleted with their theme registrations in one atomic commit, confirmed dead by zero tag usages site-wide
+- [Phase ?]: Committed a real bug found during the audit (dangling Svg imports left uncommitted by 02-02's bc7b5d3) as a Rule 1 auto-fix before running the build gate
 
 ### Pending Todos
 
@@ -122,6 +124,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-26T12:08:55.650Z
-Stopped at: Completed 02-02-PLAN.md
+Last session: 2026-07-26T12:14:38.820Z
+Stopped at: Completed 02-03-PLAN.md
 Resume file: None
