@@ -28,79 +28,21 @@ features:
     details: Case studies for hiring managers — portfolio construction, systematic alpha research, ESG, valuation, and data storytelling.
     link: /projects/
   - icon: |
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#tech-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <defs><linearGradient id="tech-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
-        <polyline points="16 18 22 12 16 6"></polyline>
-        <polyline points="8 6 2 12 8 18"></polyline>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#about-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <defs><linearGradient id="about-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
       </svg>
-    title: Technology
-    details: Diving deep into software development, exploring cutting-edge tools, frameworks, and the art of writing elegant code.
+    title: About
+    details: Background, experience, and how I approach quantitative problems.
+    link: /about
   - icon: |
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#write-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <defs><linearGradient id="write-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
-        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-        <path d="M2 2l7.586 7.586"></path>
-        <circle cx="11" cy="11" r="2"></circle>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#contact-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <defs><linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#667eea"/><stop offset="100%" style="stop-color:#ec4899"/></linearGradient></defs>
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path d="M2 6l10 7 10-7"></path>
       </svg>
-    title: Writing
-    details: Sharing insights, tutorials, and lessons learned — transforming complex ideas into accessible knowledge.
+    title: Contact
+    details: The fastest way to reach me directly.
+    link: /contact
 ---
-
-<script setup>
-import { data as posts } from './.vitepress/data/blog-posts.data.js'
-</script>
-
-## Recent Posts
-
-<div class="recent-posts">
-  <a v-for="post in posts" :key="post.url" :href="post.url" class="post-card">
-    <span class="post-title">{{ post.title }}</span>
-    <span class="post-desc">{{ post.description }}</span>
-  </a>
-</div>
-
-<style>
-.recent-posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin: 32px auto;
-  max-width: 1152px;
-  padding: 0 24px;
-}
-
-.post-card {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  border-color: var(--vp-c-brand-1);
-}
-
-.dark .post-card:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-}
-
-.post-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  margin-bottom: 8px;
-}
-
-.post-desc {
-  font-size: 0.875rem;
-  color: var(--vp-c-text-2);
-  line-height: 1.5;
-}
-</style>
