@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 1
-current_phase_name: Technical Foundations
-status: planning
-stopped_at: Completed 01-02-PLAN.md
-last_updated: "2026-07-26T10:14:42.190Z"
-last_activity: 2026-07-25
-last_activity_desc: ROADMAP.md and STATE.md created from REQUIREMENTS.md + research/SUMMARY.md
+current_phase: 2
+current_phase_name: Content Deletion & Redirects
+status: executing
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-07-26T12:02:52.416Z"
+last_activity: 2026-07-26
+last_activity_desc: Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
 progress:
-  total_phases: 5
+  total_phases: 2
   completed_phases: 0
-  total_plans: 4
-  completed_plans: 1
+  total_plans: 7
+  completed_plans: 2
 ---
 
 # Project State
@@ -23,16 +23,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-25)
 
 **Core value:** A hiring manager who clicks the URL from the CV forms a favourable, accurate impression of Qiankun's quantitative capability within twenty seconds — and finds nothing that undermines it.
-**Current focus:** Phase 1 — Technical Foundations
+**Current focus:** Phase 2 — Content Deletion & Redirects
 
 ## Current Position
 
-Phase: 1 of 5 (Technical Foundations)
-Plan: 02 of 4 complete (Dependency Cleanup & VitePress Config Unwrap)
+Phase: 2 of 5 (Content Deletion & Redirects)
+Plan: 1 of 3 complete (Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing)
 Status: In Progress
-Last activity: 2026-07-26 — Completed 01-02-PLAN.md (dependency conflict resolution, VitePress config unwrap, npm ci/build verified)
 
-Progress: [███░░░░░░░] 25%
+Phase 1 (Technical Foundations) remains parked at plan 2 of 4 — see Deferred Verification
+below. Its three remaining console-gated items do not block Phase 2's content-deletion work,
+so execution proceeded to Phase 2 while they remain outstanding.
+
+Last activity: 2026-07-26 — Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
+
+Progress: [███░░░░░░░] 29%
 
 ## Performance Metrics
 
@@ -59,6 +64,7 @@ Progress: [███░░░░░░░] 25%
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 01 P02 | 15 | 2 tasks | 5 files |
+| Phase 02 P01 | 16 | 3 tasks | 12 files |
 
 ## Accumulated Context
 
@@ -71,6 +77,8 @@ Recent decisions affecting current work:
 - Roadmap: Position (POS-*) and Design (DES-* typography/layout items) are combined into a single Phase 4 rather than sequenced, per research's explicit finding that minimal copy and typographic system are interdependent.
 - Roadmap: Design token consolidation (DES-05, DES-08) kept as its own Phase 3 rather than folded into Phase 4 — small scope, but unblocks Phase 4 so the restyle edits one clean variable set instead of two jobs at once.
 - [Phase ?]: 01-02: amplify.yml legacy-peer-deps left intact pending 01-01 Task 3's Amplify console checkpoint; VitePress config unwrapped from withMermaid to bare defineConfig().
+- [Phase ?]: 02-01: Redirects ship in the same commit as each deletion group (Photos, AI Workflow, blog posts) per PRUNE-08; docs/public/ passthrough to dist/ confirmed via tracer task.
+- [Phase ?]: 02-01: /blog/ relabelled Writing everywhere (nav, sidebar, title, H1); surviving post presented as a standalone H3-linked entry, not a one-item bulleted feed, per UI-SPEC Surface 2.
 
 ### Pending Todos
 
@@ -111,6 +119,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-26T10:14:42.184Z
-Stopped at: Completed 01-02-PLAN.md
+Last session: 2026-07-26T12:02:52.409Z
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None

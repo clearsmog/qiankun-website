@@ -22,17 +22,17 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Prune
 
-- [ ] **PRUNE-01**: The AI Workflow section (index, concepts, patterns, agents, tools) is deleted
-- [ ] **PRUNE-02**: The Photos gallery is deleted
-- [ ] **PRUNE-03**: The `welcome` blog post is deleted
-- [ ] **PRUNE-04**: The Vite plugins blog post is deleted
+- [x] **PRUNE-01**: The AI Workflow section (index, concepts, patterns, agents, tools) is deleted
+- [x] **PRUNE-02**: The Photos gallery is deleted
+- [x] **PRUNE-03**: The `welcome` blog post is deleted
+- [x] **PRUNE-04**: The Vite plugins blog post is deleted
 - [ ] **PRUNE-05**: The "Technology" and "Writing" homepage feature cards are removed
-- [ ] **PRUNE-06**: Nav and sidebar configuration contain no entries pointing at deleted pages
-- [ ] **PRUNE-07**: No internal link anywhere on the site resolves to a deleted page
-- [ ] **PRUNE-08**: `docs/public/_redirects` returns a deliberate 301 or 410 for every deleted URL, shipped in the same commit as the deletions
+- [x] **PRUNE-06**: Nav and sidebar configuration contain no entries pointing at deleted pages
+- [x] **PRUNE-07**: No internal link anywhere on the site resolves to a deleted page
+- [x] **PRUNE-08**: `docs/public/_redirects` returns a deliberate 301 or 410 for every deleted URL, shipped in the same commit as the deletions
 - [ ] **PRUNE-09**: The six unused `Svg*` chart components and their registrations are deleted, verified by grepping component **tag names** across all markdown (not import statements — VitePress registers them globally)
-- [ ] **PRUNE-10**: No "Work in Progress" badge, "coming soon", or equivalent staleness language remains anywhere on the site
-- [ ] **PRUNE-11**: `/blog/` is presented as "Writing" rather than a dated feed, so a single remaining post does not read as an abandoned blog
+- [x] **PRUNE-10**: No "Work in Progress" badge, "coming soon", or equivalent staleness language remains anywhere on the site
+- [x] **PRUNE-11**: `/blog/` is presented as "Writing" rather than a dated feed, so a single remaining post does not read as an abandoned blog
 
 ### Design System
 
@@ -125,17 +125,17 @@ Explicitly excluded. Documented to prevent scope creep.
 | INFRA-08 | Phase 1 | Complete |
 | INFRA-09 | Phase 1 | Pending |
 | INFRA-10 | Phase 1 | Pending |
-| PRUNE-01 | Phase 2 | Pending |
-| PRUNE-02 | Phase 2 | Pending |
-| PRUNE-03 | Phase 2 | Pending |
-| PRUNE-04 | Phase 2 | Pending |
+| PRUNE-01 | Phase 2 | Complete |
+| PRUNE-02 | Phase 2 | Complete |
+| PRUNE-03 | Phase 2 | Complete |
+| PRUNE-04 | Phase 2 | Complete |
 | PRUNE-05 | Phase 2 | Pending |
-| PRUNE-06 | Phase 2 | Pending |
-| PRUNE-07 | Phase 2 | Pending |
-| PRUNE-08 | Phase 2 | Pending |
+| PRUNE-06 | Phase 2 | Complete |
+| PRUNE-07 | Phase 2 | Complete |
+| PRUNE-08 | Phase 2 | Complete |
 | PRUNE-09 | Phase 2 | Pending |
-| PRUNE-10 | Phase 2 | Pending |
-| PRUNE-11 | Phase 2 | Pending |
+| PRUNE-10 | Phase 2 | Complete |
+| PRUNE-11 | Phase 2 | Complete |
 | DES-05 | Phase 3 | Pending |
 | DES-08 | Phase 3 | Pending |
 | POS-01 | Phase 4 | Pending |
