@@ -12,11 +12,11 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 - [ ] **INFRA-01**: Live DNS for `qiankun.co.uk` is verified by direct inspection (`dig`) and the serving pipeline documented, before any deployment change is made
 - [ ] **INFRA-02**: AWS Amplify auto-deploy is disabled in the console and observed stable before `amplify.yml` and `deploy.sh` are deleted from the repo
 - [ ] **INFRA-03**: Cloudflare Pages via GitHub Actions is the only path that can deploy the site; no second pipeline can trigger independently
-- [ ] **INFRA-04**: `npm install` resolves clean with no `--legacy-peer-deps` flag remaining in CI, deploy scripts, or documentation
-- [ ] **INFRA-05**: `vite-plugin-pwa` is bumped to `^1.3.0` (its peer range then includes Vite 8)
-- [ ] **INFRA-06**: `vitepress-plugin-mermaid` and the `mermaid` runtime dependency are removed entirely
-- [ ] **INFRA-07**: VitePress is pinned to exactly `2.0.0-alpha.18` with no caret range, so no future alpha can install silently
-- [ ] **INFRA-08**: The site builds successfully from a clean checkout after all dependency changes
+- [x] **INFRA-04**: `npm install` resolves clean with no `--legacy-peer-deps` flag remaining in CI, deploy scripts, or documentation
+- [x] **INFRA-05**: `vite-plugin-pwa` is bumped to `^1.3.0` (its peer range then includes Vite 8)
+- [x] **INFRA-06**: `vitepress-plugin-mermaid` and the `mermaid` runtime dependency are removed entirely
+- [x] **INFRA-07**: VitePress is pinned to exactly `2.0.0-alpha.18` with no caret range, so no future alpha can install silently
+- [x] **INFRA-08**: The site builds successfully from a clean checkout after all dependency changes
 - [ ] **INFRA-09**: Google Analytics is removed and cookieless Cloudflare Web Analytics is active in its place
 - [ ] **INFRA-10**: A short privacy note discloses what analytics is collected
 
@@ -118,11 +118,11 @@ Explicitly excluded. Documented to prevent scope creep.
 | INFRA-01 | Phase 1 | Pending |
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
-| INFRA-06 | Phase 1 | Pending |
-| INFRA-07 | Phase 1 | Pending |
-| INFRA-08 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
+| INFRA-06 | Phase 1 | Complete |
+| INFRA-07 | Phase 1 | Complete |
+| INFRA-08 | Phase 1 | Complete |
 | INFRA-09 | Phase 1 | Pending |
 | INFRA-10 | Phase 1 | Pending |
 | PRUNE-01 | Phase 2 | Pending |
@@ -168,6 +168,7 @@ Explicitly excluded. Documented to prevent scope creep.
 | VER-06 | Phase 5 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 51 total (corrected from an off-by-one "52" in the initial count — 51 is the actual number of distinct REQ-IDs in this document)
 - Mapped to phases: 51
 - Unmapped: 0 ✓
