@@ -24,13 +24,6 @@ import EHeatmap from './components/viz/EHeatmap.vue'
 import EHistogram from './components/viz/EHistogram.vue'
 import EGroupBar from './components/viz/EGroupBar.vue'
 import ECombo from './components/viz/ECombo.vue'
-// Legacy custom SVG (kept available if needed)
-import SvgAreaChart from './components/viz/SvgAreaChart.vue'
-import SvgHBars from './components/viz/SvgHBars.vue'
-import SvgDonut from './components/viz/SvgDonut.vue'
-import SvgForest from './components/viz/SvgForest.vue'
-import SvgFootballField from './components/viz/SvgFootballField.vue'
-import SvgScorePath from './components/viz/SvgScorePath.vue'
 import './custom.css'
 
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
@@ -64,11 +57,5 @@ export default {
     app.component('EHistogram', EHistogram)
     app.component('EGroupBar', EGroupBar)
     app.component('ECombo', ECombo)
-    app.component('SvgAreaChart', SvgAreaChart)
-    app.component('SvgHBars', SvgHBars)
-    app.component('SvgDonut', SvgDonut)
-    app.component('SvgForest', SvgForest)
-    app.component('SvgFootballField', SvgFootballField)
-    app.component('SvgScorePath', SvgScorePath)
   },
 }
