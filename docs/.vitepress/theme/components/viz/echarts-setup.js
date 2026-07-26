@@ -2,6 +2,7 @@
  * Tree-shaken ECharts registration for VitePress project pages.
  */
 import { use } from 'echarts/core'
+import { brand } from '../../tokens.js'
 import { CanvasRenderer } from 'echarts/renderers'
 import {
   BarChart,
@@ -65,7 +66,7 @@ export function cssVar(name, fallback) {
 
 export function themeTokens() {
   return {
-    brand: cssVar('--vp-c-brand-1', '#0071e3'),
+    brand: cssVar('--vp-c-brand-1', brand),
     text1: cssVar('--vp-c-text-1', '#1d1d1f'),
     text2: cssVar('--vp-c-text-2', '#6e6e73'),
     text3: cssVar('--vp-c-text-3', '#86868b'),
@@ -73,7 +74,7 @@ export function themeTokens() {
     bg: cssVar('--vp-c-bg', '#ffffff'),
     bgSoft: cssVar('--vp-c-bg-soft', '#f5f5f7'),
     palette: [
-      '#0071e3',
+      brand,
       '#5856d6',
       '#af52de',
       '#34c759',

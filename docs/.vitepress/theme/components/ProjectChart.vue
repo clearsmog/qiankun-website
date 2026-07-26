@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useData } from 'vitepress'
+import { brand as brandToken } from '../tokens.js'
 import {
   Chart,
   BarController,
@@ -57,7 +58,7 @@ let chart
 const brand = () =>
   getComputedStyle(document.documentElement)
     .getPropertyValue('--vp-c-brand-1')
-    .trim() || '#0071e3'
+    .trim() || brandToken
 
 const text2 = () =>
   getComputedStyle(document.documentElement)
@@ -70,7 +71,7 @@ const divider = () =>
     .trim() || 'rgba(0,0,0,0.08)'
 
 const palette = [
-  '#0071e3',
+  brandToken,
   '#34c759',
   '#ff9500',
   '#af52de',

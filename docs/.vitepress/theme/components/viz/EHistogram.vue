@@ -3,13 +3,14 @@ import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
 import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+import { brand } from '../../tokens.js'
 
 const props = defineProps({
   edges: { type: Array, required: true }, // n+1 bin edges
   counts: { type: Array, required: true }, // n bin counts
   markers: { type: Array, default: () => [] }, // [{ label, value, color, dashed? }]
   band: { type: Array, default: () => [] }, // [lo, hi] shaded band (e.g. P5–P95)
-  color: { type: String, default: '#0071e3' },
+  color: { type: String, default: brand },
   unit: { type: String, default: '$' },
   height: { type: Number, default: 320 },
 })
