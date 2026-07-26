@@ -535,48 +535,6 @@ html {
   }
 }
 
-/* ==================== WIP Badge - Apple Style ==================== */
-.wip-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  background: var(--apple-gray-100);
-  color: var(--vp-c-text-2);
-  border-radius: 980px;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.dark .wip-badge {
-  background: var(--vp-c-bg-elv);
-  color: var(--vp-c-text-2);
-}
-
-/* WIP notice box */
-.wip-notice {
-  padding: 20px 24px;
-  margin: 24px 0;
-  border-radius: 12px;
-  background: var(--apple-gray-100);
-}
-
-.dark .wip-notice {
-  background: var(--vp-c-bg-elv);
-}
-
-.wip-notice p {
-  margin: 0;
-  color: var(--vp-c-text-2);
-  font-size: 0.9375rem;
-}
-
-.wip-notice strong {
-  color: var(--vp-c-text-1);
-}
-
 /* ==================== Focus States ==================== */
 *:focus-visible {
   outline: 3px solid var(--vp-c-brand-1);

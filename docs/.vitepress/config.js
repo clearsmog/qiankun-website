@@ -154,7 +154,6 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "About", link: "/about" },
       { text: "Projects", link: "/projects/" },
-      { text: "AI Workflow", link: "/ai-workflow/" },
       { text: "Blog", link: "/blog/" },
       { text: "Contact", link: "/contact" },
     ],
@@ -186,18 +185,6 @@ export default defineConfig({
               text: "UK Finance Pay",
               link: "/projects/uk-finance-pay",
             },
-          ],
-        },
-      ],
-      "/ai-workflow/": [
-        {
-          text: "AI Workflow",
-          items: [
-            { text: "Overview", link: "/ai-workflow/" },
-            { text: "Core Concepts", link: "/ai-workflow/concepts" },
-            { text: "Patterns", link: "/ai-workflow/patterns" },
-            { text: "Agents", link: "/ai-workflow/agents" },
-            { text: "Tooling", link: "/ai-workflow/tools" },
           ],
         },
       ],
