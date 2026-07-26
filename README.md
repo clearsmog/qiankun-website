@@ -46,7 +46,6 @@ docs/
 ## Plugins
 
 - **vitepress-plugin-rss** - RSS feed generation
-- **vitepress-plugin-mermaid** - Mermaid diagrams
 - **vitepress-plugin-tabs** - Tabbed content
 - **vitepress-plugin-group-icons** - Code block icons
 - **vite-plugin-pwa** - Progressive Web App support
