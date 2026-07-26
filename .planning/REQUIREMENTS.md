@@ -40,10 +40,10 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 - [ ] **DES-02**: Fonts load with `preload` and `font-display: swap`, producing no visible layout shift
 - [ ] **DES-03**: Type scale, weights, and line-measure are defined once as tokens and consumed everywhere
 - [ ] **DES-04**: `--vp-font-family-base` is set, rather than `font-family` on a bare `html` selector, so VitePress internals inherit correctly
-- [ ] **DES-05**: The brand colour is defined in exactly one place; a minimal `tokens.js` exists only for values Node needs before the DOM (the PWA manifest colour)
+- [x] **DES-05**: The brand colour is defined in exactly one place; a minimal `tokens.js` exists only for values Node needs before the DOM (the PWA manifest colour)
 - [ ] **DES-06**: Spacing, heading treatment, and visual hierarchy are consistent across every remaining page, verified by side-by-side comparison rather than page-by-page
 - [ ] **DES-07**: Chart styling derives from the site's type and colour tokens rather than its own hard-coded values
-- [ ] **DES-08**: Both theme `MutationObserver`s are deleted and `useData().isDark` is used instead
+- [x] **DES-08**: Both theme `MutationObserver`s are deleted and `useData().isDark` is used instead
 - [ ] **DES-09**: All animations and transitions are disabled under `prefers-reduced-motion`
 - [ ] **DES-10**: Every page is readable at a 375px viewport, with no chart overflowing, clipping, or becoming illegible
 - [ ] **DES-11**: Every page renders correctly in dark mode, including all chart exhibits
@@ -136,8 +136,8 @@ Explicitly excluded. Documented to prevent scope creep.
 | PRUNE-09 | Phase 2 | Complete |
 | PRUNE-10 | Phase 2 | Complete |
 | PRUNE-11 | Phase 2 | Complete |
-| DES-05 | Phase 3 | Pending |
-| DES-08 | Phase 3 | Pending |
+| DES-05 | Phase 3 | Complete |
+| DES-08 | Phase 3 | Complete |
 | POS-01 | Phase 4 | Pending |
 | POS-02 | Phase 4 | Pending |
 | POS-03 | Phase 4 | Pending |
