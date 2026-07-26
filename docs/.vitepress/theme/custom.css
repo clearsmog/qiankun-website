@@ -9,6 +9,7 @@
 /* ==================== Color Palette ==================== */
 :root {
   /* Brand Colors - Apple Blue */
+  /* Node-side copy kept in sync with this: docs/.vitepress/theme/tokens.js */
   --vp-c-brand-1: #0071e3;
   --vp-c-brand-2: #0077ed;
   --vp-c-brand-3: #0066cc;

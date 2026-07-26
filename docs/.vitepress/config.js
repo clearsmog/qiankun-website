@@ -8,6 +8,7 @@ import {
 } from "vitepress-plugin-group-icons";
 import { VitePWA } from "vite-plugin-pwa";
 import Icons from "unplugin-icons/vite";
+import { brand } from "./theme/tokens.js";
 
 // RSS Feed Configuration
 const RSS_CONFIG = {
@@ -43,7 +44,7 @@ export default defineConfig({
           name: "Qiankun",
           short_name: "Qiankun",
           description: "Personal website and blog",
-          theme_color: "#0071e3",
+          theme_color: brand,
           background_color: "#000000",
           display: "standalone",
           icons: [
