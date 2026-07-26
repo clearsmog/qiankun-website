@@ -237,13 +237,51 @@ don't invent:
 
 ## UI Considerations
 
-Applicable state considerations resolved: 3 covered, 0 backstop, 0 unresolved
+Resolved from the UI-consideration probe over the three surfaces this phase controls.
+**23 applicable — 9 covered, 1 backstop, 13 dismissed, 0 unresolved.**
 
-| Category | Element(s) | Status | Resolution / Reason |
-|----------|------------|--------|---------------------|
-| zero-one-many | `/blog/` index (Writing) | ✅ covered | Exactly one post renders as a standalone titled entry (H3 link + paragraph + italic date), not a bulleted "recent posts" list item — see Surface 2 exact markdown contract. |
-| overflow / broken-link | Homepage features row | ✅ covered | Every one of the three cards (Projects, About, Contact) links to a page that exists after all Phase 2 deletions; card count stays at exactly three so the existing responsive grid needs no CSS change. |
-| layout-gap (removed section) | Homepage, post-features-row | ✅ covered | Deleting "Recent Posts" leaves `VPHero → VPFeatures → VPFooter`, closed by `VPFeatures`'s existing 64px/40px bottom padding and the sitewide footer — no new section is added to compensate. |
+The high dismissal count is a property of the stack, not an evasion: this is a statically
+generated VitePress site. Loading, error, and partial states have no runtime existence on a
+page whose content is inlined at build time and served as flat HTML. Each dismissal states
+its reason, per the probe contract — none are silent.
+
+### E1 — Homepage features row
+
+| Category | Status | Resolution / Reason |
+|----------|--------|---------------------|
+| populated | ✅ covered | Exactly three cards render — Projects, About, Contact — each with inline SVG icon, title, and details paragraph, from the `features:` array in `docs/index.md`. |
+| zero-one-many | ✅ covered | Card count is fixed at three by authorship, not derived from data. The degenerate one-card-in-a-three-column-grid case that motivated the replace-don't-shrink decision cannot occur. |
+| overflow | ✅ covered | The existing `VPFeatures` grid collapses below the 768px breakpoint. Card count is unchanged at three, so no CSS change is required. |
+| long-text | ✅ covered | Details copy is bounded by the Copywriting Contract; the longest string is "Background, experience, and how I approach quantitative problems". |
+| empty | ⊘ dismissed | The `features:` array is authored in frontmatter and never data-driven. It cannot be empty at runtime; a malformed array fails the build visibly. |
+| loading | ⊘ dismissed | Statically generated — the row is in the initial HTML payload. There is no async fetch to be pending. |
+| error | ⊘ dismissed | No data source exists that could fail. Content is inlined at build time. |
+| partial | ⊘ dismissed | All three cards come from one authored array and render atomically. No partial state is reachable. |
+
+### E2 — `/blog/` index presented as "Writing"
+
+| Category | Status | Resolution / Reason |
+|----------|--------|---------------------|
+| zero-one-many | ✅ covered | **Load-bearing contract.** The single surviving post renders as a standalone titled entry — H3 link, description paragraph, italic date — not as a one-item bulleted list. No plural framing, no "Recent Posts" heading, no "coming soon" line. See the Surface 2 markdown contract. |
+| populated | ✅ covered | Exactly one entry, sourced from `docs/blog/etrm-systems.md` frontmatter. |
+| long-text | ✅ covered | Title and description come from the post's own frontmatter and wrap within the content column at all breakpoints. |
+| empty | 🛡 backstop | If the last remaining post were ever deleted, `/blog/` would render a heading above nothing. Not reachable in this phase — one post is explicitly retained — but nothing in the build prevents it. **Verify by building with the posts removed and confirming the page still reads deliberately.** |
+| loading | ⊘ dismissed | Static markdown page, no async data. |
+| error | ⊘ dismissed | No data source that can fail. |
+| partial | ⊘ dismissed | A single authored markdown file; nothing renders partially. |
+| overflow | ⊘ dismissed | One entry on a short page cannot overflow. |
+
+### E3 — Vacated space where "Recent Posts" was
+
+| Category | Status | Resolution / Reason |
+|----------|--------|---------------------|
+| empty | ✅ covered | The space is *intentionally* empty. `VPFeatures`'s existing bottom padding plus the sitewide `VPFooter` close the page; no replacement section is invented, to avoid colliding with Phase 4's positioning work. |
+| populated | ✅ covered | After removal the homepage is exactly `VPHero → VPFeatures → VPFooter` and nothing else. |
+| loading | ⊘ dismissed | Nothing loads there anymore — the `blog-posts.data.js` import is removed along with the block. |
+| error | ⊘ dismissed | Removing that data import removes the only failure source on the homepage. |
+| partial | ⊘ dismissed | The block, its script import, and its scoped styles are deleted wholesale — there is no half-removed state. |
+| overflow | ⊘ dismissed | Removing content cannot cause overflow. |
+| zero-one-many | ⊘ dismissed | No collection renders at this location after the change. |
 
 ---
 
