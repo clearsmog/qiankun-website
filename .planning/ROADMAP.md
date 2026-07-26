@@ -85,12 +85,12 @@ Plans:
   3. Both theme `MutationObserver`s are deleted from `VizEChart.vue`/`EBar.vue`; theme switching there derives from VitePress's `useData().isDark`, and charts still re-theme correctly on toggle.
   4. Toggling dark mode produces no duplicate re-renders or console warnings from the old observer logic.
 
-**Plans**: 1/3 plans executed
+**Plans**: 2/3 plans executed
 
 Plans:
 
 - [x] 03-01-PLAN.md — Tracer: create `tokens.js`, wire the PWA manifest through it, convert one chart component's theme trigger, and browser-prove the post-flush recipe before scaling (wave 1)
-- [ ] 03-02-PLAN.md — Convert the remaining eleven theme triggers to `useData().isDark` with `{ flush: 'post' }`, and reduce the brand hex to two cross-referenced literals (wave 2)
+- [x] 03-02-PLAN.md — Convert the remaining eleven theme triggers to `useData().isDark` with `{ flush: 'post' }`, and reduce the brand hex to two cross-referenced literals (wave 2)
 - [ ] 03-03-PLAN.md — Phase-terminal: browser sweep across all eight chart types through a full toggle cycle, then audit committed state against every gate and scope guard (wave 3)
 
 **UI hint**: yes
@@ -136,6 +136,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Technical Foundations | 1/4 | In Progress|  |
 | 2. Content Deletion & Redirects | 3/3 | In Progress|  |
-| 3. Design Token Consolidation | 1/3 | In Progress|  |
+| 3. Design Token Consolidation | 2/3 | In Progress|  |
 | 4. Position & Design | 0/TBD | Not started | - |
 | 5. Final Cross-Cutting Audit | 0/TBD | Not started | - |
