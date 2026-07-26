@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
-import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+import { themeTokens, baseTooltip, baseGrid, hexToRgba } from './echarts-setup.js'
 
 const props = defineProps({
   items: {
@@ -119,7 +119,7 @@ const option = computed(() => {
           formatter: (p) => `${p.value}${props.unit}`,
         },
         emphasis: {
-          itemStyle: { shadowBlur: 12, shadowColor: 'rgba(0,113,227,0.35)' },
+          itemStyle: { shadowBlur: 12, shadowColor: hexToRgba(t.brand, 0.35) },
         },
       },
     ],
