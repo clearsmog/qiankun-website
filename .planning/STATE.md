@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 2
-current_phase_name: Content Deletion & Redirects
+current_phase: 3
+current_phase_name: Design Token Consolidation
 status: executing
-stopped_at: Completed 02-03-PLAN.md
-last_updated: "2026-07-26T12:14:38.848Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-07-26T19:15:09.205Z"
 last_activity: 2026-07-26
-last_activity_desc: Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
+last_activity_desc: Completed 03-01-PLAN.md (created tokens.js, wired PWA manifest theme_color
 progress:
-  total_phases: 5
+  total_phases: 3
   completed_phases: 1
-  total_plans: 7
-  completed_plans: 4
+  total_plans: 10
+  completed_plans: 5
 ---
 
 # Project State
@@ -23,21 +23,26 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-25)
 
 **Core value:** A hiring manager who clicks the URL from the CV forms a favourable, accurate impression of Qiankun's quantitative capability within twenty seconds — and finds nothing that undermines it.
-**Current focus:** Phase 2 — Content Deletion & Redirects
+**Current focus:** Phase 3 — Design Token Consolidation
 
 ## Current Position
 
-Phase: 2 of 5 (Content Deletion & Redirects)
-Plan: 3 of 3 complete (Delete Photos, AI Workflow, and the two retired posts; prune nav/sidebar; ship `_redirects`; re-present `/blog/` as Writing)
-Status: Ready to execute
+Phase: 3 of 5 (Design Token Consolidation)
+Plan: 1 of 3 complete (tokens.js created and wired into the PWA manifest; EBar.vue's `MutationObserver`
+converted to `watch(isDark, ..., { flush: 'post' })` and browser-verified against the still-unconverted
+EDonut control)
+Status: In progress — plan 03-02 (scale the recipe to the remaining eleven components) and 03-03
+(final neutrality re-assertion) remain
 
-Phase 1 (Technical Foundations) remains parked at plan 2 of 4 — see Deferred Verification
-below. Its three remaining console-gated items do not block Phase 2's content-deletion work,
-so execution proceeded to Phase 2 while they remain outstanding.
+Phase 2 (Content Deletion & Redirects) is complete, with two `verification: backstop` truths deferred
+to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
+plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 3's token-consolidation work.
 
-Last activity: 2026-07-26 — Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
+Last activity: 2026-07-26 — Completed 03-01-PLAN.md (created tokens.js, wired PWA manifest theme_color
+through it, converted EBar.vue's MutationObserver to watch(isDark, ..., { flush: 'post' }),
+browser-verified the recipe against the unconverted EDonut control)
 
-Progress: [██████░░░░] 57%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -67,6 +72,7 @@ Progress: [██████░░░░] 57%
 | Phase 02 P01 | 16 | 3 tasks | 12 files |
 | Phase 02 P02 | 20min | 2 tasks | 9 files |
 | Phase 02 P03 | 20min | 2 tasks | 1 files |
+| Phase 03 P01 | 20min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -84,6 +90,8 @@ Recent decisions affecting current work:
 - [Phase ?]: Feature trio chosen: Projects (unchanged) / About / Contact, per UI-SPEC's named safe default
 - [Phase ?]: Six retired Svg components deleted with their theme registrations in one atomic commit, confirmed dead by zero tag usages site-wide
 - [Phase ?]: Committed a real bug found during the audit (dangling Svg imports left uncommitted by 02-02's bc7b5d3) as a Rule 1 auto-fix before running the build gate
+- [Phase ?]: 03-01: tokens.js exports one named constant, brand, only (no default export, no dark-mode export) — matches CONTEXT.md's discretion clause and RESEARCH.md's finding the dark value has zero JS consumers
+- [Phase ?]: 03-01: browser-verified via Claude-in-Chrome pixel fingerprinting (getImageData stride-sampling) against the still-unconverted EDonut control on /projects/global-equity-portfolio — the watch(isDark, ..., { flush: 'post' }) recipe re-themes EBar on the same toggle with a byte-identical round-trip, clearing plan 03-02 to scale it to the remaining eleven components
 
 ### Pending Todos
 
@@ -134,6 +142,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-26T12:14:38.820Z
-Stopped at: Completed 02-03-PLAN.md
+Last session: 2026-07-26T19:15:09.197Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
