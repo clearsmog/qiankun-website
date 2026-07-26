@@ -88,6 +88,20 @@ export function themeTokens() {
   }
 }
 
+// Converts a 6-digit hex colour (with or without leading '#') to an rgba()
+// string at the given alpha. `themeTokens().brand` reads a live CSS custom
+// property, so it is normally a trimmed 6-digit hex, but falls back to the
+// light-mode brand colour if the value isn't parseable as hex (e.g. a
+// non-hex CSS colour function) so callers never emit an invalid colour string.
+export function hexToRgba(hex, alpha) {
+  const match = String(hex).trim().replace(/^#/, '').match(/^([0-9a-fA-F]{6})$/)
+  if (!match) return `rgba(0,113,227,${alpha})`
+  const r = parseInt(match[1].slice(0, 2), 16)
+  const g = parseInt(match[1].slice(2, 4), 16)
+  const b = parseInt(match[1].slice(4, 6), 16)
+  return `rgba(${r},${g},${b},${alpha})`
+}
+
 export function baseTooltip(t) {
   return {
     backgroundColor: 'rgba(29,29,31,0.92)',

@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
-import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+import { themeTokens, baseTooltip, baseGrid, hexToRgba } from './echarts-setup.js'
 
 const props = defineProps({
   points: {
@@ -103,8 +103,8 @@ const option = computed(() => {
             x2: 0,
             y2: 1,
             colorStops: [
-              { offset: 0, color: 'rgba(0,113,227,0.28)' },
-              { offset: 1, color: 'rgba(0,113,227,0.02)' },
+              { offset: 0, color: hexToRgba(t.brand, 0.28) },
+              { offset: 1, color: hexToRgba(t.brand, 0.02) },
             ],
           },
         },
