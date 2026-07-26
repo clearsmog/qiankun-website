@@ -10,7 +10,7 @@ last_updated: "2026-07-26T10:14:42.190Z"
 last_activity: 2026-07-25
 last_activity_desc: ROADMAP.md and STATE.md created from REQUIREMENTS.md + research/SUMMARY.md
 progress:
-  total_phases: 1
+  total_phases: 5
   completed_phases: 0
   total_plans: 4
   completed_plans: 1
@@ -85,6 +85,21 @@ None yet.
 - VitePress: pin `2.0.0-alpha.18` exactly. Do not downgrade to 1.6.4.
 - Analytics: replace Google Analytics (G-4PF046MSJJ) with Cloudflare Web Analytics (cookieless, no consent banner).
 - Deploy autonomy: pipeline changes proceed without per-change pause; local `npm run build` must pass before committing.
+
+## Deferred Verification
+
+| Phase | State | Resume |
+|-------|-------|--------|
+| 1 | verification_deferred_human | /gsd-autonomous --from 1 |
+
+Phase 1 is blocked on two external console actions that cannot be performed from this
+machine. Both are `verification: backstop` truths — no repository evidence can confirm them.
+
+| Plan | Blocked on | Action required |
+|------|-----------|-----------------|
+| 01-01 Task 3 | AWS Amplify console | Disable auto-build on `main` (App settings → Branch settings → `main` row → Actions → Disable auto build), confirm site still serves, confirm no new build fired. Only then may `amplify.yml`, `deploy.sh`, and the two `package.json` deploy scripts be deleted. |
+| 01-03 | Cloudflare dashboard | Enable Web Analytics (Workers & Pages → `qiankun-website` → Metrics → Web Analytics → Enable). Beacon appears on the next deployment. GA removal is committed only after this is on. |
+| 01-04 | 01-03 | Privacy page states the site uses cookieless analytics — publishing it while GA is still live would make the page factually wrong. Gated on 01-03, not on a console action of its own. |
 
 ## Deferred Items
 
