@@ -10,7 +10,7 @@ last_updated: "2026-07-26T12:14:38.848Z"
 last_activity: 2026-07-26
 last_activity_desc: Completed 02-01-PLAN.md (deleted Photos gallery, AI Workflow section, two retired blog posts; shipped docs/public/_redirects; relabelled /blog/ as Writing)
 progress:
-  total_phases: 2
+  total_phases: 5
   completed_phases: 1
   total_plans: 7
   completed_plans: 4
@@ -104,8 +104,18 @@ None yet.
 | Phase | State | Resume |
 |-------|-------|--------|
 | 1 | verification_deferred_human | /gsd-autonomous --from 1 |
+| 2 | verification_deferred_human | post-deploy `curl` check (see below) |
 
-Phase 1 is blocked on two external console actions that cannot be performed from this
+**Phase 2** is complete and verified in the repository — 33/33 non-backstop must-haves confirmed
+against a clean `git archive HEAD` extract, not against the working tree. Two `verification: backstop`
+truths remain, both unobservable until the site is deployed:
+
+| Truth | Why it can't be verified now |
+|-------|------------------------------|
+| The six `_redirects` rules return live 301s | `_redirects` is honoured only by Cloudflare's edge, never by a local build or `vitepress preview`. Nothing has been pushed — `origin/main` is far behind local `HEAD`. Verify post-deploy with `curl -sI https://qiankun.co.uk/photos` etc. and confirm `301` + `Location`. |
+| The `/blog/` empty-state | Not reachable while one post is retained; nothing in the build prevents it if that post were ever removed. |
+
+**Phase 1** is blocked on two external console actions that cannot be performed from this
 machine. Both are `verification: backstop` truths — no repository evidence can confirm them.
 
 | Plan | Blocked on | Action required |
