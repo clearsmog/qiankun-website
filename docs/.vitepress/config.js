@@ -9,6 +9,32 @@ import {
 import { VitePWA } from "vite-plugin-pwa";
 import Icons from "unplugin-icons/vite";
 import { brand } from "./theme/tokens.js";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Build-time assertion: theme/tokens.js's `brand` (the Node-side copy, used
+// for the PWA manifest) must match theme/custom.css's :root --vp-c-brand-1
+// (the browser-side, canonical definition). These are two manually-synced
+// sources of truth by design (tokens.js exists because config.js runs in
+// Node before any stylesheet is parsed) — fail the build loudly instead of
+// letting them silently drift on a future rebrand.
+function assertBrandInSync() {
+  const cssPath = join(__dirname, "theme/custom.css");
+  const css = readFileSync(cssPath, "utf-8");
+  const rootBlock = css.match(/:root\s*{([^}]*)}/)?.[1] ?? "";
+  const cssBrand = rootBlock.match(/--vp-c-brand-1:\s*(#[0-9a-fA-F]{3,8})/)?.[1];
+  if (!cssBrand || cssBrand.toLowerCase() !== brand.toLowerCase()) {
+    throw new Error(
+      `Brand colour out of sync: theme/tokens.js exports brand="${brand}" but ` +
+        `theme/custom.css :root --vp-c-brand-1 is "${cssBrand ?? "not found"}". ` +
+        `Update one to match the other (see the comments in both files).`,
+    );
+  }
+}
+assertBrandInSync();
 
 // RSS Feed Configuration
 const RSS_CONFIG = {
