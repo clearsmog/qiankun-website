@@ -1,5 +1,6 @@
 <script setup>
-import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
 import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
 
@@ -12,18 +13,11 @@ const props = defineProps({
   height: { type: Number, default: 320 },
 })
 
+const { isDark } = useData()
 const tick = ref(0)
-let obs
-onMounted(() => {
-  obs = new MutationObserver(() => {
-    tick.value++
-  })
-  obs.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class'],
-  })
-})
-onBeforeUnmount(() => obs?.disconnect())
+watch(isDark, () => {
+  tick.value++
+}, { flush: 'post' })
 
 const option = computed(() => {
   void tick.value

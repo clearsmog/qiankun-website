@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useData } from 'vitepress'
 import {
   Chart,
   BarController,
@@ -49,6 +50,7 @@ const props = defineProps({
   stacked: { type: Boolean, default: false },
 })
 
+const { isDark } = useData()
 const canvasRef = ref(null)
 let chart
 
@@ -194,17 +196,14 @@ function build() {
 
 onMounted(() => {
   build()
-  // rebuild on theme class changes
-  const obs = new MutationObserver(() => build())
-  obs.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class'],
-  })
-  onBeforeUnmount(() => {
-    obs.disconnect()
-    chart?.destroy()
-  })
 })
+
+onBeforeUnmount(() => {
+  chart?.destroy()
+})
+
+// rebuild on theme mode changes
+watch(isDark, () => build(), { flush: 'post' })
 
 watch(
   () => [props.labels, props.datasets, props.type],

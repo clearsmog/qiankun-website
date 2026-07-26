@@ -1,5 +1,6 @@
 <script setup>
-import { computed, onMounted, onBeforeUnmount, ref, shallowRef, watch } from 'vue'
+import { computed, ref, shallowRef, watch } from 'vue'
+import { useData } from 'vitepress'
 import VChart from 'vue-echarts'
 import { ensureEcharts } from './echarts-setup.js'
 
@@ -11,6 +12,7 @@ const props = defineProps({
   loading: { type: Boolean, default: false },
 })
 
+const { isDark } = useData()
 const chartRef = ref(null)
 const ready = shallowRef(true)
 
@@ -19,20 +21,11 @@ const style = computed(() => ({
   width: '100%',
 }))
 
-let obs
-onMounted(() => {
-  // Rebuild when light/dark class flips so axis colors stay correct
-  obs = new MutationObserver(() => {
-    // force vue-echarts to re-evaluate if parent rebuilds option via key
-    chartRef.value?.resize?.()
-  })
-  obs.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class'],
-  })
-})
-
-onBeforeUnmount(() => obs?.disconnect())
+// Rebuild when light/dark mode flips so axis colors stay correct
+watch(isDark, () => {
+  // force vue-echarts to re-evaluate if parent rebuilds option via key
+  chartRef.value?.resize?.()
+}, { flush: 'post' })
 
 watch(
   () => props.option,
