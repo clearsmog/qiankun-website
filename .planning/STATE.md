@@ -5,12 +5,12 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: planning
-stopped_at: Completed 03-03-PLAN.md (phase 3 complete)
-last_updated: "2026-07-27T05:52:18.428Z"
+stopped_at: Phase 4 UI-SPEC approved
+last_updated: "2026-07-27T12:59:38.794Z"
 last_activity: 2026-07-27
-last_activity_desc: Phase 3 complete, transitioned to Phase 4
+last_activity_desc: Phase 3 complete and verified, transitioned to Phase 4
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 2
   total_plans: 10
   completed_plans: 7
@@ -110,6 +110,7 @@ Recent decisions affecting current work:
   marker stays light-brand against re-themed bars. This is DES-07 ("chart styling derives from tokens
   rather than its own hard-coded values") and DES-11 ("every page renders correctly in dark mode,
   including all chart exhibits"), both already mapped to Phase 4.
+
 - `theme/custom.css` still expresses the brand colour as four raw RGB literals independent of
   `--vp-c-brand-1` (`--vp-c-brand-soft`, and `rgba(0, 113, 227, ...)` at lines 429 and 486). The new
   `assertBrandInSync()` guard structurally cannot cover these. Non-blocking for Phase 3; fold into
@@ -160,6 +161,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-26T19:30:24.620Z
-Stopped at: Completed 03-03-PLAN.md (phase 3 complete)
-Resume file: None
+Last session: 2026-07-27T12:59:38.783Z
+Stopped at: Phase 4 UI-SPEC approved
+Resume file: .planning/phases/04-position-design/04-UI-SPEC.md
