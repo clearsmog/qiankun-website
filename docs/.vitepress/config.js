@@ -122,6 +122,16 @@ export default defineConfig({
         href: "/feed.rss",
       },
     ],
+    [
+      "link",
+      {
+        rel: "preload",
+        href: "/fonts/source-sans-3-variable.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "",
+      },
+    ],
     ["meta", { name: "author", content: "Qiankun" }],
     [
       "meta",

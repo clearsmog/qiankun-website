@@ -3,11 +3,20 @@
  * Clean, minimalist design with subtle animations and premium feel
  */
 
-/* ==================== Typography Import ==================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* ==================== Typeface ==================== */
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('/fonts/source-sans-3-variable.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ==================== Color Palette ==================== */
 :root {
+  /* Typeface */
+  --vp-font-family-base: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
   /* Brand Colors - Apple Blue */
   /* Node-side copy kept in sync with this: docs/.vitepress/theme/tokens.js */
   --vp-c-brand-1: #0071e3;
@@ -92,7 +101,6 @@
 
 /* ==================== Global Styles ==================== */
 html {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
