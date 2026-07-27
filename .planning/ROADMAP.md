@@ -22,7 +22,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Technical Foundations** - Single deploy pipeline, clean dependencies, pinned VitePress, cookieless analytics — with zero risk to the live site
 - [ ] **Phase 2: Content Deletion & Redirects** - Remove what actively hurts, verify no dead links, redirect every deleted URL
-- [ ] **Phase 3: Design Token Consolidation** - One source of truth for brand colour and theme reactivity, before the restyle touches either
+- [x] **Phase 3: Design Token Consolidation** - One source of truth for brand colour and theme reactivity, before the restyle touches either (completed 2026-07-27)
 - [ ] **Phase 4: Position & Design** - Rewrite the twenty-second story and rebuild the typographic/visual system together
 - [ ] **Phase 5: Final Cross-Cutting Audit** - Checklist-driven verification pass across the whole finished site
 
@@ -136,6 +136,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Technical Foundations | 1/4 | In Progress|  |
 | 2. Content Deletion & Redirects | 3/3 | In Progress|  |
-| 3. Design Token Consolidation | 3/3 | In Progress|  |
+| 3. Design Token Consolidation | 3/3 | Complete    | 2026-07-27 |
 | 4. Position & Design | 0/TBD | Not started | - |
 | 5. Final Cross-Cutting Audit | 0/TBD | Not started | - |

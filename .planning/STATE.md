@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 3
-current_phase_name: Design Token Consolidation
-status: executing
+current_phase: 4
+current_phase_name: Position & Design
+status: planning
 stopped_at: Completed 03-03-PLAN.md (phase 3 complete)
-last_updated: "2026-07-26T19:30:24.631Z"
-last_activity: 2026-07-26
-last_activity_desc: Completed 03-01-PLAN.md (created tokens.js, wired PWA manifest theme_color
+last_updated: "2026-07-27T05:52:18.428Z"
+last_activity: 2026-07-27
+last_activity_desc: Phase 3 complete, transitioned to Phase 4
 progress:
   total_phases: 3
   completed_phases: 2
@@ -23,32 +23,33 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-25)
 
 **Core value:** A hiring manager who clicks the URL from the CV forms a favourable, accurate impression of Qiankun's quantitative capability within twenty seconds — and finds nothing that undermines it.
-**Current focus:** Phase 3 — Design Token Consolidation
+**Current focus:** Phase 4 — Position & Design
 
 ## Current Position
 
-Phase: 3 of 5 (Design Token Consolidation)
-Plan: 3 of 3 complete (tokens.js created and wired into the PWA manifest; EBar.vue's `MutationObserver`
-converted to `watch(isDark, ..., { flush: 'post' })` and browser-verified against the still-unconverted
-EDonut control)
-Status: In progress — plan 03-02 (scale the recipe to the remaining eleven components) and 03-03
-(final neutrality re-assertion) remain
+Phase: 4 of 5 (Position & Design)
+Plan: Not started
+Status: Ready to plan
+
+Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
+exactly two files (`theme/tokens.js` for Node, `theme/custom.css` for the browser), kept honest by
+an `assertBrandInSync()` build-time assertion in `config.js` that fails the build on drift. All
+twelve chart components use `watch(isDark, ..., { flush: 'post' })`; zero `MutationObserver`
+remain. Six code-review findings were fixed across two iterations; the final re-review was clean.
 
 Phase 2 (Content Deletion & Redirects) is complete, with two `verification: backstop` truths deferred
 to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
-plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 3's token-consolidation work.
+plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
-Last activity: 2026-07-26 — Completed 03-01-PLAN.md (created tokens.js, wired PWA manifest theme_color
-through it, converted EBar.vue's MutationObserver to watch(isDark, ..., { flush: 'post' }),
-browser-verified the recipe against the unconverted EDonut control)
+Last activity: 2026-07-27 — Phase 3 complete and verified, transitioned to Phase 4
 
-Progress: [███████░░░] 70%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
+- Total plans completed: 3
 - Average duration: - min
 - Total execution time: 0 hours
 
@@ -56,7 +57,7 @@ Progress: [███████░░░] 70%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 3 | 3 | - | - |
 
 **Recent Trend:**
 
@@ -100,7 +101,19 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None yet.
+**Carried into Phase 4 (found during Phase 3 verification, correctly out of Phase 3 scope):**
+
+- 23 occurrences of the brand hex `#0071e3` are hardcoded in *content* markdown across 5 files
+  (`docs/projects/{wq-alpha-research,uk-finance-pay,board-diversity-esg,cisco-equity-valuation,global-equity-portfolio}.md`)
+  as chart series/marker colours. These are passed as explicit props, correctly take precedence over
+  the token, and therefore do **not** re-theme in dark mode — e.g. the Cisco page's Exhibit 7 "Median"
+  marker stays light-brand against re-themed bars. This is DES-07 ("chart styling derives from tokens
+  rather than its own hard-coded values") and DES-11 ("every page renders correctly in dark mode,
+  including all chart exhibits"), both already mapped to Phase 4.
+- `theme/custom.css` still expresses the brand colour as four raw RGB literals independent of
+  `--vp-c-brand-1` (`--vp-c-brand-soft`, and `rgba(0, 113, 227, ...)` at lines 429 and 486). The new
+  `assertBrandInSync()` guard structurally cannot cover these. Non-blocking for Phase 3; fold into
+  the Phase 4 restyle.
 
 ### Blockers/Concerns
 
