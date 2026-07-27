@@ -22,7 +22,7 @@
   --vp-c-brand-1: #0071e3;
   --vp-c-brand-2: #0077ed;
   --vp-c-brand-3: #0066cc;
-  --vp-c-brand-soft: rgba(0, 113, 227, 0.1);
+  --vp-c-brand-soft: color-mix(in srgb, var(--vp-c-brand-1) 10%, transparent);
 
   /* Neutral Grays - Apple Style */
   --apple-gray-50: #fbfbfd;
@@ -70,12 +70,61 @@
   --apple-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* ==================== Spacing Scale ==================== */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  /* Deliberate departure from the 8-point set: desktop hero top padding only.
+     Do not "fix" this down to 64px. */
+  --space-8: 80px;
+}
+
+/* ==================== Type Scale ==================== */
+:root {
+  /* 1.200 minor-third ratio, 1rem anchor */
+  /* Consumed as a literal JS number (11) in chart components, not var() --
+     ECharts renders axis/legend text to canvas, where CSS custom properties
+     have no effect. */
+  --font-size-micro: 0.69rem;
+  --font-size-caption: 0.83rem;
+  --font-size-body: 1rem;
+  --font-size-lead: 1.2rem;
+  --font-size-h3: 1.44rem;
+  --font-size-h2: 1.73rem;
+  --font-size-h1: clamp(2.07rem, 1.4rem + 2.5vw, 2.49rem);
+  --font-size-display: clamp(2.5rem, 1.4rem + 5vw, 4.5rem);
+
+  /* Only two weights on the site -- no third step. */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+
+  /* Single card radius for .VPFeature, .project-card and .viz-panel. */
+  --radius-card: 18px;
+}
+
+/* ==================== Semantic Colors ==================== */
+:root {
+  /* Deliberate exception to this file's :root/.dark mirroring convention:
+     these two semantic colours have no .dark counterpart. A warning red/green
+     doesn't need a dark-mode shift the way brand does -- do not "fix" this
+     into a matching .dark block unless a real value divergence is needed. */
+  --color-negative: #ff3b30;
+  --color-positive: #34c759;
+}
+
 /* ==================== Dark Mode ==================== */
 .dark {
   --vp-c-brand-1: #2997ff;
   --vp-c-brand-2: #0077ed;
   --vp-c-brand-3: #6ac4ff;
-  --vp-c-brand-soft: rgba(41, 151, 255, 0.12);
 
   --vp-c-bg: #000000;
   --vp-c-bg-alt: #161617;
@@ -434,11 +483,7 @@ html {
 
 /* ==================== Selection ==================== */
 ::selection {
-  background: rgba(0, 113, 227, 0.2);
-}
-
-.dark ::selection {
-  background: rgba(41, 151, 255, 0.3);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 20%, transparent);
 }
 
 /* ==================== Page Transitions ==================== */
@@ -491,12 +536,8 @@ html {
 }
 
 .vp-doc .custom-block.tip {
-  background: rgba(0, 113, 227, 0.06);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 6%, transparent);
   border-left-color: var(--vp-c-brand-1);
-}
-
-.dark .vp-doc .custom-block.tip {
-  background: rgba(41, 151, 255, 0.1);
 }
 
 /* ==================== Project case-study assets ==================== */
