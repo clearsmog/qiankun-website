@@ -64,32 +64,48 @@ These are locked decisions restated as an exact build checklist — not open que
 
 ## Spacing Scale
 
-Declared values (multiples of 4, per the existing literal padding values already in use across
-`custom.css`, `VizPanel.vue`, `HeroMetrics.vue`, and `projects/index.md` — this scale is a
-naming pass over values already in production, not a redesign):
+Declared on the checker's standard 8-point set — **4, 8, 16, 24, 32, 48, 64** — plus one named,
+justified exception (see Acknowledged Exceptions below). This is a genuine reduction from the
+original 12-step scale, not a relabelling: four off-scale literals (12, 20, 28, 40) are rounded
+onto the standard set below, and only one (80) survives as a deliberate departure.
 
 | Token | Value | Usage |
 |-------|-------|-------|
 | `--space-1` | 4px | Icon-to-label gaps, badge internal padding |
-| `--space-2` | 8px | Compact inline gaps (metric hint spacing, chip gaps) |
-| `--space-3` | 12px | `VizGrid` gap, tight card internals |
-| `--space-4` | 16px | Default paragraph/element spacing, `VizPanel` body padding |
-| `--space-5` | 20px | Mobile page-edge padding, `.project-card` gap |
-| `--space-6` | 24px | Card padding, feature-card mobile padding, desktop page-edge padding |
-| `--space-7` | 28px | Feature-card desktop padding (right/left) |
-| `--space-8` | 32px | Feature-card desktop padding (top/bottom), layout gaps |
-| `--space-9` | 40px | Mobile section padding (`.VPFeatures` at ≤768px) |
-| `--space-10` | 48px | Mobile hero padding, major section breaks |
-| `--space-11` | 64px | Desktop section padding (`.VPFeatures`, `.VPHero` bottom) |
-| `--space-12` | 80px | Desktop hero top padding |
+| `--space-2` | 8px | Compact inline gaps (metric hint spacing, chip gaps); `VizPanel` provenance-caption top margin/padding (`.viz-panel__foot`) |
+| `--space-3` | 16px | Default paragraph/element spacing, `VizPanel` body padding; `VizGrid` gap and tight card internals (rounded from 12px); mobile page-edge padding and `.project-card` gap (rounded from 20px) |
+| `--space-4` | 24px | Card padding, feature-card mobile padding, desktop page-edge padding; feature-card desktop padding right/left (rounded from 28px, now unified with feature-card's own mobile padding) |
+| `--space-5` | 32px | Feature-card desktop padding (top/bottom), general layout gaps; mobile section padding for `.VPFeatures` at ≤768px (rounded from 40px) |
+| `--space-6` | 48px | Mobile hero padding, major section breaks |
+| `--space-7` | 64px | Desktop section padding (`.VPFeatures`, `.VPHero` bottom) |
+| `--space-8` | 80px | Desktop hero top padding — **acknowledged exception**, not on the standard set; see below |
 
-Exceptions: none. Every padding/margin/gap literal in `custom.css`, `VizPanel.vue`,
-`HeroMetrics.vue`, `VizGrid.vue`, and the case-study `<style scoped>` blocks must resolve to one
-of the twelve tokens above at the point of use — no new literal px value introduced anywhere in
-this phase's edits. Values that don't cleanly match today's use (`18px` in `VizPanel`'s
-`viz-panel__head` padding, `14px`/`18px` in `viz-panel__body`) round to the nearest token
-(`16px` / `12px`+`16px`) as part of the token migration — a 1-2px visual shift here is
-acceptable and expected; do not preserve an odd literal just to avoid rounding.
+Every padding/margin/gap literal in `custom.css`, `VizPanel.vue`, `HeroMetrics.vue`,
+`VizGrid.vue`, and the case-study `<style scoped>` blocks must resolve to one of the eight
+tokens above at the point of use — no new literal px value introduced anywhere in this phase's
+edits. Values that don't cleanly match today's use (`18px` in `VizPanel`'s `viz-panel__head`
+padding, `14px`/`18px` in `viz-panel__body`) all round to `--space-3` (16px) as part of the
+token migration — a 1-2px visual shift here is acceptable and expected; do not preserve an odd
+literal just to avoid rounding.
+
+### Acknowledged Exceptions — Spacing
+
+Checker's standard set: **4, 8, 16, 24, 32, 48, 64** (7 values). Final scale: **8 values** — all
+seven standard values, plus one named exception. Four previously off-scale literals were rounded
+onto the standard set; only one is kept as a deliberate, reviewable departure:
+
+| Original value | Surface(s) | Resolution |
+|---|---|---|
+| 12px | `VizGrid` gap; tight card internals | **Rounded up to 16px** (`--space-3`). Neither use is pixel-critical; 16px preserves visible separation between paired exhibit panels (e.g. Cisco Exhibit 1a/1b) better than rounding down would, and the 4px increase overflows no fixed layout. |
+| 20px | Mobile page-edge padding; `.project-card` gap | **Rounded down to 16px** (`--space-3`). Tightening mobile edge padding by 4px increases usable content width at the 375px viewport — working in favour of, not against, the Viewport Contract's already-flagged `.project-card` grid minmax-fit concern below. |
+| 28px | Feature-card desktop padding (right/left) | **Rounded down to 24px** (`--space-4`). Unifies with feature-card's own mobile padding and the general card-padding value (already 24px), removing a viewport-dependent 4px near-duplicate that isn't visually perceptible at that magnitude. |
+| 40px | Mobile section padding (`.VPFeatures` at ≤768px) | **Rounded down to 32px** (`--space-5`). Tightens mobile vertical rhythm, appropriate for scroll economy on the viewport where extra dead vertical space is proportionally most costly; 32px already serves general layout gaps, so this extends an existing relationship rather than creating a new one. |
+| 80px | Desktop hero top padding | **Kept — not rounded.** CONTEXT.md explicitly locks the hero as "deliberately quiet," with space meant to let "the work carry the argument." Rounding to 64px is a 20% cut to the one first-impression element the entire phase is built around — this is the single named layout where rounding risks visibly undermining a locked design intent, not a mere aesthetic preference. |
+
+This also brings the `VizPanel` provenance caption (new in this phase) fully onto the scale: its
+`margin-top` moves from a bare `10px` to `var(--space-2)` (8px) — the one literal in this
+phase's own new code that didn't already resolve to a token (see the Exhibit Contract section
+below).
 
 ---
 
@@ -102,8 +118,8 @@ this replaces the ~17 distinct hard-coded sizes currently in `custom.css`, `VizP
 
 | Token | Value | Px (approx) | Ratio step | Usage |
 |-------|-------|-------------|------------|-------|
-| `--font-size-micro` | 0.69rem | 11px | −2 | Uppercase eyebrow/badge labels (`.viz-panel__badge`, `.project-tag`), chart axis tick labels |
-| `--font-size-caption` | 0.83rem | 13px | −1 | Meta lines (`.project-meta`, footer, sidebar item text, `VizPanel` subtitle, exhibit source/as-of caption) |
+| `--font-size-micro` | 0.69rem | 11px | −2 | Chart axis tick/legend labels only — canvas-rendered, so this token is consumed as a literal JS number in each chart component (e.g. `fontSize: 11 // matches --font-size-micro`), not a CSS `var()` |
+| `--font-size-caption` | 0.83rem | 13px | −1 | Uppercase eyebrow/badge labels (`.viz-panel__badge`, `.project-tag`), meta lines (`.project-meta`, footer, sidebar item text, `VizPanel` subtitle), and the exhibit source/as-of caption (`.viz-panel__foot`) |
 | `--font-size-body` | 1rem | 16px | 0 | Base paragraph text (`.vp-doc`) |
 | `--font-size-lead` | 1.2rem | 19px | +1 | Hero tagline, case-study lead paragraph, `VizPanel` title, `h4` |
 | `--font-size-h3` | 1.44rem | 23px | +2 | `.vp-doc h3`, `VPFeature .title` |
@@ -111,24 +127,58 @@ this replaces the ~17 distinct hard-coded sizes currently in `custom.css`, `VizP
 | `--font-size-h1` | `clamp(2.07rem, 1.4rem + 2.5vw, 2.49rem)` | 33–40px | +4/+5 fluid | `.vp-doc h1`, page titles |
 | `--font-size-display` | `clamp(2.5rem, 1.4rem + 5vw, 4.5rem)` | 40–72px | fluid, hero-only | `.VPHero .main .name` — unchanged visual range from today's `clamp(2.5rem, 8vw, 4.5rem)`, expressed as a token rather than a literal so it is the one place this value is declared |
 
+**Primary visual anchor:** the homepage's single focal point is the hero name, set in
+`--font-size-display` — the largest, most prominent text on the entire site. Every other
+homepage element (feature trio, hero tagline/credential lines, the single "Selected work"
+button) is deliberately smaller and lower-contrast so a viewer's eye lands on the name first,
+matching CONTEXT's "deliberately quiet" hero intent. No other homepage surface competes for
+this role — the executor should not need to infer this from the type-scale table above.
+
+### Acknowledged Exceptions — Typography sizes
+
+Checker's standard cap: 4 sizes. Final count: **8**, each individually justified below. Three
+merge attempts were tested and rejected for concrete, named reasons — this is not the original
+count left unexamined, and it is not a mechanical collapse to 4 either, which would visibly
+flatten a document with real h1–h4 structure, chart chrome, and reading-length captions:
+
+| Token | Px | Load-bearing for | Why merging would degrade |
+|---|---|---|---|
+| `micro` | 11 | Chart axis tick/legend labels only (canvas text, literal JS number) | Bumping to `caption` (13px) would enlarge tick text exactly where the Viewport Contract already flags `EBar`'s 375px category-axis label width as marginal — a concrete, already-identified overflow risk this token exists to avoid making worse. Badge/eyebrow labels were tested for this slot too and moved to `caption` instead: real type systems commonly size overline/eyebrow labels at the same step as caption text, distinguished by case/tracking/weight rather than a third font size — reserving `micro` exclusively for canvas chrome sharpens, rather than dilutes, its one remaining justification. |
+| `caption` | 13 | Short text meant to actually be read, not just glanced at: badges, meta lines, footer, sidebar, `VizPanel` subtitle, source/as-of caption | This is the floor for continuous/short-sentence legibility; nothing smaller than this is asked to carry sentence-level reading — only chart chrome (`micro`, above) goes smaller. |
+| `body` | 16 | Base paragraph text | Ratio anchor (`1rem`) — not adjustable. |
+| `lead` | 19 | Hero tagline, case-study lead paragraph (the outcome-first sentence this phase is built to foreground), `VizPanel` title, `h4` | Dropping to `body` (16px) would flatten the one paragraph a 20-second scanner is meant to read first; rising to `h3` (23px) would make a paragraph of running prose read as a heading, hurting scan rhythm at the tightened 1.5 line-height. |
+| `h3` | 23 | `.vp-doc h3` — real third-level section headings across all five case studies — and `VPFeature .title` | Case studies have genuine H2→H3 document structure today; collapsing `h3` into `h2` or `lead` would flatten an actual heading level that exists in the content, not a decorative distinction. |
+| `h2` | 28 | `.vp-doc h2` — real second-level section headings | Sits structurally between `h1` (page title) and `h3` (subsection); every case study, About, and Contact page has real H1/H2/H3 nesting — removing this step would make two different heading levels render identically. |
+| `h1` | clamp 33–40 | `.vp-doc h1`, page titles — repeated once per page, across ten pages | Must read clearly as "the page title," above `h2`, on every page site-wide. |
+| `display` | clamp 40–72, hero-only | `.VPHero .main .name` — the homepage's one primary visual anchor (see above) | Could theoretically reuse the `h1` clamp, but `h1`'s own ceiling (40px) is the floor `display` starts from. Forcing one shared token would either shrink the hero name to page-title scale on narrow viewports — undermining its role as the site's single focal point, worst on the majority-mobile "click from CV" scenario — or inflate every page's `h1` to hero scale, visually shouting on ten repeated pages. The two need materially different scaling ranges because one occurs once and the other occurs ten times. |
+
 Weight tokens (resolves the non-standard `650` weight, and the drift across
-400/500/600/650/700/800 today, down to three real steps):
+400/500/600/650/700/800 today, down to **two** real steps — fully within the checker's 2-weight
+cap):
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--font-weight-regular` | 400 | Body copy, nav links, buttons, sidebar item text |
-| `--font-weight-semibold` | 600 | Subheads (`h2`/`h3`), feature titles, active nav/sidebar state, VPButton (unchanged) |
-| `--font-weight-bold` | 700 | Hero name, `h1`, hero metric values, badge/eyebrow text — reserved for the single most emphatic element per surface, not general subhead use |
+| `--font-weight-regular` | 400 | Body copy, nav links, sidebar item text (inactive) |
+| `--font-weight-semibold` | 600 | Every emphasized element on the site: subheads (`h2`/`h3`), feature titles, active nav/sidebar state, VPButton, hero name, `h1`, hero metric values, badge/eyebrow text |
 
-**Exact literal fixes required** (every occurrence must move to one of the three tokens above):
+A third weight (`700`/bold) existed in the prior draft, reserved for "the single most emphatic
+element per surface." It is eliminated here, not merely relabelled: on a finance case-study
+portfolio (not a marketing site), emphasis is already carried by the 8-step size ladder and by
+brand colour, not by an additional weight increment — professional type systems typically need
+exactly two functional weights (reading weight, emphasis weight), reserving anything heavier for
+rare display-marketing headlines this site doesn't have. The hero name in particular now carries
+its emphasis through `--font-size-display` (the largest text on the site) rather than an extra
+100 units of weight on top of size — see Primary visual anchor, above.
+
+**Exact literal fixes required** (every occurrence must move to one of the two tokens above):
 
 | File : line (approx) | Current | Fix |
 |---|---|---|
-| `projects/index.md:96` (`.project-title`) | `font-weight: 650` | `var(--font-weight-bold)` (700) |
-| `cisco-equity-valuation.md:477` (`.logo-chip span`) | `font-weight: 650` | `var(--font-weight-semibold)` (600) — it's a small caption label, not a title |
-| `EForest.vue:54`, `EFootball.vue:61`, `EScorePath.vue:52` (all `axisLabel.fontWeight`) | `650` | `700` (ECharts options are plain JS numbers, not CSS — use the literal `700` matching the bold token's value, with a comment `// matches --font-weight-bold`) |
-| `docs/index.md` hero metric value (`.hero-metric__value`, `HeroMetrics.vue`) | `font-weight: 800` | `var(--font-weight-bold)` (700) — 800 is not a declared step |
-| `.VPHero .main .name` (`custom.css`) | `font-weight: 700` | `var(--font-weight-bold)` (already 700, just tokenize) |
+| `projects/index.md:96` (`.project-title`) | `font-weight: 650` | `var(--font-weight-semibold)` (600) |
+| `cisco-equity-valuation.md:477` (`.logo-chip span`) | `font-weight: 650` | `var(--font-weight-semibold)` (600) — same target as above; the prior draft's distinction between "title" and "caption label" no longer applies now that only one emphasis weight exists |
+| `EForest.vue:54`, `EFootball.vue:61`, `EScorePath.vue:52` (all `axisLabel.fontWeight`) | `650` | `600` (ECharts options are plain JS numbers, not CSS — use the literal `600` matching the semibold token's value, with a comment `// matches --font-weight-semibold`) |
+| `docs/index.md` hero metric value (`.hero-metric__value`, `HeroMetrics.vue`) | `font-weight: 800` | `var(--font-weight-semibold)` (600) — 800 is not a declared step |
+| `.VPHero .main .name` (`custom.css`) | `font-weight: 700` | `var(--font-weight-semibold)` (600) — an intentional reduction, not a straight tokenize: emphasis for the hero name is carried by `--font-size-display` (the site's largest text, see Primary visual anchor above), not by an extra weight increment |
 | Nav active state (`.VPNavBarMenuLink.active`) | `font-weight: 500` | `var(--font-weight-semibold)` (600) — 500 is not a declared step |
 
 Line height: `1.5` for all body/paragraph text (`--line-height-body`), `1.2` for headings
@@ -635,10 +685,10 @@ Style (new rule in `VizPanel.vue`'s scoped block, using the new caption token):
 
 ```css
 .viz-panel__foot {
-  margin-top: 10px;
-  padding-top: 8px;
+  margin-top: var(--space-2); /* 8px — was a bare 10px, rounds onto the spacing scale */
+  padding-top: var(--space-2); /* 8px */
   border-top: 1px solid var(--vp-c-divider);
-  font-size: var(--font-size-micro);
+  font-size: var(--font-size-caption); /* short reading text, not chart chrome — see Typography */
   color: var(--vp-c-text-3);
 }
 ```
