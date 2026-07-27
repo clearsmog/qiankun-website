@@ -1,10 +1,11 @@
 ---
 phase: 4
 slug: position-design
-status: draft
+status: approved
 shadcn_initialized: false
 preset: none
 created: 2026-07-27
+reviewed_at: 2026-07-27
 ---
 
 # Phase 4 — UI Design Contract: Position & Design
@@ -791,29 +792,58 @@ prescribes (reframe, don't rebuild, don't delete).
 
 ## UI Considerations
 
-Resolved from the UI-consideration probe over this phase's controlled surfaces: the homepage
-hero/feature trio, the `/projects/` index card list, and the exhibit furniture (`VizPanel` +
-chart components) repeated across all five case studies. Per-case-study prose (About, Contact,
-individual case-study leads) is `static-content` with no state axis beyond `long-text`, already
-covered inline in the Copywriting Contract above.
+Resolved from the UI-consideration probe run over all eight surfaces this phase touches:
+**E1** homepage hero, **E2** homepage feature trio, **E3** About, **E4** Contact, **E5** `/projects/`
+index, **E6** case-study lead + Snapshot block, **E7** `VizPanel` exhibit + chart, **E8** Writing
+index.
 
-**14 applicable — 11 covered, 1 backstop, 2 dismissed, 0 unresolved.**
+**53 applicable — 29 covered, 3 backstop, 21 dismissed, 0 unresolved.**
 
-| Category | Element(s) | Status | Resolution / Reason |
-|----------|------------|--------|---------------------|
-| populated | `/projects/` index cards | ✅ covered | Exactly five cards render, in the locked order, each with tag/title/blurb/meta — see Index Ordering table above. |
-| zero-one-many | `/projects/` index cards | ✅ covered | Card count is fixed at five by authorship (not data-driven); the five-card layout is the only state this list can be in — no add/remove flow exists on a static site. |
-| long-text | `/projects/` index cards | ✅ covered | Card blurb copy is bounded by the two-sentence template above; longest blurb (Cisco's) fits `.project-card`'s existing `flex: 1` description slot at 375px without truncation — verify in manual QA once the card-radius/minmax fix lands. |
-| overflow | `/projects/` index cards | ✅ covered | Minmax floor lowered to `260px` per the Viewport Contract fix; grid already collapses to 1 column below that floor. |
-| overflow | Homepage hero (`text`/`tagline`) | ✅ covered | Hero `text`/`tagline` use existing `clamp()` fluid sizing (`.VPHero .text`, `.VPHero .tagline`) already tested down to narrow viewports; new copy is shorter than the string it replaces, so no new overflow risk is introduced. |
-| long-text | Homepage hero | ✅ covered | New hero copy is deliberately short (locked four-line shape); no line exceeds the existing `max-width: 600px` tagline constraint. |
-| populated | Exhibits (`VizPanel` + chart, all five case studies) | ✅ covered | Every exhibit renders with `badge`/`title`/`subtitle` already populated from real model output (confirmed by file read) plus the new `source`/`as-of` caption. |
-| long-text | Exhibit `source`/`as-of` caption | ✅ covered | Caption uses `--font-size-micro` at `--vp-c-text-3`, wraps naturally within `.viz-panel__body`'s existing padding; source strings are short (≤~25 chars, e.g. "Bloomberg equity/ESG"), no truncation risk. |
-| overflow | Chart axis-title (`xName`/`yName`) | ✅ covered | `nameLocation: 'middle'`/`nameGap` pattern already proven in `EHeatmap.vue`; axis-name strings specified in the Exhibit Contract are all short (≤~22 chars, e.g. "Weighted cost (%)"). |
-| overflow | Chart canvases at 375px | 🧪 backstop | `EBar`'s horizontal category-axis label width (`110px`) combined with a narrow chart width is a plausible truncation risk not confirmed either way by static file review — **verify by rendering the site at 375px and checking every case study's charts for clipped/overlapping axis labels before sign-off.** |
-| empty | Exhibit `source`/`as-of` | ✅ covered | Both new `VizPanel` props default to empty string and the caption `<footer>` is conditionally rendered (`v-if="source || asOf"`) — a page that doesn't yet supply them renders no broken/empty caption row, but every exhibit in this phase's scope does supply both, so the empty path is a defensive default, not an expected state. |
-| zero-one-many | Homepage feature trio | ✅ covered | Fixed at three cards (Phase 2 already locked this; this phase only changes copy/icon colour, not count). |
-| loading / error / partial | All surfaces above | ⊘ dismissed | Statically generated site — every surface in this phase's scope is inlined at build time with no client-side fetch, form submission, or async render path. Nothing on these pages can be "loading," "erroring," or "partial" at runtime (same reasoning Phase 2's UI-SPEC applied, carried forward unchanged). |
+### The governing fact
+
+This is a **statically generated site**. Every surface is pre-rendered to HTML at build time; there
+is no client-side fetch, no form submission, and no async render path anywhere in scope. That makes
+the `loading` and `error` axes inapplicable on all surfaces but one, and it is the reason 21 of 53
+considerations are dismissed rather than specified. The single exception is E1's `loading`: web-font
+delivery genuinely *is* a loading state on the first painted surface, and DES-02 governs it.
+
+### Backstops — must be verified by looking, not by reading code
+
+| # | Element | Category | Statement | Verification |
+|---|---------|----------|-----------|--------------|
+| B1 | E7 chart canvases | overflow | At 375px, `EBar`'s `110px` category-axis label width against a narrow canvas is a plausible clipping/overlap risk that static file review cannot settle either way. | backstop — render every case study at 375px and inspect all exhibits for clipped or overlapping axis labels before sign-off |
+| B2 | E8 Writing index | empty | If the single remaining ETRM post were ever removed, `/blog/` renders an unstyled empty list. Nothing in the build prevents this. | backstop — carried forward from Phase 2's deferred-verification table, where it was recorded as unreachable while one post is retained |
+| B3 | E8 Writing index | zero-one-many | The index holds exactly one post. Phase 2 locked the decision that it must read as a body of writing, not a dated feed of one — singular/plural copy and spacing must not imply an abandoned stream. | backstop — visual check that the one-post state reads deliberately, not as a broken feed |
+
+### Covered
+
+| Element | Category | Resolution |
+|---------|----------|------------|
+| E1 hero | loading | Web font loads via `font-display: swap` + `<link rel="preload">`; DES-02 requires no visible layout shift. The fallback stack is metric-adjacent so the swap does not reflow the hero. |
+| E1 hero | long-text | Locked four-line shape, deliberately short; no line exceeds the existing `max-width: 600px` tagline constraint. New copy is shorter than the string it replaces. |
+| E2 trio | empty / populated / zero-one-many | Fixed at exactly three cards, locked in Phase 2; this phase changes copy and icon colour only, never count. |
+| E2 trio | overflow / long-text | Grid collapses to one column below the minmax floor; card copy is bounded by the trio copy table above. |
+| E3 About | overflow / long-text | Prose page inside `.vp-doc`'s existing measure constraint; the rewrite is materially shorter than the copy it replaces. |
+| E4 Contact | empty / populated / zero-one-many | Exactly three links (mailto, GitHub, LinkedIn), authored constants — the list cannot be empty or variable-length. |
+| E4 Contact | overflow / long-text | Link labels are short and fixed; the `mailto:` address wraps within the content measure at 375px. |
+| E5 index | empty / populated / zero-one-many | Exactly five cards in the locked order; hand-authored, not data-driven, so no add/remove flow exists. |
+| E5 index | overflow | Minmax floor lowered to `260px` per the Viewport Contract; grid collapses to one column below it. |
+| E5 index | long-text | Blurbs bounded by the two-sentence template; the longest (Cisco) fits `.project-card`'s `flex: 1` slot at 375px. |
+| E6 lead block | empty / populated | Title, provenance line, lead paragraph and Snapshot tiles are all authored constants on every one of the five pages. |
+| E6 lead block | partial | EXH-03's per-case-study audit is the mechanism that catches a lead or Snapshot tile missing its unit, as-of date, or source — the audit is required to be exhaustive, not spot-checked. |
+| E6 lead block | zero-one-many | `HeroMetrics` tile count is fixed per page; the 2-column narrow layout is specified in the Viewport Contract. |
+| E6 lead block | overflow / long-text | Snapshot tiles wrap to two columns at 375px; longest-label behaviour is listed in the spec's own manual-QA checklist. |
+| E7 exhibit | long-text | Provenance caption wraps naturally inside `.viz-panel__body` padding; source strings are short (≤~25 chars). Axis-name strings are ≤~22 chars using the `nameLocation: 'middle'`/`nameGap` pattern already proven in `EHeatmap.vue`. |
+| E8 Writing | populated / overflow / long-text | Single post renders as a linked H3 with date and description, inside the standard content measure. |
+
+### Dismissed (21)
+
+| Elements | Categories | Reason |
+|----------|------------|--------|
+| E2, E3, E4, E5, E6, E8 | loading | Statically generated — content is inlined into pre-rendered HTML at build time. No client-side fetch exists on any of these surfaces, so there is no loading state to design. |
+| E1, E2, E3, E4, E5, E6, E8 | error | No runtime failure path on a static page. E4's external links can fail at their *destination*, but that is not a state this page renders. |
+| E1, E3 | empty | Hero copy and About prose are authored constants compiled into the page — they cannot be empty at runtime. |
+| E1, E2, E3, E4, E5 | partial | Same reason: every field on these surfaces is an authored constant, so there is no partial-data state. Contrast E6, where provenance completeness *is* a real axis and is covered above. |
 
 ---
 
@@ -831,11 +861,11 @@ Vue theme, no `components.json`).
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
 **Approval:** pending
