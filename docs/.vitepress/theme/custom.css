@@ -173,7 +173,7 @@ html {
 
 /* ==================== Hero Section ==================== */
 .VPHero {
-  padding: 80px 24px 64px !important;
+  padding: var(--space-8) var(--space-4) var(--space-7) !important;
 }
 
 .VPHero .container {
@@ -183,28 +183,30 @@ html {
 }
 
 .VPHero .main .name {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  font-weight: 700;
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: var(--line-height-heading);
   color: var(--vp-c-text-1);
 }
 
+/* The hero's substance line -- one step above the credential line (.tagline),
+   far below the name (--font-size-display), per UI-SPEC's primary-visual-anchor intent. */
 .VPHero .text {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 600;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
   color: var(--vp-c-text-1);
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
   letter-spacing: -0.01em;
 }
 
 .VPHero .tagline {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 400;
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-regular);
   color: var(--vp-c-text-2);
   max-width: 600px;
-  margin: 1rem auto 0;
-  line-height: 1.5;
+  margin: var(--space-3) auto 0;
+  line-height: var(--line-height-body);
 }
 
 /* Hero animations */
@@ -248,14 +250,14 @@ html {
 
 /* ==================== Feature Cards ==================== */
 .VPFeatures {
-  padding: 64px 24px !important;
+  padding: var(--space-7) var(--space-4) !important;
 }
 
 .VPFeature {
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 18px;
-  padding: 32px 28px !important;
+  border-radius: var(--radius-card);
+  padding: var(--space-5) var(--space-4) !important;
   transition: all 0.4s var(--apple-ease);
   box-shadow: var(--apple-shadow-sm);
 }
@@ -270,23 +272,24 @@ html {
   background: var(--vp-c-bg-elv);
 }
 
+/* No font-size: children are inline SVGs with explicit width/height attributes,
+   so a size declaration here has no visible effect. */
 .VPFeature .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-3);
 }
 
 .VPFeature .title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
   color: var(--vp-c-text-1);
   letter-spacing: -0.01em;
 }
 
 .VPFeature .details {
-  font-size: 0.9375rem;
+  font-size: var(--font-size-body);
   color: var(--vp-c-text-2);
-  line-height: 1.55;
-  margin-top: 0.5rem;
+  line-height: var(--line-height-body);
+  margin-top: var(--space-2);
 }
 
 /* ==================== Navigation - Frosted Glass ==================== */
@@ -302,16 +305,16 @@ html {
 }
 
 .VPNavBar .title {
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-caption);
   color: var(--vp-c-text-1);
   letter-spacing: -0.01em;
 }
 
 /* Nav links */
 .VPNavBarMenuLink {
-  font-weight: 400 !important;
-  font-size: 0.875rem !important;
+  font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-caption) !important;
   color: var(--vp-c-text-2) !important;
   transition: color 0.2s var(--apple-ease) !important;
 }
@@ -322,15 +325,15 @@ html {
 
 .VPNavBarMenuLink.active {
   color: var(--vp-c-text-1) !important;
-  font-weight: 500 !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 /* ==================== Buttons - Apple Style ==================== */
 .VPButton {
   border-radius: 980px !important;
-  font-size: 1rem !important;
-  font-weight: 400 !important;
-  padding: 12px 24px !important;
+  font-size: var(--font-size-body) !important;
+  font-weight: var(--font-weight-regular) !important;
+  padding: var(--space-3) var(--space-4) !important;
   transition: all 0.2s var(--apple-ease) !important;
 }
 
@@ -368,14 +371,14 @@ html {
 }
 
 .VPSidebarItem .text {
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
   color: var(--vp-c-text-2);
 }
 
 .VPSidebarItem.is-active>.item .text {
   color: var(--vp-c-text-1);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .VPSidebarItem.is-active>.item .indicator {
@@ -386,30 +389,30 @@ html {
 
 /* ==================== Content ==================== */
 .vp-doc {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   color: var(--vp-c-text-1);
 }
 
 .vp-doc h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.025em;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-3);
 }
 
 .vp-doc h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.02em;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
   border-top: 1px solid var(--vp-c-divider);
 }
 
 .vp-doc h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.01em;
 }
 
@@ -426,13 +429,16 @@ html {
 }
 
 /* Inline code */
+/* font-size stays em-relative (not a token) so inline code scales with
+   whatever text it sits inside, including headings -- a fixed rem token
+   would shrink code spans inside headings. */
 .vp-doc :not(pre)>code {
   background: var(--vp-c-bg-alt);
   color: var(--vp-c-text-1);
   border-radius: 6px;
-  padding: 3px 6px;
+  padding: var(--space-1) var(--space-2);
   font-size: 0.875em;
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Code blocks */
@@ -450,7 +456,7 @@ html {
 
 .VPFooter .message,
 .VPFooter .copyright {
-  font-size: 0.75rem;
+  font-size: var(--font-size-caption);
   color: var(--vp-c-text-3);
 }
 
@@ -513,8 +519,8 @@ html {
 
 /* ==================== Doc Aside ==================== */
 .VPDocAsideOutline .outline-link {
-  font-size: 0.8125rem;
-  font-weight: 400;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
   color: var(--vp-c-text-3);
   transition: color 0.2s var(--apple-ease);
 }
@@ -525,14 +531,14 @@ html {
 
 .VPDocAsideOutline .outline-link.active {
   color: var(--vp-c-text-1);
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ==================== Custom Blocks ==================== */
 .vp-doc .custom-block {
   border-radius: 12px;
   border-left: 4px solid;
-  padding: 16px 20px;
+  padding: var(--space-3) var(--space-4);
 }
 
 .vp-doc .custom-block.tip {
@@ -546,7 +552,7 @@ html {
   width: 100%;
   max-width: 920px;
   height: auto;
-  margin: 1.25rem auto 1.75rem;
+  margin: var(--space-3) auto var(--space-4);
   border-radius: 12px;
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-soft);
@@ -573,15 +579,15 @@ html {
 /* ==================== Responsive ==================== */
 @media (max-width: 768px) {
   .VPHero {
-    padding: 48px 20px !important;
+    padding: var(--space-6) var(--space-3) !important;
   }
 
   .VPFeatures {
-    padding: 40px 20px !important;
+    padding: var(--space-5) var(--space-3) !important;
   }
 
   .VPFeature {
-    padding: 24px 20px !important;
+    padding: var(--space-4) var(--space-3) !important;
   }
 }
 
