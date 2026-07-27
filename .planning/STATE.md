@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
-status: planning
-stopped_at: Phase 4 UI-SPEC approved
-last_updated: "2026-07-27T12:59:38.794Z"
+status: executing
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-07-27T14:37:07.796Z"
 last_activity: 2026-07-27
-last_activity_desc: Phase 3 complete and verified, transitioned to Phase 4
+last_activity_desc: Phase 4 execution started
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 10
-  completed_plans: 7
+  total_plans: 20
+  completed_plans: 8
 ---
 
 # Project State
@@ -27,9 +27,9 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 
 ## Current Position
 
-Phase: 4 of 5 (Position & Design)
-Plan: Not started
-Status: Ready to plan
+Phase: 4 (Position & Design) — EXECUTING
+Plan: 2 of 10
+Status: Ready to execute
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
 exactly two files (`theme/tokens.js` for Node, `theme/custom.css` for the browser), kept honest by
@@ -41,9 +41,9 @@ Phase 2 (Content Deletion & Redirects) is complete, with two `verification: back
 to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
 plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
-Last activity: 2026-07-27 — Phase 3 complete and verified, transitioned to Phase 4
+Last activity: 2026-07-27 — Phase 4 execution started
 
-Progress: [████████░░] 80%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
@@ -76,6 +76,7 @@ Progress: [████████░░] 80%
 | Phase 03 P01 | 20min | 2 tasks | 5 files |
 | Phase 03 P02 | 25min | 2 tasks | 12 files |
 | Phase 03 P03 | 25min | 2 tasks | 0 files |
+| Phase 04 P01 | 25min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,7 @@ Recent decisions affecting current work:
 - [Phase ?]: Imported tokens.js's brand export under alias brandToken in ProjectChart.vue to avoid shadowing its local brand() helper
 - [Phase ?]: 03-03: Committed-state audit re-ran every Phase 3 gate inside a git archive HEAD extract with a fresh npm ci — all passed, confirming nothing from 03-01/03-02 was left uncommitted
 - [Phase ?]: 03-03: DES-05 and DES-08 marked complete in REQUIREMENTS.md, closing Phase 3 — browser sweep confirmed all eight rendered ECharts types re-theme correctly across a full toggle cycle with a clean console
+- [Phase ?]: Font sourced via npm pack extraction (never installed as dependency); vitepress/theme-without-fonts entry point required to stop VitePress bundling its own Inter family
 
 ### Pending Todos
 
@@ -161,6 +163,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-27T12:59:38.783Z
-Stopped at: Phase 4 UI-SPEC approved
-Resume file: .planning/phases/04-position-design/04-UI-SPEC.md
+Last session: 2026-07-27T14:37:07.789Z
+Stopped at: Completed 04-01-PLAN.md
+Resume file: None

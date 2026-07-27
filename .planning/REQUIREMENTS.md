@@ -36,10 +36,10 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Design System
 
-- [ ] **DES-01**: The chosen typeface is self-hosted as variable WOFF2; the Google Fonts `@import` is gone and no third-party font request remains
-- [ ] **DES-02**: Fonts load with `preload` and `font-display: swap`, producing no visible layout shift
+- [x] **DES-01**: The chosen typeface is self-hosted as variable WOFF2; the Google Fonts `@import` is gone and no third-party font request remains
+- [x] **DES-02**: Fonts load with `preload` and `font-display: swap`, producing no visible layout shift
 - [ ] **DES-03**: Type scale, weights, and line-measure are defined once as tokens and consumed everywhere
-- [ ] **DES-04**: `--vp-font-family-base` is set, rather than `font-family` on a bare `html` selector, so VitePress internals inherit correctly
+- [x] **DES-04**: `--vp-font-family-base` is set, rather than `font-family` on a bare `html` selector, so VitePress internals inherit correctly
 - [x] **DES-05**: The brand colour is defined in exactly one place; a minimal `tokens.js` exists only for values Node needs before the DOM (the PWA manifest colour)
 - [ ] **DES-06**: Spacing, heading treatment, and visual hierarchy are consistent across every remaining page, verified by side-by-side comparison rather than page-by-page
 - [ ] **DES-07**: Chart styling derives from the site's type and colour tokens rather than its own hard-coded values
@@ -145,10 +145,10 @@ Explicitly excluded. Documented to prevent scope creep.
 | POS-05 | Phase 4 | Pending |
 | POS-06 | Phase 4 | Pending |
 | POS-07 | Phase 4 | Pending |
-| DES-01 | Phase 4 | Pending |
-| DES-02 | Phase 4 | Pending |
+| DES-01 | Phase 4 | Complete |
+| DES-02 | Phase 4 | Complete |
 | DES-03 | Phase 4 | Pending |
-| DES-04 | Phase 4 | Pending |
+| DES-04 | Phase 4 | Complete |
 | DES-06 | Phase 4 | Pending |
 | DES-07 | Phase 4 | Pending |
 | DES-09 | Phase 4 | Pending |
