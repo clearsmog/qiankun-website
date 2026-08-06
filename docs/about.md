@@ -1,28 +1,40 @@
 ---
 title: About
-description: Learn more about Qiankun
+description: Qiankun (Kenny) Zhu — quantitative finance, MSc Finance & Investment (Edinburgh), FRM
 ---
 
-# About Me
+# About
 
-Welcome! I'm Qiankun, and this is my personal website.
+Qiankun (Kenny) Zhu holds an MSc in Finance and Investment from the University of Edinburgh, is
+a certified Financial Risk Manager (FRM, GARP), and reached Gold tier in the WorldQuant BRAIN
+Challenge — an independently judged systematic-alpha research competition.
 
-## What I Do
+## What I build
 
-I'm passionate about technology, quantitative systems, and software development. This site shares writing, projects, and learnings.
+Quantitative finance work: multi-factor equity portfolios with institutional risk reporting,
+systematic alpha research, equity valuation models, and empirical ESG research — built as
+reproducible code (Python, Stata, Excel) rather than one-off spreadsheets, with assumptions
+stated, sources cited, and checks that catch a broken formula before a reader does.
+
+## Background
+
+Before Edinburgh: an MSc in Artificial Intelligence from Nanyang Technological University,
+Singapore, and a BEng in Software Engineering from Xi'an Jiaotong University.
+
+## The name
+
+"Qiankun" (乾坤) is a Chinese philosophical term for the universe — heaven and earth, yin and yang.
 
 ## Portfolio
 
-Case studies for hiring managers and interviewers are under [Projects](/projects/), including a [GBP 10M global equity portfolio](/projects/global-equity-portfolio), [WorldQuant BRAIN alpha research](/projects/wq-alpha-research) (Gold), [board gender diversity and ESG](/projects/board-diversity-esg), a [Cisco equity valuation](/projects/cisco-equity-valuation), and a [UK finance pay](/projects/uk-finance-pay) data story.
+Case studies for hiring managers are under [Projects](/projects/): a
+[GBP 10M global equity portfolio](/projects/global-equity-portfolio),
+[WorldQuant BRAIN alpha research](/projects/wq-alpha-research),
+[board gender diversity and ESG](/projects/board-diversity-esg), a
+[Cisco equity valuation](/projects/cisco-equity-valuation), and a
+[UK finance pay](/projects/uk-finance-pay) data story.
 
-## The Name
+## Get in touch
 
-"Qiankun" is a Chinese philosophical term representing the universe, heaven and earth, and the fundamental forces of yin and yang — a symbol of completeness and balance.
-
-## Get in Touch
-
-Feel free to reach out through the [contact page](/contact) or connect with me on social media.
-
----
-
-*Thanks for visiting!*
+Reach out via [Contact](/contact), or on [GitHub](https://github.com/KennyZhu) and
+[LinkedIn](https://linkedin.com/in/KennyZhu).
