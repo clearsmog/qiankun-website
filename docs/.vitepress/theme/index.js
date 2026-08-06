@@ -5,9 +5,6 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import JsonLd from './JsonLd.vue'
 import NotFound from './NotFound.vue'
-import MetricCards from './components/MetricCards.vue'
-import ProjectChart from './components/ProjectChart.vue'
-import ProcessSteps from './components/ProcessSteps.vue'
 import VizPanel from './components/viz/VizPanel.vue'
 import VizGrid from './components/viz/VizGrid.vue'
 import HeroMetrics from './components/viz/HeroMetrics.vue'
@@ -39,9 +36,6 @@ export default {
   },
   enhanceApp({ app }) {
     enhanceAppWithTabs(app)
-    app.component('MetricCards', MetricCards)
-    app.component('ProjectChart', ProjectChart)
-    app.component('ProcessSteps', ProcessSteps)
     app.component('VizPanel', VizPanel)
     app.component('VizGrid', VizGrid)
     app.component('HeroMetrics', HeroMetrics)
