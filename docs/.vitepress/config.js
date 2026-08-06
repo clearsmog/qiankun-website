@@ -241,9 +241,8 @@ export default defineConfig({
 
     // Social links
     socialLinks: [
-      { icon: "github", link: "https://github.com/KennyZhu" },
-      { icon: "linkedin", link: "https://linkedin.com/in/KennyZhu" },
-      // { icon: 'twitter', link: 'https://twitter.com/KennyZhu' }
+      { icon: "github", link: "https://github.com/clearsmog" },
+      { icon: "linkedin", link: "https://linkedin.com/in/kenny0908" },
     ],
 
     // Footer

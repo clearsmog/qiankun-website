@@ -36,5 +36,5 @@ Case studies for hiring managers are under [Projects](/projects/): a
 
 ## Get in touch
 
-Reach out via [Contact](/contact), or on [GitHub](https://github.com/KennyZhu) and
-[LinkedIn](https://linkedin.com/in/KennyZhu).
+Reach out via [Contact](/contact), or on [GitHub](https://github.com/clearsmog) and
+[LinkedIn](https://linkedin.com/in/kenny0908).
