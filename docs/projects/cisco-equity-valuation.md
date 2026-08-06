@@ -173,6 +173,8 @@ Cisco operates five segments — Networking, Security, Collaboration, Observabil
   <VizPanel
     badge="Exhibit 1a"
     title="Segment revenue mix, FY2025"
+    source="Company model output"
+    as-of="FY2025"
     subtitle="Security (+59% → $8.1B) and Observability (+26% → $1.1B) growth is largely Splunk-driven — the model isolates inorganic contribution before forecasting."
   >
     <EDonut :items="segmentMix" center-value="$56.7B" center-label="FY2025" unit="B" :height="320" legend-pos="bottom" />
@@ -180,6 +182,8 @@ Cisco operates five segments — Networking, Security, Collaboration, Observabil
   <VizPanel
     badge="Exhibit 1b"
     title="Geographic revenue mix, FY2025"
+    source="Company model output"
+    as-of="FY2025"
     subtitle="Americas 59% / EMEA 26% / APJC 14% — the same weights blend the regional equity risk premia in §4."
   >
     <EDonut :items="geoMix" center-value="59%" center-label="Americas" unit="B" :height="320" legend-pos="bottom" />
@@ -195,9 +199,11 @@ Competitors pressure every segment: Arista (AI fabric), Palo Alto and Fortinet (
 <VizPanel
   badge="Exhibit 2"
   title="Revenue trajectories: bull / base / bear, TTM → year 10"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="The bear path embeds the FY2022–24 pull-forward reversal precedent (−20% to −28% product orders, Networking −15.5% YoY); the base case treats AI demand as structural but moderated."
 >
-  <ELine :labels="scenarioLabels" :series="scenarioSeries" y-suffix="B" :height="320" />
+  <ELine :labels="scenarioLabels" :series="scenarioSeries" y-suffix="B" y-name="Revenue ($B)" :height="320" />
 </VizPanel>
 
 ## 3 · Financial analysis
@@ -207,9 +213,11 @@ FY2025 free cash flow was **$13.3B** on **$56.7B** revenue, with capex of only �
 <VizPanel
   badge="Exhibit 3"
   title="Revenue and GAAP operating margin, FY2021–FY2025"
+  source="Company model output"
+  as-of="FY2025"
   subtitle="Non-linear history: supply-chain surge, order reversal, then stabilisation — the reason the forecast is built segment-by-segment rather than trend-extrapolated."
 >
-  <ECombo :labels="trendLabels" :bars="trendBars" :line="trendLine" :height="320" />
+  <ECombo :labels="trendLabels" :bars="trendBars" :line="trendLine" y-name="Revenue ($B)" y-name-right="Op. margin (%)" :height="320" />
 </VizPanel>
 
 ## 4 · Capital structure and WACC
@@ -225,9 +233,11 @@ Every component is built bottom-up, no defaults:
 <VizPanel
   badge="Cost of capital"
   title="WACC build: Ke 9.24% × 94.2% + after-tax Kd 3.78% × 5.8%"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="Equity weight ~94% means WACC ≈ cost of equity. Result: 8.93%."
 >
-  <EBar :items="wacc" unit="%" :max="10" />
+  <EBar :items="wacc" unit="%" :max="10" x-name="Weighted cost (%)" />
 </VizPanel>
 
 ## 5 · Growth forecast and assumptions
@@ -239,9 +249,11 @@ Discipline choices that drive the answer: **R&D capitalised** over a 3-year amor
 <VizPanel
   badge="Forecast"
   title="Base-case revenue and FCFF path, all ten years"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="Revenue $60.7B TTM → $97.9B year 10; FCFF $12.7B → $17.6B."
 >
-  <ELine :labels="scenarioLabels" :series="pathSeries" y-suffix="B" :height="300" />
+  <ELine :labels="scenarioLabels" :series="pathSeries" y-suffix="B" y-name="Revenue & FCFF ($B)" :height="300" />
 </VizPanel>
 
 ## 6 · Intrinsic valuation — DCF
@@ -262,9 +274,11 @@ The EV→equity bridge uses the **Q3-FY2026 Form 10-Q** balance sheet (quarter e
 <VizPanel
   badge="Football field"
   title="Triangulation: DCF, multiples, and 52-week range vs market"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="Market $120.16 sits ~$61 above the bull DCF and at the top of its own 52-week range. Only the multiples band reaches the price — and §7 shows why it misleads."
 >
-  <EFootball :ranges="ranges" :market="120.16" market-label="Mkt" unit="$" />
+  <EFootball :ranges="ranges" :market="120.16" market-label="Mkt" unit="$" x-name="Value per share ($)" />
 </VizPanel>
 
 ## 7 · Relative valuation — multiples
@@ -291,9 +305,11 @@ Naive peer medians imply **≈$123 (EV/EBITDA)** to **≈$185 (P/E)** per share 
 <VizPanel
   badge="Exhibit 4"
   title="Cisco vs peer-median vs regression-predicted multiples"
+  source="Bloomberg equity/ESG"
+  as-of="28 May 2026"
   subtitle="Forward (NTM) basis for Cisco and peer median; trailing basis for the Damodaran regression cross-check — matching Table 4 of the report."
 >
-  <EGroupBar :categories="multipleCategories" :series="multipleSeries" unit="×" :height="320" />
+  <EGroupBar :categories="multipleCategories" :series="multipleSeries" unit="×" y-name="Multiple (×)" :height="320" />
 </VizPanel>
 
 ## 8 · Synthesis, sensitivity, and reverse DCF
@@ -303,6 +319,8 @@ No credible parameter change bridges the gap: across WACC **8.2–9.7%** and ter
 <VizPanel
   badge="Exhibit 5"
   title="Sensitivity: intrinsic value per share, WACC × terminal growth"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="The exact 5×5 grid from the model. Outlined cell = base case ($48.56 at WACC 8.93%, g 4.10%). Even the most generous corner stays $41 below the market."
 >
   <EHeatmap
@@ -311,8 +329,8 @@ No credible parameter change bridges the gap: across WACC **8.2–9.7%** and ter
     :values="sensValues"
     :base-cell="['8.93%', '4.10%']"
     unit="$"
-    x-name="Terminal growth g"
-    y-name="WACC"
+    x-name="Terminal growth (%)"
+    y-name="WACC (%)"
     :height="340"
   />
 </VizPanel>
@@ -321,16 +339,20 @@ No credible parameter change bridges the gap: across WACC **8.2–9.7%** and ter
   <VizPanel
     badge="Exhibit 6a"
     title="Implied growth vs base-case CAGR"
+    source="Company model output"
+    as-of="28 May 2026"
     subtitle="The market prices 17.8% constant revenue growth vs the 4.9% base path."
   >
-    <EBar :items="impliedGrowth" :horizontal="false" unit="%" :height="260" />
+    <EBar :items="impliedGrowth" :horizontal="false" unit="%" y-name="Growth rate (%)" :height="260" />
   </VizPanel>
   <VizPanel
     badge="Exhibit 6b"
     title="Implied WACC vs bottom-up WACC"
+    source="Company model output"
+    as-of="28 May 2026"
     subtitle="Alternatively: a 5.79% discount rate, 314bp below the bottom-up 8.93%."
   >
-    <EBar :items="impliedWacc" :horizontal="false" unit="%" :height="260" />
+    <EBar :items="impliedWacc" :horizontal="false" unit="%" y-name="WACC (%)" :height="260" />
   </VizPanel>
 </VizGrid>
 
@@ -341,6 +363,8 @@ Scenarios weighted **base 45% / bull 30% / bear 25%** give a probability-weighte
 <VizPanel
   badge="Exhibit 7"
   title="Monte Carlo intrinsic-value distribution, 50,000 trials"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="The model's actual histogram: median $48.74, mean $49.63, P5–P95 band $36.01–$66.44. The entire distribution sits below the $120.16 market price."
 >
   <EHistogram
@@ -349,6 +373,8 @@ Scenarios weighted **base 45% / bull 30% / bear 25%** give a probability-weighte
     :markers="mcMarkers"
     :band="[36.01, 66.44]"
     unit="$"
+    x-name="Value per share ($)"
+    y-name="Trials (count)"
     :height="320"
   />
 </VizPanel>
@@ -356,9 +382,11 @@ Scenarios weighted **base 45% / bull 30% / bear 25%** give a probability-weighte
 <VizPanel
   badge="Exhibit 8"
   title="Scenario-weighted value bridge"
+  source="Company model output"
+  as-of="28 May 2026"
   subtitle="Probability-weighted contributions to the $48.46 weighted intrinsic value."
 >
-  <EBar :items="bridge" unit="" :height="240" series-name="$/share" />
+  <EBar :items="bridge" unit="" :height="240" series-name="$/share" x-name="Contribution ($/sh)" />
 </VizPanel>
 
 ## 9 · Conclusion
