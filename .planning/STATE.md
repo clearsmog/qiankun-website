@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: executing
-stopped_at: Completed 04-09-PLAN.md
-last_updated: "2026-08-06T14:45:58.100Z"
+stopped_at: Completed 04-10-PLAN.md — Phase 4 complete (10/10)
+last_updated: "2026-08-06T14:56:58.443Z"
 last_activity: 2026-08-06
-last_activity_desc: Completed 04-05 (projects index card consolidation and outcome-first copy)
+last_activity_desc: Completed 04-10 (Writing index + cross-page sweep) — Phase 4 complete 10/10
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 20
-  completed_plans: 16
+  completed_plans: 17
 ---
 
 # Project State
@@ -27,9 +27,9 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 
 ## Current Position
 
-Phase: 4 (Position & Design) — EXECUTING
-Plan: 9 of 10
-Status: Ready to execute
+Phase: 4 (Position & Design) — COMPLETE (10/10 plans executed)
+Plan: 10 of 10
+Status: Phase 4 execution complete — visual-sweep halves on the windows ledger for Phase 5
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
 exactly two files (`theme/tokens.js` for Node, `theme/custom.css` for the browser), kept honest by
@@ -41,9 +41,9 @@ Phase 2 (Content Deletion & Redirects) is complete, with two `verification: back
 to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
 plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
-Last activity: 2026-08-06 — Completed 04-05 (projects index card consolidation and outcome-first copy)
+Last activity: 2026-08-06 — Completed 04-10 (Writing index + cross-page sweep) — Phase 4 complete 10/10
 
-Progress: [████████░░] 80%
+Progress: [█████████░] 85%
 
 ## Performance Metrics
 
@@ -84,6 +84,7 @@ Progress: [████████░░] 80%
 | Phase 04 P07 | 16min | 3 tasks | 2 files |
 | Phase 04 P08 | 14min | 2 tasks | 2 files |
 | Phase 04 P09 | 12min | 2 tasks | 2 files |
+| Phase 04 P10 | 25min | 3 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -121,6 +122,8 @@ Recent decisions affecting current work:
 - [Phase ?]: 04-08: Board Diversity H1 changed to canonical 'Board Gender Diversity and Corporate ESG'; regression exhibits stamped Refinitiv with the panel window '2012–2024 panel' as as-of
 - [Phase ?]: 04-09: UK Finance Pay relabelled honestly — illustrative framing in lead + meta description before any claim, Views/panel-count tile deleted, hedging subtitles byte-identical; hand-set series values untouched
 - [Phase ?]: 04-09: WQ leads with the externally judged Gold credential before the pipeline; both pages' greys (3qRa0A96, Whole economy, Actuaries, Rest of UK finance) take 'muted'/t.text3; erosion tile takes var(--color-negative)
+- [Phase ?]: 04-10: Writing index framed with one intro sentence (remnant-feed failure mode (c) held); cross-page sweep clean in code — visual halves on windows ledger for Phase 5
+- [Phase ?]: 04-10: EXH-03 merged table shows zero cross-page disagreements; POS-02 blind read (fresh claude -p, isolated hero) returned all three facts — recorded as proxy for the human 5-second test
 
 ### Pending Todos
 
@@ -184,6 +187,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-08-06T14:45:58.090Z
-Stopped at: Completed 04-09-PLAN.md
+Last session: 2026-08-06T14:56:58.433Z
+Stopped at: Completed 04-10-PLAN.md — Phase 4 complete (10/10)
 Resume file: None

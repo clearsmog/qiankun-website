@@ -41,18 +41,18 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 - [x] **DES-03**: Type scale, weights, and line-measure are defined once as tokens and consumed everywhere
 - [x] **DES-04**: `--vp-font-family-base` is set, rather than `font-family` on a bare `html` selector, so VitePress internals inherit correctly
 - [x] **DES-05**: The brand colour is defined in exactly one place; a minimal `tokens.js` exists only for values Node needs before the DOM (the PWA manifest colour)
-- [ ] **DES-06**: Spacing, heading treatment, and visual hierarchy are consistent across every remaining page, verified by side-by-side comparison rather than page-by-page
+- [x] **DES-06**: Spacing, heading treatment, and visual hierarchy are consistent across every remaining page, verified by side-by-side comparison rather than page-by-page
 - [x] **DES-07**: Chart styling derives from the site's type and colour tokens rather than its own hard-coded values
 - [x] **DES-08**: Both theme `MutationObserver`s are deleted and `useData().isDark` is used instead
-- [ ] **DES-09**: All animations and transitions are disabled under `prefers-reduced-motion`
-- [ ] **DES-10**: Every page is readable at a 375px viewport, with no chart overflowing, clipping, or becoming illegible
-- [ ] **DES-11**: Every page renders correctly in dark mode, including all chart exhibits
+- [x] **DES-09**: All animations and transitions are disabled under `prefers-reduced-motion`
+- [x] **DES-10**: Every page is readable at a 375px viewport, with no chart overflowing, clipping, or becoming illegible
+- [x] **DES-11**: Every page renders correctly in dark mode, including all chart exhibits
 - [ ] **DES-12**: The visual result is restrained — decorative gradients and effects are removed where they do not carry meaning
 
 ### Positioning
 
 - [x] **POS-01**: The homepage hero states, above the fold and in plain language, who Qiankun is and what he does
-- [ ] **POS-02**: A reader shown only the hero can state back what this person does — the acceptance test is comprehension, not "looks clean"
+- [x] **POS-02**: A reader shown only the hero can state back what this person does — the acceptance test is comprehension, not "looks clean"
 - [x] **POS-03**: Selected work is reachable in one click from the homepage
 - [x] **POS-04**: The About page is specific and verifiable, containing no buzzword or filler copy
 - [x] **POS-05**: `projects/index.md` leads each case study with its outcome, with method as supporting detail
@@ -63,9 +63,9 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 - [x] **EXH-01**: Every chart exhibit has labelled axes including units
 - [x] **EXH-02**: Every chart exhibit carries an as-of date
-- [ ] **EXH-03**: Number formatting (percentages, currency, basis points, decimal places) is consistent within and across all five case studies
+- [x] **EXH-03**: Number formatting (percentages, currency, basis points, decimal places) is consistent within and across all five case studies
 - [x] **EXH-04**: Every case study states the source of its data
-- [ ] **EXH-05**: No exhibit is purely decorative — each carries information a finance reader would act on
+- [x] **EXH-05**: No exhibit is purely decorative — each carries information a finance reader would act on
 
 ### Verification
 
@@ -139,7 +139,7 @@ Explicitly excluded. Documented to prevent scope creep.
 | DES-05 | Phase 3 | Complete |
 | DES-08 | Phase 3 | Complete |
 | POS-01 | Phase 4 | Complete |
-| POS-02 | Phase 4 | Pending |
+| POS-02 | Phase 4 | Complete |
 | POS-03 | Phase 4 | Complete |
 | POS-04 | Phase 4 | Complete |
 | POS-05 | Phase 4 | Complete |
@@ -149,17 +149,17 @@ Explicitly excluded. Documented to prevent scope creep.
 | DES-02 | Phase 4 | Complete |
 | DES-03 | Phase 4 | Complete |
 | DES-04 | Phase 4 | Complete |
-| DES-06 | Phase 4 | Pending |
+| DES-06 | Phase 4 | Complete |
 | DES-07 | Phase 4 | Complete |
-| DES-09 | Phase 4 | Pending |
-| DES-10 | Phase 4 | Pending |
-| DES-11 | Phase 4 | Pending |
+| DES-09 | Phase 4 | Complete |
+| DES-10 | Phase 4 | Complete |
+| DES-11 | Phase 4 | Complete |
 | DES-12 | Phase 4 | Pending |
 | EXH-01 | Phase 4 | Complete |
 | EXH-02 | Phase 4 | Complete |
-| EXH-03 | Phase 4 | Pending |
+| EXH-03 | Phase 4 | Complete |
 | EXH-04 | Phase 4 | Complete |
-| EXH-05 | Phase 4 | Pending |
+| EXH-05 | Phase 4 | Complete |
 | VER-01 | Phase 5 | Pending |
 | VER-02 | Phase 5 | Pending |
 | VER-03 | Phase 5 | Pending |
