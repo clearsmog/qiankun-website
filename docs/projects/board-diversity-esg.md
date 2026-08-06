@@ -14,10 +14,10 @@ head:
 
 <script setup>
 const metrics = [
-  { label: 'Firms', value: '2,270', hint: 'US Refinitiv-rated', accent: '#0071e3' },
-  { label: 'Firm-years', value: '18,101', hint: '2012–2024 panel', accent: '#5856d6' },
-  { label: 'E coefficient', value: '+2.13***', hint: 'per 1 SD diversity', accent: '#34c759' },
-  { label: 'S coefficient', value: '+1.08***', hint: 'per 1 SD diversity', accent: '#30d158' },
+  { label: 'Firms', value: '2,270', hint: 'US Refinitiv-rated' },
+  { label: 'Firm-years', value: '18,101', hint: '2012–2024 panel' },
+  { label: 'E coefficient', value: '+2.133***', hint: 'per 1 SD diversity' },
+  { label: 'S coefficient', value: '+1.08***', hint: 'per 1 SD diversity' },
 ]
 
 const forest = [
@@ -28,9 +28,9 @@ const forest = [
 ]
 
 const magnitude = [
-  { label: 'E / mean E', value: 6.8, sub: '2.13 ÷ 31.3', color: '#34c759' },
-  { label: 'S / mean S', value: 2.4, sub: '1.08 ÷ 45.7', color: '#30d158' },
-  { label: 'G / mean G', value: 4.8, sub: 'mechanical inflation check', color: '#ff9500' },
+  { label: 'E / mean E', value: 6.8, sub: '2.133 ÷ 31.3' },
+  { label: 'S / mean S', value: 2.4, sub: '1.08 ÷ 45.7' },
+  { label: 'G / mean G', value: 4.8, sub: 'mechanical inflation check' },
 ]
 
 const steps = [
@@ -41,11 +41,11 @@ const steps = [
 ]
 </script>
 
-# Do Women Directors Move ESG?
+# Board Gender Diversity and Corporate ESG
 
-University of Edinburgh · Shareholder Value and ESG (CMSE11621) · July 2026
+University of Edinburgh · Shareholder Value and ESG · July 2026
 
-Does greater female board representation improve **environmental and social** performance? Panel FE plus a California SB 826 quasi-experiment — with a deliberate measurement design that separates real E/S response from mechanical governance inflation.
+Across 2,270 US firms and 18,101 firm-years, greater board gender diversity is robustly associated with higher environmental and social (E&S) performance — but a California-law natural experiment finds no evidence the relationship is causal. The panel uses firm and year fixed effects (statistical controls that strip out anything constant within a firm or a year, isolating the year-to-year relationship) with clustered standard errors to isolate the association, then tests causality with a lead-lag design, propensity-score matching, and California SB 826's board-diversity mandate as a quasi-experiment.
 
 ## Snapshot
 
@@ -56,9 +56,11 @@ Does greater female board representation improve **environmental and social** pe
 <VizPanel
   badge="Firm + year FE · N = 18,101"
   title="Effect of lagged board gender diversity (1 SD)"
-  subtitle="Green points are primary outcomes (E, S). Orange points show composite and governance — largest G coefficient is the mechanical-inflation check."
+  subtitle="E and S rise 2.133 and 1.08 points per 1 SD of diversity — the real outcomes; the still-larger G coefficient flags mechanical inflation, not signal."
+  source="Refinitiv"
+  as-of="2012–2024 panel"
 >
-  <EForest :items="forest" />
+  <EForest :items="forest" x-name="Effect (ESG pts / SD)" />
 </VizPanel>
 
 ## Economic magnitude
@@ -67,8 +69,10 @@ Does greater female board representation improve **environmental and social** pe
   badge="Scale"
   title="Coefficient as % of pillar mean"
   subtitle="E moves more relative to its mean than S; G is shown only for measurement context."
+  source="Refinitiv"
+  as-of="2012–2024 panel"
 >
-  <EBar :items="magnitude" unit="%" :max="8" />
+  <EBar :items="magnitude" unit="%" :max="8" x-name="% of pillar mean" />
 </VizPanel>
 
 ## Hypotheses
