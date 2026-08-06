@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: executing
-stopped_at: Completed 04-08-PLAN.md
-last_updated: "2026-08-06T14:35:12.956Z"
+stopped_at: Completed 04-09-PLAN.md
+last_updated: "2026-08-06T14:45:58.100Z"
 last_activity: 2026-08-06
 last_activity_desc: Completed 04-05 (projects index card consolidation and outcome-first copy)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 20
-  completed_plans: 15
+  completed_plans: 16
 ---
 
 # Project State
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 ## Current Position
 
 Phase: 4 (Position & Design) — EXECUTING
-Plan: 8 of 10
+Plan: 9 of 10
 Status: Ready to execute
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
@@ -43,7 +43,7 @@ plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
 Last activity: 2026-08-06 — Completed 04-05 (projects index card consolidation and outcome-first copy)
 
-Progress: [████████░░] 75%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -83,6 +83,7 @@ Progress: [████████░░] 75%
 | Phase 04-position-design P06 | 12min | 3 tasks | 10 files |
 | Phase 04 P07 | 16min | 3 tasks | 2 files |
 | Phase 04 P08 | 14min | 2 tasks | 2 files |
+| Phase 04 P09 | 12min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -118,6 +119,8 @@ Recent decisions affecting current work:
 - [Phase ?]: 04-07: bridge weighted-intrinsic bar takes 'muted-strong' to avoid palette collision with bull's positive green; 52-week range keeps grey via 'muted'
 - [Phase ?]: 04-08: all four VaR/CVaR bars take 'negative' uniformly — the old red-amber-green was decorative; a lower Historical VaR estimate is not a favourable finding
 - [Phase ?]: 04-08: Board Diversity H1 changed to canonical 'Board Gender Diversity and Corporate ESG'; regression exhibits stamped Refinitiv with the panel window '2012–2024 panel' as as-of
+- [Phase ?]: 04-09: UK Finance Pay relabelled honestly — illustrative framing in lead + meta description before any claim, Views/panel-count tile deleted, hedging subtitles byte-identical; hand-set series values untouched
+- [Phase ?]: 04-09: WQ leads with the externally judged Gold credential before the pipeline; both pages' greys (3qRa0A96, Whole economy, Actuaries, Rest of UK finance) take 'muted'/t.text3; erosion tile takes var(--color-negative)
 
 ### Pending Todos
 
@@ -181,6 +184,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-08-06T14:35:12.945Z
-Stopped at: Completed 04-08-PLAN.md
+Last session: 2026-08-06T14:45:58.090Z
+Stopped at: Completed 04-09-PLAN.md
 Resume file: None
