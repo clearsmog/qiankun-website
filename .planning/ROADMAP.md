@@ -109,7 +109,7 @@ Plans:
   5. The typeface is self-hosted as variable WOFF2 with no third-party font request remaining; it loads with `preload` and `font-display: swap` producing no visible layout shift; `--vp-font-family-base` is set (not `font-family` on a bare `html` selector); and type scale, weights, and line-measure are defined once as tokens and consumed everywhere.
   6. Checked side-by-side across every remaining page, at a genuinely narrow (375px) viewport, and in dark mode: spacing, heading treatment, and hierarchy are consistent; chart styling derives from the site's type and colour tokens; no decorative gradient or effect survives without carrying meaning; and no animation or transition plays when `prefers-reduced-motion` is set.
 
-**Plans**: 4/10 plans executed
+**Plans**: 6/10 plans executed
 
 Plans:
 
@@ -117,8 +117,8 @@ Plans:
 - [x] 04-02-PLAN.md — Token foundation in custom.css: type, spacing, weight, semantic colour, reduced-motion
 - [x] 04-03-PLAN.md — Positioning copy: hero, feature trio, About, Contact, site metadata, OG PNG
 - [x] 04-04-PLAN.md — Exhibit chrome: VizPanel provenance props, chart theme slots, dead-component removal
-- [ ] 04-05-PLAN.md — Projects index: card unification into custom.css, locked order, outcome-first blurbs
-- [ ] 04-06-PLAN.md — Ten chart components: axis titles, reduced-motion gating, semantic colour resolution
+- [x] 04-05-PLAN.md — Projects index: card unification into custom.css, locked order, outcome-first blurbs
+- [x] 04-06-PLAN.md — Ten chart components: axis titles, reduced-motion gating, semantic colour resolution
 - [ ] 04-07-PLAN.md — Cisco case study: lead, 13 exhibits, colour removal, number audit
 - [ ] 04-08-PLAN.md — Global Equity + Board Diversity case studies
 - [ ] 04-09-PLAN.md — WorldQuant BRAIN + UK Finance Pay case studies (incl. honest relabel)
@@ -151,5 +151,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Technical Foundations | 1/4 | In Progress|  |
 | 2. Content Deletion & Redirects | 3/3 | In Progress|  |
 | 3. Design Token Consolidation | 3/3 | Complete    | 2026-07-27 |
-| 4. Position & Design | 4/10 | In Progress|  |
+| 4. Position & Design | 6/10 | In Progress|  |
 | 5. Final Cross-Cutting Audit | 0/TBD | Not started | - |

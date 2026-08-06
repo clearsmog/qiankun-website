@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: executing
-stopped_at: Completed 04-05-PLAN.md
-last_updated: "2026-08-06T13:58:00.000Z"
+stopped_at: Completed 04-06-PLAN.md
+last_updated: "2026-08-06T14:10:18.939Z"
 last_activity: 2026-08-06
 last_activity_desc: Completed 04-05 (projects index card consolidation and outcome-first copy)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 20
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 ## Current Position
 
 Phase: 4 (Position & Design) — EXECUTING
-Plan: 5 of 10
+Plan: 6 of 10
 Status: Ready to execute
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
@@ -43,7 +43,7 @@ plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
 Last activity: 2026-08-06 — Completed 04-05 (projects index card consolidation and outcome-first copy)
 
-Progress: [██████░░░░] 60%
+Progress: [███████░░░] 65%
 
 ## Performance Metrics
 
@@ -80,6 +80,7 @@ Progress: [██████░░░░] 60%
 | Phase 04 P03 | 12min | 3 tasks | 7 files |
 | Phase 04 P04 | 8 min | 3 tasks | 8 files |
 | Phase 04 P05 | 8min | 2 tasks | 2 files |
+| Phase 04-position-design P06 | 12min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -109,6 +110,8 @@ Recent decisions affecting current work:
 - [Phase ?]: 04-04: chart.js dependency has zero source consumers after ProjectChart.vue deletion but stays in package.json — uninstall deferred to a later housekeeping plan
 - [Phase ?]: 04-05: project-card styling consolidated into custom.css (radius onto --radius-card, 260px grid floor); Cisco tail style block deliberately left page-local per PATTERNS trap note
 - [Phase ?]: 04-05: VaR gloss and FCFF expansion written into the index card blurbs, reconciling UI-SPEC's card-copy table with its gloss table per the plan's acceptance gates; literal-scan gate applied by intent (sole match is the untokenizable @font-face weight-range descriptor, pre-existing)
+- [Phase ?]: 04-06: semantic chart-colour names fixed as literal strings 'negative'/'positive'/'muted'/'muted-strong' — muted names are read-only aliases of text3/text2, not new themeTokens() slots
+- [Phase ?]: 04-06: EScorePath medal colours and EHeatmap ramp deliberately kept as hex literals (domain colours, no tokens); EScorePath gained axis-title props as a gap-fill UI-SPEC's table omitted
 
 ### Pending Todos
 
@@ -172,6 +175,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-08-06T13:58:00.000Z
-Stopped at: Completed 04-05-PLAN.md
+Last session: 2026-08-06T14:10:18.930Z
+Stopped at: Completed 04-06-PLAN.md
 Resume file: None
