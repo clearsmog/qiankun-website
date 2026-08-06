@@ -256,13 +256,6 @@ export default defineConfig({
       provider: "local",
     },
 
-    // Edit link - update with your GitHub username
-    editLink: {
-      pattern:
-        "https://github.com/KennyZhu/qiankun-website/edit/main/docs/:path",
-      text: "Edit this page on GitHub",
-    },
-
     // Last updated
     lastUpdated: true,
     lastUpdatedText: "Last updated",
