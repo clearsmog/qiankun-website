@@ -14,10 +14,10 @@ head:
 
 <script setup>
 const metrics = [
-  { label: 'AUM', value: '£10M', hint: 'Long-only global equity', accent: '#0071e3' },
-  { label: 'Holdings', value: '~29', hint: '9 sectors · 14+ countries', accent: '#5856d6' },
-  { label: 'Model TE', value: '6.8%', hint: 'Process cap 8%', accent: '#ff9500' },
-  { label: 'Max name', value: '7%', hint: 'Sector cap 35%', accent: '#34c759' },
+  { label: 'AUM', value: '£10M', hint: 'Long-only global equity' },
+  { label: 'Holdings', value: '~29', hint: '9 sectors · 14+ countries' },
+  { label: 'Model TE', value: '6.8%', hint: 'Process cap 8%' },
+  { label: 'Max name', value: '7%', hint: 'Sector cap 35%' },
 ]
 
 const factors = [
@@ -45,17 +45,17 @@ const sectors = [
 ]
 
 const teParts = [
-  { label: 'Idiosyncratic', value: 54.6, color: '#0071e3' },
-  { label: 'Style', value: 30.2, color: '#5856d6' },
-  { label: 'Industry', value: 11.5, color: '#af52de' },
-  { label: 'Market', value: 3.7, color: '#86868b' },
+  { label: 'Idiosyncratic', value: 54.6 },
+  { label: 'Style', value: 30.2 },
+  { label: 'Industry', value: 11.5 },
+  { label: 'Market', value: 3.7, color: 'muted' },
 ]
 
 const varItems = [
-  { label: 'Parametric VaR', value: 10.2, sub: '95% · 1-month', color: '#ff3b30' },
-  { label: 'Cornish–Fisher VaR', value: 10.4, sub: 'skew/kurt adjust', color: '#ff9500' },
-  { label: 'Historical VaR', value: 5.4, sub: 'sample path', color: '#34c759' },
-  { label: 'Parametric CVaR', value: 12.8, sub: 'tail expectation', color: '#ff2d55' },
+  { label: 'Parametric VaR', value: 10.2, sub: '95% · 1-month', color: 'negative' },
+  { label: 'Cornish–Fisher VaR', value: 10.4, sub: 'skew/kurt adjust', color: 'negative' },
+  { label: 'Historical VaR', value: 5.4, sub: 'sample path', color: 'negative' },
+  { label: 'Parametric CVaR', value: 12.8, sub: 'tail expectation', color: 'negative' },
 ]
 
 const steps = [
@@ -71,7 +71,7 @@ const steps = [
 
 University of Edinburgh · Investment Management · March 2026
 
-End-to-end design of a **GBP 10 million long-only global equity fund**: multi-factor selection, constrained optimisation, ESG integration, and institutional risk reporting.
+This project builds and risk-manages a GBP 10 million long-only global equity portfolio benchmarked against the MSCI World, reporting institutional-grade risk across four separate Value-at-Risk (VaR — the largest loss expected over a set period, at a given confidence level) methodologies. The portfolio is built from a multi-factor stock-selection model, a constrained optimizer that balances return against risk and sector limits, and a Bloomberg-sourced ESG floor applied to every holding.
 
 ## Snapshot
 
@@ -93,17 +93,31 @@ End-to-end design of a **GBP 10 million long-only global equity fund**: multi-fa
   badge="Security selection"
   title="DM composite factor weights"
   subtitle="Quality and momentum lead; valuation and growth balance the book; secondary tilts include efficiency, conviction, short interest, and dividend."
+  source="Company model output"
+  as-of="March 2026"
 >
-  <EBar :items="factors" unit="%" :max="20" />
+  <EBar :items="factors" unit="%" :max="20" x-name="Factor weight (%)" />
 </VizPanel>
 
 ## Portfolio structure
 
 <VizGrid :cols="2">
-  <VizPanel badge="Allocation" title="Sector weights" subtitle="Active IT sleeve with industrials and financials diversification.">
+  <VizPanel
+    badge="Allocation"
+    title="Sector weights"
+    subtitle="Active IT sleeve with industrials and financials diversification."
+    source="Company model output"
+    as-of="March 2026"
+  >
     <EDonut :items="sectors" center-value="9" center-label="Sectors" unit="%" />
   </VizPanel>
-  <VizPanel badge="Active risk" title="Tracking-error decomposition" subtitle="Idiosyncratic + style dominate; market contribution kept small.">
+  <VizPanel
+    badge="Active risk"
+    title="Tracking-error decomposition"
+    subtitle="Idiosyncratic + style dominate; market contribution kept small."
+    source="Company model output"
+    as-of="March 2026"
+  >
     <EDonut :items="teParts" center-value="6.8%" center-label="Model TE" unit="%" />
   </VizPanel>
 </VizGrid>
@@ -125,8 +139,10 @@ End-to-end design of a **GBP 10 million long-only global equity fund**: multi-fa
   badge="Loss estimates"
   title="VaR / CVaR at 95% (1-month, % of NAV)"
   subtitle="Parametric and Cornish–Fisher sit near ~10% of NAV; historical VaR is lower — both families are reported."
+  source="Bloomberg equity/ESG"
+  as-of="March 2026"
 >
-  <EBar :items="varItems" unit="%" :max="14" />
+  <EBar :items="varItems" unit="%" :max="14" x-name="Loss (% of NAV)" />
 </VizPanel>
 
 ## Stack
