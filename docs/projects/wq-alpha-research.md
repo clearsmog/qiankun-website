@@ -14,10 +14,10 @@ head:
 
 <script setup>
 const metrics = [
-  { label: 'Challenge', value: 'Gold', hint: 'WorldQuant certificate', accent: '#e6b422' },
-  { label: 'Peak score', value: '9,932', hint: 'from 2,000 Bronze', accent: '#0071e3' },
-  { label: 'ACTIVE book', value: '10', hint: 'IS alphas live', accent: '#34c759' },
-  { label: 'Best Sharpe', value: '2.91', hint: 'OI/equity + est. EPS', accent: '#af52de' },
+  { label: 'Challenge', value: 'Gold', hint: 'WorldQuant certificate' },
+  { label: 'Peak score', value: '9,932', hint: 'from 2,000 Bronze' },
+  { label: 'ACTIVE book', value: '10', hint: 'IS alphas live' },
+  { label: 'Best Sharpe', value: '2.91', hint: 'OI/equity + est. EPS' },
 ]
 
 const scorePoints = [
@@ -28,29 +28,29 @@ const scorePoints = [
 ]
 
 const sharpeBars = [
-  { label: 'ZYnG1pV1', value: 2.91, sub: 'OI + est. EPS · TOP3000', color: '#0071e3' },
-  { label: 'blq3YEkR', value: 2.53, sub: 'OI + 5d reverse', color: '#5856d6' },
-  { label: 'N1roXeEL', value: 2.28, sub: 'OI + PCR options', color: '#af52de' },
-  { label: 'd50w58jK', value: 2.2, sub: 'FCF + reverse · diversifier', color: '#34c759' },
-  { label: 'd50Lv3Zv', value: 2.01, sub: 'Pure OI/equity', color: '#5ac8fa' },
-  { label: 'mLbXoLmE', value: 1.85, sub: 'OI + EPS · TOP500', color: '#64d2ff' },
-  { label: 'N1rONo0L', value: 1.69, sub: 'Pure est. EPS · TOP2000', color: '#ff9500' },
-  { label: 'akn233gw', value: 1.69, sub: 'OI + guidance · TOP1000', color: '#ff9f0a' },
-  { label: 'RR80pQnn', value: 1.64, sub: 'PCR + reverse', color: '#ff2d55' },
-  { label: '3qRa0A96', value: 1.41, sub: 'Multi-leg composite', color: '#86868b' },
+  { label: 'ZYnG1pV1', value: 2.91, sub: 'OI + est. EPS · TOP3000' },
+  { label: 'blq3YEkR', value: 2.53, sub: 'OI + 5d reverse' },
+  { label: 'N1roXeEL', value: 2.28, sub: 'OI + PCR options' },
+  { label: 'd50w58jK', value: 2.2, sub: 'FCF + reverse · diversifier' },
+  { label: 'd50Lv3Zv', value: 2.01, sub: 'Pure OI/equity' },
+  { label: 'mLbXoLmE', value: 1.85, sub: 'OI + EPS · TOP500' },
+  { label: 'N1rONo0L', value: 1.69, sub: 'Pure est. EPS · TOP2000' },
+  { label: 'akn233gw', value: 1.69, sub: 'OI + guidance · TOP1000' },
+  { label: 'RR80pQnn', value: 1.64, sub: 'PCR + reverse' },
+  { label: '3qRa0A96', value: 1.41, sub: 'Multi-leg composite', color: 'muted' },
 ]
 
 const fitnessBars = [
-  { label: 'ZYnG1pV1', value: 2.18, color: '#0071e3' },
-  { label: 'blq3YEkR', value: 1.81, color: '#5856d6' },
-  { label: 'd50w58jK', value: 1.69, color: '#34c759' },
-  { label: 'N1roXeEL', value: 1.65, color: '#af52de' },
-  { label: 'N1rONo0L', value: 1.44, color: '#ff9500' },
-  { label: 'd50Lv3Zv', value: 1.32, color: '#5ac8fa' },
-  { label: 'mLbXoLmE', value: 1.17, color: '#64d2ff' },
-  { label: 'RR80pQnn', value: 1.14, color: '#ff2d55' },
-  { label: 'akn233gw', value: 1.1, color: '#ff9f0a' },
-  { label: '3qRa0A96', value: 1.01, color: '#86868b' },
+  { label: 'ZYnG1pV1', value: 2.18 },
+  { label: 'blq3YEkR', value: 1.81 },
+  { label: 'd50w58jK', value: 1.69 },
+  { label: 'N1roXeEL', value: 1.65 },
+  { label: 'N1rONo0L', value: 1.44 },
+  { label: 'd50Lv3Zv', value: 1.32 },
+  { label: 'mLbXoLmE', value: 1.17 },
+  { label: 'RR80pQnn', value: 1.14 },
+  { label: 'akn233gw', value: 1.1 },
+  { label: '3qRa0A96', value: 1.01, color: 'muted' },
 ]
 
 const themes = [
@@ -73,7 +73,7 @@ const steps = [
 
 Independent systematic equity research · WorldQuant BRAIN Challenge · 2026
 
-Mining pipeline on BRAIN: simulate → quality gates → **daily-return correlation** → submit. Account path **Bronze → Silver → Gold** with a diversified **ACTIVE** book across quality, analyst, cash-flow, options, and multi-universe sleeves.
+This project reached Gold tier in the WorldQuant BRAIN Challenge — an independently verifiable, externally judged systematic-alpha competition — building a ten-strategy ACTIVE book with a best Sharpe ratio (a strategy's return per unit of risk taken) of 2.91. Each alpha is produced by a repeatable mining pipeline: generate a candidate signal from a 4,300-field universe, pass it through quality gates (Sharpe, fitness, turnover, drawdown, concentration), reject anything too similar to an existing strategy, then submit for ACTIVE status.
 
 ![WorldQuant Challenge Gold Certificate](/projects/wq-alpha-research/gold-certificate-pdf.png)
 
@@ -85,18 +85,20 @@ Mining pipeline on BRAIN: simulate → quality gates → **daily-return correlat
   badge="Score journey"
   title="Challenge score: Bronze → Silver → Gold track"
   subtitle="Platform snapshots. Rank improved from ~25.8k to ~18.9k as scored alphas and ACTIVE count rose."
+  source="WorldQuant BRAIN platform"
+  as-of="July 2026"
 >
-  <EScorePath :points="scorePoints" />
+  <EScorePath :points="scorePoints" x-name="Snapshot date (2026)" y-name="Challenge score (pts)" />
 </VizPanel>
 
 ## ACTIVE book performance
 
 <VizGrid :cols="2">
-  <VizPanel badge="IS Sharpe" title="ACTIVE alphas ranked by Sharpe" subtitle="Hover bars for theme. Best: quality + analyst blend at 2.91.">
-    <EBar :items="sharpeBars" :max="3.2" />
+  <VizPanel badge="IS Sharpe" title="ACTIVE alphas ranked by Sharpe" subtitle="Hover bars for theme. Best: quality + analyst blend at 2.91." source="WorldQuant BRAIN platform" as-of="July 2026">
+    <EBar :items="sharpeBars" :max="3.2" x-name="Sharpe ratio (IS)" />
   </VizPanel>
-  <VizPanel badge="Fitness" title="Turnover-adjusted quality (Fitness)" subtitle="Fitness rewards return strength without excessive turnover.">
-    <EBar :items="fitnessBars" :max="2.4" />
+  <VizPanel badge="Fitness" title="Turnover-adjusted quality (Fitness)" subtitle="The top Sharpe alphas hold their lead once turnover is penalised — returns aren't bought with churn." source="WorldQuant BRAIN platform" as-of="July 2026">
+    <EBar :items="fitnessBars" :max="2.4" x-name="Fitness (IS)" />
   </VizPanel>
 </VizGrid>
 
@@ -104,6 +106,8 @@ Mining pipeline on BRAIN: simulate → quality gates → **daily-return correlat
   badge="Diversification"
   title="Book composition by economic theme"
   subtitle="Not ten clones of the same OI/equity formula — axes chosen to pass self-correlation."
+  source="WorldQuant BRAIN platform"
+  as-of="July 2026"
 >
   <EDonut :items="themes" center-value="10" center-label="ACTIVE" unit="%" />
 </VizPanel>
