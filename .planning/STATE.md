@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: executing
-stopped_at: Completed 04-06-PLAN.md
-last_updated: "2026-08-06T14:10:18.939Z"
+stopped_at: Completed 04-07-PLAN.md
+last_updated: "2026-08-06T14:25:38.968Z"
 last_activity: 2026-08-06
 last_activity_desc: Completed 04-05 (projects index card consolidation and outcome-first copy)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 20
-  completed_plans: 13
+  completed_plans: 14
 ---
 
 # Project State
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 ## Current Position
 
 Phase: 4 (Position & Design) — EXECUTING
-Plan: 6 of 10
+Plan: 7 of 10
 Status: Ready to execute
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
@@ -43,7 +43,7 @@ plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
 Last activity: 2026-08-06 — Completed 04-05 (projects index card consolidation and outcome-first copy)
 
-Progress: [███████░░░] 65%
+Progress: [███████░░░] 70%
 
 ## Performance Metrics
 
@@ -81,6 +81,7 @@ Progress: [███████░░░] 65%
 | Phase 04 P04 | 8 min | 3 tasks | 8 files |
 | Phase 04 P05 | 8min | 2 tasks | 2 files |
 | Phase 04-position-design P06 | 12min | 3 tasks | 10 files |
+| Phase 04 P07 | 16min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -112,6 +113,8 @@ Recent decisions affecting current work:
 - [Phase ?]: 04-05: VaR gloss and FCFF expansion written into the index card blurbs, reconciling UI-SPEC's card-copy table with its gloss table per the plan's acceptance gates; literal-scan gate applied by intent (sole match is the untokenizable @font-face weight-range descriptor, pre-existing)
 - [Phase ?]: 04-06: semantic chart-colour names fixed as literal strings 'negative'/'positive'/'muted'/'muted-strong' — muted names are read-only aliases of text3/text2, not new themeTokens() slots
 - [Phase ?]: 04-06: EScorePath medal colours and EHeatmap ramp deliberately kept as hex literals (domain colours, no tokens); EScorePath gained axis-title props as a gap-fill UI-SPEC's table omitted
+- [Phase ?]: 04-07: ELine gains the same semantic-colour resolution as its seven 04-06 siblings (scenario lines needed 'negative'/'positive')
+- [Phase ?]: 04-07: bridge weighted-intrinsic bar takes 'muted-strong' to avoid palette collision with bull's positive green; 52-week range keeps grey via 'muted'
 
 ### Pending Todos
 
@@ -175,6 +178,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-08-06T14:10:18.930Z
-Stopped at: Completed 04-06-PLAN.md
+Last session: 2026-08-06T14:25:38.959Z
+Stopped at: Completed 04-07-PLAN.md
 Resume file: None
