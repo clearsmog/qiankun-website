@@ -292,6 +292,64 @@ html {
   margin-top: var(--space-2);
 }
 
+/* ==================== Project Cards ==================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  background: var(--vp-c-bg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.project-tag {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+}
+
+.project-title {
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-semibold);
+  color: var(--vp-c-text-1);
+  line-height: var(--line-height-heading);
+}
+
+.project-desc {
+  font-size: var(--font-size-body);
+  color: var(--vp-c-text-2);
+  line-height: var(--line-height-body);
+  flex: 1;
+}
+
+.project-meta {
+  font-size: var(--font-size-caption);
+  color: var(--vp-c-text-3);
+  margin-top: var(--space-1);
+}
+
 /* ==================== Navigation - Frosted Glass ==================== */
 .VPNav {
   background: var(--apple-glass-bg) !important;
