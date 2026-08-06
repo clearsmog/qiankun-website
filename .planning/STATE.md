@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: executing
-stopped_at: Completed 04-04-PLAN.md
-last_updated: "2026-08-06T13:51:20.839Z"
-last_activity: 2026-07-27
-last_activity_desc: Phase 4 execution started
+stopped_at: Completed 04-05-PLAN.md
+last_updated: "2026-08-06T13:58:00.000Z"
+last_activity: 2026-08-06
+last_activity_desc: Completed 04-05 (projects index card consolidation and outcome-first copy)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 20
-  completed_plans: 11
+  completed_plans: 12
 ---
 
 # Project State
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-07-25)
 ## Current Position
 
 Phase: 4 (Position & Design) — EXECUTING
-Plan: 4 of 10
+Plan: 5 of 10
 Status: Ready to execute
 
 Phase 3 (Design Token Consolidation) is complete and verified 6/6 — the brand hex now lives in
@@ -41,9 +41,9 @@ Phase 2 (Content Deletion & Redirects) is complete, with two `verification: back
 to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
 plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
-Last activity: 2026-07-27 — Phase 4 execution started
+Last activity: 2026-08-06 — Completed 04-05 (projects index card consolidation and outcome-first copy)
 
-Progress: [██████░░░░] 55%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
@@ -79,6 +79,7 @@ Progress: [██████░░░░] 55%
 | Phase 04 P01 | 25min | 2 tasks | 4 files |
 | Phase 04 P03 | 12min | 3 tasks | 7 files |
 | Phase 04 P04 | 8 min | 3 tasks | 8 files |
+| Phase 04 P05 | 8min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -106,6 +107,8 @@ Recent decisions affecting current work:
 - [Phase ?]: POS-02/DES-12 left unmarked in REQUIREMENTS despite 04-03 frontmatter listing them — comprehension proxy runs in 04-10, remaining DES-12 surfaces in 04-04/04-05
 - [Phase ?]: 04-04: rounded equidistant 6px gaps up to --space-2 per UI-SPEC usage table; metric-tile radius 16->18 onto --radius-card as minimal extension of card-radius unification
 - [Phase ?]: 04-04: chart.js dependency has zero source consumers after ProjectChart.vue deletion but stays in package.json — uninstall deferred to a later housekeeping plan
+- [Phase ?]: 04-05: project-card styling consolidated into custom.css (radius onto --radius-card, 260px grid floor); Cisco tail style block deliberately left page-local per PATTERNS trap note
+- [Phase ?]: 04-05: VaR gloss and FCFF expansion written into the index card blurbs, reconciling UI-SPEC's card-copy table with its gloss table per the plan's acceptance gates; literal-scan gate applied by intent (sole match is the untokenizable @font-face weight-range descriptor, pre-existing)
 
 ### Pending Todos
 
@@ -169,6 +172,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-08-06T13:51:13.364Z
-Stopped at: Completed 04-04-PLAN.md
+Last session: 2026-08-06T13:58:00.000Z
+Stopped at: Completed 04-05-PLAN.md
 Resume file: None
