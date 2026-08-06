@@ -4,11 +4,11 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
-status: executing
-stopped_at: Completed 04-10-PLAN.md — Phase 4 complete (10/10)
-last_updated: "2026-08-06T14:56:58.443Z"
+status: deployed
+stopped_at: Deployed to production — Phase 4 complete (12/12 incl. extensions), site live at qiankun.co.uk
+last_updated: "2026-08-06T15:35:00.000Z"
 last_activity: 2026-08-06
-last_activity_desc: Completed 04-10 (Writing index + cross-page sweep) — Phase 4 complete 10/10
+last_activity_desc: Pushed 3d0fa5f..de625a0 to origin/main; Cloudflare Pages deploy succeeded; live checks pass (new hero, LNG page, redirects, og-image.png). Extensions beyond original 10 plans — 04-11 addenda sweep, 04-12 LNG SPA case study (user-approved scope override; compliance rules in 04-12-SUMMARY.md), editLink removal, real social handles (clearsmog / kenny0908). Remaining user-gated items — 01-01 disable Amplify auto-build (AWS console), 01-03 Cloudflare Web Analytics swap (GA still live). 375px visual sweep deferred (window resize unavailable in session).
 progress:
   total_phases: 4
   completed_phases: 3
