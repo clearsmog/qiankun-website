@@ -28,15 +28,15 @@ defineProps({
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin: 1.25rem 0 1.75rem;
+  gap: var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
 }
 
 .hero-metric {
   position: relative;
   isolation: isolate;
-  padding: 18px 14px 16px;
-  border-radius: 16px;
+  padding: var(--space-3);
+  border-radius: var(--radius-card);
   border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg);
   overflow: hidden;
@@ -56,10 +56,10 @@ defineProps({
 }
 
 .hero-metric__value {
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  font-weight: 800;
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: var(--line-height-heading);
   background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 40%, #fff));
   -webkit-background-clip: text;
   background-clip: text;
@@ -73,19 +73,19 @@ defineProps({
 }
 
 .hero-metric__label {
-  margin-top: 8px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  margin-top: var(--space-2);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--vp-c-text-1);
 }
 
 .hero-metric__hint {
-  margin-top: 4px;
-  font-size: 0.78rem;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-caption);
   color: var(--vp-c-text-3);
-  line-height: 1.35;
+  line-height: var(--line-height-body);
 }
 
 @media (max-width: 900px) {

@@ -14,8 +14,8 @@ defineProps({
 .viz-grid {
   display: grid;
   grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-  gap: 14px;
-  margin: 0 0 0.25rem;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-1);
 }
 
 .viz-grid > :deep(.viz-panel) {

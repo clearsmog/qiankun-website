@@ -3,6 +3,8 @@ defineProps({
   title: { type: String, default: '' },
   subtitle: { type: String, default: '' },
   badge: { type: String, default: '' },
+  source: { type: String, default: '' }, // e.g. "Bloomberg equity/ESG"
+  asOf: { type: String, default: '' }, // e.g. "28 May 2026" — written as as-of="..." in markdown
 })
 </script>
 
@@ -17,6 +19,11 @@ defineProps({
     </header>
     <div class="viz-panel__body">
       <slot />
+      <footer v-if="source || asOf" class="viz-panel__foot">
+        <span v-if="asOf">{{ asOf }}</span>
+        <span v-if="source && asOf"> · </span>
+        <span v-if="source">Source: {{ source }}</span>
+      </footer>
     </div>
   </section>
 </template>
@@ -24,8 +31,8 @@ defineProps({
 <style scoped>
 .viz-panel {
   position: relative;
-  margin: 1.5rem 0 2rem;
-  border-radius: 18px;
+  margin: var(--space-4) 0 var(--space-5);
+  border-radius: var(--radius-card);
   border: 1px solid var(--vp-c-divider);
   background:
     radial-gradient(1200px 400px at 0% 0%, color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent), transparent 55%),
@@ -48,28 +55,28 @@ defineProps({
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--vp-c-brand-1), #af52de 50%, #34c759);
+  background: linear-gradient(90deg, var(--vp-c-brand-1), color-mix(in srgb, var(--vp-c-brand-1) 40%, transparent));
   opacity: 0.9;
 }
 
 .viz-panel__head {
-  padding: 18px 20px 0;
+  padding: var(--space-3) var(--space-3) 0;
 }
 
 .viz-panel__badge {
   display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--vp-c-brand-1);
-  margin-bottom: 6px;
+  margin-bottom: var(--space-2);
 }
 
 .viz-panel__title {
   margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.02em;
   color: var(--vp-c-text-1);
   border: none;
@@ -81,14 +88,22 @@ defineProps({
 }
 
 .viz-panel__sub {
-  margin: 6px 0 0;
-  font-size: 0.86rem;
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-caption);
   color: var(--vp-c-text-2);
-  line-height: 1.45;
+  line-height: var(--line-height-body);
   max-width: 52rem;
 }
 
 .viz-panel__body {
-  padding: 14px 16px 18px;
+  padding: var(--space-3);
+}
+
+.viz-panel__foot {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: var(--font-size-caption);
+  color: var(--vp-c-text-3);
 }
 </style>
