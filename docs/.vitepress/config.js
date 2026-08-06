@@ -205,6 +205,10 @@ export default defineConfig({
           items: [
             { text: "Overview", link: "/projects/" },
             {
+              text: "LNG SPA Valuation",
+              link: "/projects/lng-spa-valuation",
+            },
+            {
               text: "Global Equity Portfolio",
               link: "/projects/global-equity-portfolio",
             },

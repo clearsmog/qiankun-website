@@ -11,6 +11,14 @@ Work samples intended for **hiring managers and interviewers**. Each page is a c
 ## Featured
 
 <div class="project-grid">
+  <a href="/projects/lng-spa-valuation" class="project-card">
+    <span class="project-tag">Energy trading · Derivatives &amp; optimisation</span>
+    <span class="project-title">LNG SPA Real-Option Valuation</span>
+    <span class="project-desc">
+      A Monte Carlo valuation of a 20-year US Gulf Coast FOB LNG contract from a publicly filed SEC exhibit finds $597m of extrinsic value — 43% of the full mark — in destination and cancellation flex that a static NPV misses. A mixed-integer cargo-scheduling model with shadow prices and an out-of-sample-validated freight model complete the chain from valuation to lifting decisions.
+    </span>
+    <span class="project-meta">Independent quantitative research · Python · August 2026</span>
+  </a>
   <a href="/projects/global-equity-portfolio" class="project-card">
     <span class="project-tag">Asset management · Quantitative equity</span>
     <span class="project-title">Global Equity Portfolio Construction</span>
