@@ -51,12 +51,12 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Positioning
 
-- [ ] **POS-01**: The homepage hero states, above the fold and in plain language, who Qiankun is and what he does
+- [x] **POS-01**: The homepage hero states, above the fold and in plain language, who Qiankun is and what he does
 - [ ] **POS-02**: A reader shown only the hero can state back what this person does — the acceptance test is comprehension, not "looks clean"
-- [ ] **POS-03**: Selected work is reachable in one click from the homepage
-- [ ] **POS-04**: The About page is specific and verifiable, containing no buzzword or filler copy
+- [x] **POS-03**: Selected work is reachable in one click from the homepage
+- [x] **POS-04**: The About page is specific and verifiable, containing no buzzword or filler copy
 - [ ] **POS-05**: `projects/index.md` leads each case study with its outcome, with method as supporting detail
-- [ ] **POS-06**: Contact offers a direct email path, not a form-only route
+- [x] **POS-06**: Contact offers a direct email path, not a form-only route
 - [ ] **POS-07**: Quantitative jargon carries a one-line plain-language translation wherever it appears in a lead or summary
 
 ### Exhibits — Finance Quality Bar
@@ -138,12 +138,12 @@ Explicitly excluded. Documented to prevent scope creep.
 | PRUNE-11 | Phase 2 | Complete |
 | DES-05 | Phase 3 | Complete |
 | DES-08 | Phase 3 | Complete |
-| POS-01 | Phase 4 | Pending |
+| POS-01 | Phase 4 | Complete |
 | POS-02 | Phase 4 | Pending |
-| POS-03 | Phase 4 | Pending |
-| POS-04 | Phase 4 | Pending |
+| POS-03 | Phase 4 | Complete |
+| POS-04 | Phase 4 | Complete |
 | POS-05 | Phase 4 | Pending |
-| POS-06 | Phase 4 | Pending |
+| POS-06 | Phase 4 | Complete |
 | POS-07 | Phase 4 | Pending |
 | DES-01 | Phase 4 | Complete |
 | DES-02 | Phase 4 | Complete |
