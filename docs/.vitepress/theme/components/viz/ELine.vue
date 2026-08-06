@@ -9,7 +9,7 @@ const props = defineProps({
   series: {
     type: Array,
     required: true,
-    // [{ name, data, color?, area? }]
+    // [{ name, data, color?, area? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (sequential palette)
   },
   height: { type: Number, default: 320 },
   ySuffix: { type: String, default: '' },
@@ -71,7 +71,12 @@ const option = computed(() => {
       axisLine: { show: false },
     },
     series: props.series.map((s, i) => {
-      const color = s.color || t.palette[i % t.palette.length]
+      const color =
+        s.color === 'negative' ? t.negative
+          : s.color === 'positive' ? t.positive
+          : s.color === 'muted' ? t.text3
+          : s.color === 'muted-strong' ? t.text2
+          : (s.color || t.palette[i % t.palette.length])
       const area = s.area !== false
       return {
         name: s.name,
