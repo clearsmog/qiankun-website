@@ -394,6 +394,15 @@ html {
   color: var(--vp-c-text-1);
 }
 
+/* Tabular figures for the two DOM surfaces where numeric-column alignment is
+   structurally meaningful. ECharts renders numeric labels to canvas, where
+   font-variant-numeric has no effect -- chart figures get their alignment
+   from the variable font itself (Source Sans 3, already in place). */
+.hero-metric__value,
+.vp-doc table {
+  font-variant-numeric: tabular-nums;
+}
+
 .vp-doc h1 {
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-semibold);
@@ -506,6 +515,21 @@ html {
 
   to {
     opacity: 1;
+  }
+}
+
+/* ==================== Reduced Motion ==================== */
+/* Third, separate media block -- do not merge into either
+   `no-preference` gate above; both stay untouched. Universal override,
+   same !important pattern as the existing @media print block below. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
