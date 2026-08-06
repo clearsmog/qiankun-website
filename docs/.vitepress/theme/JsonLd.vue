@@ -16,7 +16,7 @@ const jsonLd = computed(() => {
     '@type': 'BlogPosting',
     'headline': frontmatter.value.title || page.value.title,
     'description': frontmatter.value.description || '',
-    'image': frontmatter.value.image || `${baseUrl}/og-image.svg`,
+    'image': frontmatter.value.image || `${baseUrl}/og-image.png`,
     'datePublished': frontmatter.value.date,
     'dateModified': frontmatter.value.lastUpdated || frontmatter.value.date,
     'author': {

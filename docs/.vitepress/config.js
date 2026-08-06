@@ -41,7 +41,8 @@ const RSS_CONFIG = {
   title: "Qiankun Blog",
   baseUrl: "https://qiankun.co.uk",
   copyright: `Copyright © ${new Date().getFullYear()} Qiankun`,
-  description: "Thoughts on technology, development, and more",
+  description:
+    "Notes on energy trading and risk management systems, by Qiankun (Kenny) Zhu.",
   language: "en-GB",
   author: {
     name: "Qiankun",
@@ -55,7 +56,7 @@ const RSS_CONFIG = {
 export default defineConfig({
   title: "Qiankun",
   description:
-    "Personal website and blog - thoughts on technology, development, and more",
+    "Quantitative finance case studies — portfolio construction, systematic alpha research, and equity valuation, by Qiankun (Kenny) Zhu.",
 
   // Vite plugins
   vite: {
@@ -65,11 +66,12 @@ export default defineConfig({
       Icons({ compiler: "vue3", autoInstall: true }),
       VitePWA({
         registerType: "autoUpdate",
-        includeAssets: ["favicon.svg", "logo.svg", "og-image.svg"],
+        includeAssets: ["favicon.svg", "logo.svg", "og-image.png"],
         manifest: {
           name: "Qiankun",
           short_name: "Qiankun",
-          description: "Personal website and blog",
+          description:
+            "Quantitative finance case studies by Qiankun (Kenny) Zhu",
           theme_color: brand,
           background_color: "#000000",
           display: "standalone",
@@ -138,7 +140,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "qiankun, blog, technology, development, software, portfolio, quantitative finance",
+          "quantitative finance, portfolio construction, equity valuation, systematic alpha research, ESG, risk management",
       },
     ],
     ["meta", { property: "og:type", content: "website" }],
@@ -147,14 +149,14 @@ export default defineConfig({
     ["meta", { property: "og:url", content: "https://qiankun.co.uk/" }],
     [
       "meta",
-      { property: "og:image", content: "https://qiankun.co.uk/og-image.svg" },
+      { property: "og:image", content: "https://qiankun.co.uk/og-image.png" },
     ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     [
       "meta",
       {
         name: "twitter:image",
-        content: "https://qiankun.co.uk/og-image.svg",
+        content: "https://qiankun.co.uk/og-image.png",
       },
     ],
     // Google Analytics
@@ -242,7 +244,6 @@ export default defineConfig({
 
     // Footer
     footer: {
-      message: "Built with VitePress",
       copyright: `Copyright © ${new Date().getFullYear()} Qiankun`,
     },
 
