@@ -17,7 +17,7 @@ head:
 
 ## 1. Definition and Scope
 
-Energy Trading and Risk Management (ETRM) software is a category of systems designed to manage the end-to-end lifecycle of trading energy commodities. ETRM is fundamentally essentially Commodity Trading and Risk Management (CTRM) specifically applied to energy markets. Historically, these systems began with FERC order 636 in 1992 in the United States, which deregulated the natural gas industry, creating a need for software to track trades and exposures.
+Energy Trading and Risk Management (ETRM) software is a category of systems designed to manage the end-to-end lifecycle of trading energy commodities. ETRM is essentially Commodity Trading and Risk Management (CTRM) specifically applied to energy markets. Historically, these systems began with FERC order 636 in 1992 in the United States, which deregulated the natural gas industry, creating a need for software to track trades and exposures.
 
 The industry is currently witnessing a shift toward **"Commodity Management" (CM)**, which combines traditional trading and risk functionality with supply chain logistics and ERP-like capabilities. While CTRM focuses on trade management and basic risk reporting, Commodity Management encompasses inventory management, logistics, workforce management, and accounting integration. This evolution is driven by physical players—producers and consumers—who need to manage the supply chain alongside trade and risk.
 

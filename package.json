@@ -11,13 +11,11 @@
     "deploy:quick": "./deploy.sh --skip-build"
   },
   "dependencies": {
-    "chart.js": "^4.5.1",
     "echarts": "^6.1.0",
     "vue-echarts": "^8.0.1"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.430",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "unplugin-icons": "^23.0.1",
     "vite": "^8.1.4",
     "vite-plugin-imagemin": "^0.6.1",
