@@ -19,7 +19,7 @@ head:
 
 const metrics = [
   { label: 'Base intrinsic', value: '$48.56', hint: 'FCFF DCF, per share', accent: '#0071e3' },
-  { label: 'Market price', value: '$120.16', hint: '≈2.5× intrinsic (+146%)', accent: '#ff3b30' },
+  { label: 'Market price', value: '$120.16', hint: '≈2.5× intrinsic (+146%) · as of 28 May 2026', accent: '#ff3b30' },
   { label: 'WACC', value: '8.93%', hint: 'Bottom-up CAPM', accent: '#5856d6' },
   { label: 'P(undervalued)', value: '0%', hint: '50,000-trial Monte Carlo', accent: '#af52de' },
 ]
@@ -154,10 +154,10 @@ const steps = [
 
 <div class="brand-row">
   <span class="brand-chip"><img src="/projects/cisco-equity-valuation/logos/cisco.png" alt="Cisco logo" /></span>
-  <span>University of Edinburgh · Equity Valuation (CMSE11664) · June 2026 · <strong>Mark: 73 (A band)</strong></span>
+  <span>University of Edinburgh · Equity Valuation · June 2026</span>
 </div>
 
-Full **buy-side style** valuation of **Cisco Systems (NASDAQ: CSCO)** — FCFF DCF, peer multiples, scenarios, reverse DCF, Monte Carlo — built as a reproducible Python model with a formula-driven Excel audit workbook and a Typst report. This page follows the report section by section, at the same depth, and **every chart below is rendered live from the model's own output data**.
+This project values Cisco Systems (NASDAQ: CSCO) from the ground up and concludes the stock is materially overvalued — a base-case intrinsic value of $48.56 a share against a market price of about $120. The verdict comes from a full free-cash-flow-to-firm (FCFF) discounted cash flow model, cross-checked against peer trading multiples, a reverse DCF (working backwards from today's price to find what growth it would require to be fair), and a 50,000-trial Monte Carlo simulation — all built as a reproducible Python model with a formula-driven Excel audit workbook.
 
 ## Snapshot
 
