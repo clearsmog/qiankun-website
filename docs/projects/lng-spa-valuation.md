@@ -35,8 +35,8 @@ const flexCompareSeries = [
 ]
 
 const extrinsicSplit = [
-  { label: 'Cancellation right alone', value: 102.1, sub: 'no destination flex', color: 'muted' },
-  { label: 'Destination flex increment', value: 495.0, sub: 'max(EU, Asia) netback per cargo' },
+  { label: 'Cancellation only', value: 102.1, sub: 'no destination flex', color: 'muted' },
+  { label: 'Destination flex', value: 495.0, sub: 'max(EU, Asia) netback per cargo' },
   { label: 'Total extrinsic', value: 597.1, sub: 'full − intrinsic', color: 'positive' },
 ]
 
@@ -48,8 +48,8 @@ const volSeries = [
 ]
 
 const mipCompare = [
-  { label: 'Per-cargo greedy', value: -4.24, sub: 'infeasible — breaches EU slots in Q2 & Q3', color: 'negative' },
-  { label: 'Constrained MIP optimum', value: -4.94, sub: 'feasible · CBC solver' },
+  { label: 'Greedy', value: -4.24, sub: 'infeasible — breaches EU slots in Q2 & Q3', color: 'negative' },
+  { label: 'MIP optimum', value: -4.94, sub: 'feasible · CBC solver' },
 ]
 
 const shadowPrices = [
@@ -115,7 +115,7 @@ A long-term LNG contract is a strip of real options, not an annuity. Valuing a 2
   source="Own model output"
   as-of="August 2026"
 >
-  <EGroupBar :categories="flexCompareCats" :series="flexCompareSeries" unit="$m" y-name="NPV ($m)" />
+  <EGroupBar :categories="flexCompareCats" :series="flexCompareSeries" y-name="NPV ($m)" />
 </VizPanel>
 
 ## Where the extrinsic comes from
@@ -128,7 +128,7 @@ A long-term LNG contract is a strip of real options, not an annuity. Valuing a 2
     source="Own model output"
     as-of="August 2026"
   >
-    <EBar :items="extrinsicSplit" :max="650" unit="$m" x-name="Extrinsic value ($m)" />
+    <EBar :items="extrinsicSplit" :max="650" x-name="Extrinsic value ($m)" />
   </VizPanel>
   <VizPanel
     badge="Vol sensitivity"
@@ -137,7 +137,7 @@ A long-term LNG contract is a strip of real options, not an annuity. Valuing a 2
     source="Own model output"
     as-of="August 2026"
   >
-    <ELine :labels="volLabels" :series="volSeries" :smooth="false" y-suffix=" $/MMBtu" y-name="Extrinsic ($/MMBtu)" />
+    <ELine :labels="volLabels" :series="volSeries" :smooth="false" y-name="$/MMBtu" />
   </VizPanel>
 </VizGrid>
 
@@ -153,7 +153,7 @@ A long-term LNG contract is a strip of real options, not an annuity. Valuing a 2
     source="Own model output"
     as-of="August 2026"
   >
-    <EBar :items="mipCompare" unit=" $/MMBtu" x-name="Margin ($/MMBtu)" />
+    <EBar :items="mipCompare" x-name="Margin ($/MMBtu)" />
   </VizPanel>
   <VizPanel
     badge="LP duals"
@@ -162,7 +162,7 @@ A long-term LNG contract is a strip of real options, not an annuity. Valuing a 2
     source="Own model output"
     as-of="August 2026"
   >
-    <EBar :items="shadowPrices" :max="1.6" unit=" $/MMBtu" x-name="Shadow price ($/MMBtu)" />
+    <EBar :items="shadowPrices" :max="1.6" x-name="Shadow price ($/MMBtu)" />
   </VizPanel>
 </VizGrid>
 
@@ -187,7 +187,7 @@ The optimiser's schedule is not the greedy schedule with the worst months lopped
     source="Published freight assessments"
     as-of="Dec 2024 – Jul 2026"
   >
-    <EGroupBar :categories="oosCats" :series="oosSeries" unit=" $/MMBtu" y-name="OOS MAE ($/MMBtu)" />
+    <EGroupBar :categories="oosCats" :series="oosSeries" y-name="OOS MAE ($/MMBtu)" />
   </VizPanel>
 </VizGrid>
 
