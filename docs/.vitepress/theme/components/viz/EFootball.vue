@@ -13,6 +13,7 @@ const props = defineProps({
   market: { type: Number, required: true },
   marketLabel: { type: String, default: 'Market' },
   unit: { type: String, default: '$' },
+  xName: { type: String, default: '' }, // value-axis title (price/valuation range) incl. unit
   height: { type: Number, default: 300 },
 })
 
@@ -47,6 +48,10 @@ const option = computed(() => {
       type: 'value',
       min: (v) => Math.min(v.min, props.market) * 0.9,
       max: (v) => Math.max(v.max, props.market) * 1.05,
+      name: props.xName,
+      nameLocation: 'middle',
+      nameGap: 26,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: {
         color: t.text3,
         fontSize: 11,

@@ -8,6 +8,8 @@ const props = defineProps({
   categories: { type: Array, required: true },
   series: { type: Array, required: true }, // [{ name, color?, data: [] }]
   unit: { type: String, default: '' },
+  xName: { type: String, default: '' }, // category-axis title
+  yName: { type: String, default: '' }, // value-axis title incl. unit
   height: { type: Number, default: 320 },
 })
 
@@ -40,12 +42,20 @@ const option = computed(() => {
     xAxis: {
       type: 'category',
       data: props.categories,
+      name: props.xName,
+      nameLocation: 'middle',
+      nameGap: 26,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: { color: t.text2, fontSize: 11, fontWeight: 600 },
       axisLine: { lineStyle: { color: t.divider } },
       axisTick: { show: false },
     },
     yAxis: {
       type: 'value',
+      name: props.yName,
+      nameLocation: 'middle',
+      nameGap: 28,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: {
         color: t.text3,
         fontSize: 11,

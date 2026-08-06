@@ -12,6 +12,8 @@ const props = defineProps({
   },
   horizontal: { type: Boolean, default: true },
   unit: { type: String, default: '' },
+  xName: { type: String, default: '' }, // value-axis title when horizontal, incl. unit
+  yName: { type: String, default: '' }, // value-axis title when vertical, incl. unit
   max: { type: Number, default: undefined },
   height: { type: Number, default: 360 },
   seriesName: { type: String, default: 'Value' },
@@ -35,6 +37,10 @@ const option = computed(() => {
   const valueAxis = {
     type: 'value',
     max: props.max,
+    name: props.horizontal ? props.xName : props.yName,
+    nameLocation: 'middle',
+    nameGap: 26,
+    nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
     axisLabel: {
       color: t.text3,
       fontSize: 11,

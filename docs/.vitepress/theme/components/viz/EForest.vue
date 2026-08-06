@@ -10,6 +10,7 @@ const props = defineProps({
     required: true,
     // [{ label, value, se?, primary?, stars? }]
   },
+  xName: { type: String, default: '' }, // coefficient-axis title, e.g. "Effect size (SD)"
   height: { type: Number, default: 320 },
 })
 
@@ -43,6 +44,10 @@ const option = computed(() => {
     grid: { ...baseGrid(), left: 20, right: 36, top: 20, bottom: 20 },
     xAxis: {
       type: 'value',
+      name: props.xName,
+      nameLocation: 'middle',
+      nameGap: 26,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: { color: t.text3, fontSize: 11 },
       splitLine: { lineStyle: { color: t.divider, type: 'dashed' } },
       axisLine: { show: false },

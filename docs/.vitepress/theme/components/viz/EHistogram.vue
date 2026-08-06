@@ -11,6 +11,8 @@ const props = defineProps({
   band: { type: Array, default: () => [] }, // [lo, hi] shaded band (e.g. P5–P95)
   color: { type: String, default: undefined },
   unit: { type: String, default: '$' },
+  xName: { type: String, default: '' }, // bin-axis title incl. unit
+  yName: { type: String, default: '' }, // frequency-axis title, e.g. "Trials"
   height: { type: Number, default: 320 },
 })
 
@@ -65,6 +67,10 @@ const option = computed(() => {
     xAxis: {
       type: 'category',
       data: labels,
+      name: props.xName,
+      nameLocation: 'middle',
+      nameGap: 26,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: {
         color: t.text3,
         fontSize: 10,
@@ -76,6 +82,10 @@ const option = computed(() => {
     },
     yAxis: {
       type: 'value',
+      name: props.yName,
+      nameLocation: 'middle',
+      nameGap: 28,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: { color: t.text3, fontSize: 10 },
       splitLine: { lineStyle: { color: t.divider, type: 'dashed' } },
     },

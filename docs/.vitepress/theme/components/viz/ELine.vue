@@ -13,6 +13,7 @@ const props = defineProps({
   },
   height: { type: Number, default: 320 },
   ySuffix: { type: String, default: '' },
+  yName: { type: String, default: '' }, // value-axis title incl. unit, e.g. "Revenue ($B)"
   smooth: { type: Boolean, default: true },
 })
 
@@ -57,6 +58,10 @@ const option = computed(() => {
     },
     yAxis: {
       type: 'value',
+      name: props.yName,
+      nameLocation: 'middle',
+      nameGap: 28,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: {
         color: t.text3,
         fontSize: 11,

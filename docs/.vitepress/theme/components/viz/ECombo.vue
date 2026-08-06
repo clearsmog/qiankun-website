@@ -8,6 +8,9 @@ const props = defineProps({
   labels: { type: Array, required: true },
   bars: { type: Object, required: true }, // { name, data, color?, unit? }
   line: { type: Object, required: true }, // { name, data, color?, unit? }
+  xName: { type: String, default: '' }, // category-axis title
+  yName: { type: String, default: '' }, // left value-axis title (bars) incl. unit
+  yNameRight: { type: String, default: '' }, // right value-axis title (line) incl. unit
   height: { type: Number, default: 320 },
 })
 
@@ -43,6 +46,10 @@ const option = computed(() => {
     xAxis: {
       type: 'category',
       data: props.labels,
+      name: props.xName,
+      nameLocation: 'middle',
+      nameGap: 26,
+      nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
       axisLabel: { color: t.text2, fontSize: 11, fontWeight: 600 },
       axisLine: { lineStyle: { color: t.divider } },
       axisTick: { show: false },
@@ -50,6 +57,10 @@ const option = computed(() => {
     yAxis: [
       {
         type: 'value',
+        name: props.yName,
+        nameLocation: 'middle',
+        nameGap: 28,
+        nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
         axisLabel: {
           color: barColor,
           fontSize: 11,
@@ -59,6 +70,10 @@ const option = computed(() => {
       },
       {
         type: 'value',
+        name: props.yNameRight,
+        nameLocation: 'middle',
+        nameGap: 28,
+        nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
         axisLabel: {
           color: lineColor,
           fontSize: 11,
