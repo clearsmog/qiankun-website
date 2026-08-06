@@ -73,6 +73,8 @@ export function themeTokens() {
     divider: cssVar('--vp-c-divider', 'rgba(0,0,0,0.08)'),
     bg: cssVar('--vp-c-bg', '#ffffff'),
     bgSoft: cssVar('--vp-c-bg-soft', '#f5f5f7'),
+    negative: cssVar('--color-negative', '#ff3b30'),
+    positive: cssVar('--color-positive', '#34c759'),
     palette: [
       brand,
       '#5856d6',
@@ -86,6 +88,13 @@ export function themeTokens() {
       '#ff9f0a',
     ],
   }
+}
+
+// Read at option-evaluation time, not live-reactive: an OS-level preference
+// change mid-session only applies at a chart's next re-render.
+export function prefersReducedMotion() {
+  return typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 // Converts a 6-digit hex colour (with or without leading '#') to an rgba()
