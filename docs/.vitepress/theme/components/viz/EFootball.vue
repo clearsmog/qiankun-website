@@ -8,7 +8,7 @@ const props = defineProps({
   ranges: {
     type: Array,
     required: true,
-    // [{ label, low, high, mid?, color? }]
+    // [{ label, low, high, mid?, color? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (sequential palette)
   },
   market: { type: Number, required: true },
   marketLabel: { type: String, default: 'Market' },
@@ -77,7 +77,12 @@ const option = computed(() => {
           const x1 = api.coord([r.high, params.dataIndex])[0]
           const xm =
             r.mid != null ? api.coord([r.mid, params.dataIndex])[0] : (x0 + x1) / 2
-          const color = r.color || palette[params.dataIndex % palette.length]
+          const color =
+            r.color === 'negative' ? t.negative
+              : r.color === 'positive' ? t.positive
+              : r.color === 'muted' ? t.text3
+              : r.color === 'muted-strong' ? t.text2
+              : (r.color || palette[params.dataIndex % palette.length])
           const h = 14
           return {
             type: 'group',
@@ -133,13 +138,13 @@ const optionFinal = computed(() => {
         show: true,
         formatter: `${props.marketLabel} ${props.unit}${props.market}`,
         color: '#fff',
-        backgroundColor: '#ff3b30',
+        backgroundColor: t.negative, // semantic token: this marker pivots the overvaluation claim
         padding: [4, 8],
         borderRadius: 8,
         fontSize: 10,
         fontWeight: 700,
       },
-      lineStyle: { color: '#ff3b30', type: 'dashed', width: 2 },
+      lineStyle: { color: t.negative, type: 'dashed', width: 2 },
       data: [{ xAxis: props.market }],
     },
     z: 1,

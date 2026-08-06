@@ -6,7 +6,7 @@ import { themeTokens, baseTooltip, baseGrid, prefersReducedMotion } from './echa
 
 const props = defineProps({
   categories: { type: Array, required: true },
-  series: { type: Array, required: true }, // [{ name, color?, data: [] }]
+  series: { type: Array, required: true }, // [{ name, color?, data: [] }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (sequential palette)
   unit: { type: String, default: '' },
   xName: { type: String, default: '' }, // category-axis title
   yName: { type: String, default: '' }, // value-axis title incl. unit
@@ -64,7 +64,12 @@ const option = computed(() => {
       splitLine: { lineStyle: { color: t.divider, type: 'dashed' } },
     },
     series: props.series.map((s, idx) => {
-      const color = s.color || t.palette[idx % t.palette.length]
+      const color =
+        s.color === 'negative' ? t.negative
+          : s.color === 'positive' ? t.positive
+          : s.color === 'muted' ? t.text3
+          : s.color === 'muted-strong' ? t.text2
+          : (s.color || t.palette[idx % t.palette.length])
       return {
         name: s.name,
         type: 'bar',

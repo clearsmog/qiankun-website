@@ -6,8 +6,8 @@ import { themeTokens, baseTooltip, baseGrid, prefersReducedMotion } from './echa
 
 const props = defineProps({
   labels: { type: Array, required: true },
-  bars: { type: Object, required: true }, // { name, data, color?, unit? }
-  line: { type: Object, required: true }, // { name, data, color?, unit? }
+  bars: { type: Object, required: true }, // { name, data, color?, unit? } — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted
+  line: { type: Object, required: true }, // { name, data, color?, unit? } — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted
   xName: { type: String, default: '' }, // category-axis title
   yName: { type: String, default: '' }, // left value-axis title (bars) incl. unit
   yNameRight: { type: String, default: '' }, // right value-axis title (line) incl. unit
@@ -23,8 +23,18 @@ watch(isDark, () => {
 const option = computed(() => {
   void tick.value
   const t = themeTokens()
-  const barColor = props.bars.color || t.palette[0]
-  const lineColor = props.line.color || '#ff9500'
+  const barColor =
+    props.bars.color === 'negative' ? t.negative
+      : props.bars.color === 'positive' ? t.positive
+      : props.bars.color === 'muted' ? t.text3
+      : props.bars.color === 'muted-strong' ? t.text2
+      : (props.bars.color || t.palette[0])
+  const lineColor =
+    props.line.color === 'negative' ? t.negative
+      : props.line.color === 'positive' ? t.positive
+      : props.line.color === 'muted' ? t.text3
+      : props.line.color === 'muted-strong' ? t.text2
+      : (props.line.color || t.palette[4]) // palette entry holding the orange formerly hard-coded here
   const barUnit = props.bars.unit || ''
   const lineUnit = props.line.unit || ''
 

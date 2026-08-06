@@ -8,7 +8,7 @@ const props = defineProps({
   items: {
     type: Array,
     required: true,
-    // [{ label, value, se?, primary?, stars? }]
+    // [{ label, value, se?, primary?, stars?, color? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (primary → positive token, else palette orange)
   },
   xName: { type: String, default: '' }, // coefficient-axis title, e.g. "Effect size (SD)"
   height: { type: Number, default: 320 },
@@ -25,6 +25,12 @@ const option = computed(() => {
   const t = themeTokens()
   const labels = props.items.map((i) => i.label).reverse()
   const rows = [...props.items].reverse()
+  const pointColor = (it) =>
+    it.color === 'negative' ? t.negative
+      : it.color === 'positive' ? t.positive
+      : it.color === 'muted' ? t.text3
+      : it.color === 'muted-strong' ? t.text2
+      : (it.color || (it.primary ? t.positive : t.palette[4]))
 
   return {
     animationDuration: prefersReducedMotion() ? 0 : 700,
@@ -67,11 +73,9 @@ const option = computed(() => {
         data: rows.map((it) => ({
           value: it.value,
           itemStyle: {
-            color: it.primary ? '#34c759' : '#ff9500',
+            color: pointColor(it),
             shadowBlur: 10,
-            shadowColor: it.primary
-              ? 'rgba(52,199,89,0.4)'
-              : 'rgba(255,149,0,0.35)',
+            shadowColor: hexToRgba(pointColor(it), it.primary ? 0.4 : 0.35),
             borderColor: t.bg,
             borderWidth: 2,
           },
@@ -87,7 +91,7 @@ const option = computed(() => {
           const y = api.coord([0, params.dataIndex])[1]
           const x0 = api.coord([it.value - 1.96 * it.se, params.dataIndex])[0]
           const x1 = api.coord([it.value + 1.96 * it.se, params.dataIndex])[0]
-          const color = it.primary ? '#34c759' : '#ff9500'
+          const color = pointColor(it)
           return {
             type: 'group',
             children: [

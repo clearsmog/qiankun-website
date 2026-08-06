@@ -7,9 +7,9 @@ import { themeTokens, baseTooltip, baseGrid, prefersReducedMotion } from './echa
 const props = defineProps({
   edges: { type: Array, required: true }, // n+1 bin edges
   counts: { type: Array, required: true }, // n bin counts
-  markers: { type: Array, default: () => [] }, // [{ label, value, color, dashed? }]
+  markers: { type: Array, default: () => [] }, // [{ label, value, color?, dashed? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (brand)
   band: { type: Array, default: () => [] }, // [lo, hi] shaded band (e.g. P5–P95)
-  color: { type: String, default: undefined },
+  color: { type: String, default: undefined }, // bar colour: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (brand)
   unit: { type: String, default: '$' },
   xName: { type: String, default: '' }, // bin-axis title incl. unit
   yName: { type: String, default: '' }, // frequency-axis title, e.g. "Trials"
@@ -25,7 +25,12 @@ watch(isDark, () => {
 const option = computed(() => {
   void tick.value
   const t = themeTokens()
-  const barColor = props.color || t.brand
+  const barColor =
+    props.color === 'negative' ? t.negative
+      : props.color === 'positive' ? t.positive
+      : props.color === 'muted' ? t.text3
+      : props.color === 'muted-strong' ? t.text2
+      : (props.color || t.brand)
   const mids = props.counts.map((_, i) => (props.edges[i] + props.edges[i + 1]) / 2)
   const labels = mids.map((m) => m.toFixed(1))
   const snap = (v) => {
@@ -36,16 +41,24 @@ const option = computed(() => {
     return best
   }
 
-  const markLineData = props.markers.map((m) => ({
-    xAxis: snap(m.value),
-    lineStyle: { color: m.color || t.brand, type: m.dashed ? 'dashed' : 'solid', width: 1.8 },
-    label: {
-      formatter: `${m.label} ${props.unit}${m.value}`,
-      color: m.color || t.brand,
-      fontSize: 10,
-      fontWeight: 700,
-    },
-  }))
+  const markLineData = props.markers.map((m) => {
+    const color =
+      m.color === 'negative' ? t.negative
+        : m.color === 'positive' ? t.positive
+        : m.color === 'muted' ? t.text3
+        : m.color === 'muted-strong' ? t.text2
+        : (m.color || t.brand)
+    return {
+      xAxis: snap(m.value),
+      lineStyle: { color, type: m.dashed ? 'dashed' : 'solid', width: 1.8 },
+      label: {
+        formatter: `${m.label} ${props.unit}${m.value}`,
+        color,
+        fontSize: 10,
+        fontWeight: 700,
+      },
+    }
+  })
 
   const markAreaData = props.band.length === 2
     ? [[{ xAxis: snap(props.band[0]) }, { xAxis: snap(props.band[1]) }]]

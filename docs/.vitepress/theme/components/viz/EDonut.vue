@@ -8,6 +8,7 @@ const props = defineProps({
   items: {
     type: Array,
     required: true,
+    // [{ label, value, color? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (sequential palette)
   },
   centerLabel: { type: String, default: '' },
   centerValue: { type: String, default: '' },
@@ -31,7 +32,12 @@ const option = computed(() => {
     name: it.label,
     value: it.value,
     itemStyle: {
-      color: it.color || t.palette[i % t.palette.length],
+      color:
+        it.color === 'negative' ? t.negative
+          : it.color === 'positive' ? t.positive
+          : it.color === 'muted' ? t.text3
+          : it.color === 'muted-strong' ? t.text2
+          : (it.color || t.palette[i % t.palette.length]),
       borderRadius: 6,
       borderColor: t.bg,
       borderWidth: 3,

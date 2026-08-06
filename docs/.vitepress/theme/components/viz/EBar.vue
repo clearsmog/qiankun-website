@@ -8,7 +8,7 @@ const props = defineProps({
   items: {
     type: Array,
     required: true,
-    // [{ label, value, color?, sub? }]
+    // [{ label, value, color?, sub? }] — color: 'negative' | 'positive' | 'muted' | 'muted-strong' | hex | omitted (sequential palette)
   },
   horizontal: { type: Boolean, default: true },
   unit: { type: String, default: '' },
@@ -31,7 +31,12 @@ const option = computed(() => {
   const labels = props.items.map((i) => i.label)
   const values = props.items.map((i) => i.value)
   const colors = props.items.map(
-    (i, idx) => i.color || t.palette[idx % t.palette.length],
+    (i, idx) =>
+      i.color === 'negative' ? t.negative
+        : i.color === 'positive' ? t.positive
+        : i.color === 'muted' ? t.text3
+        : i.color === 'muted-strong' ? t.text2
+        : (i.color || t.palette[idx % t.palette.length]),
   )
 
   const valueAxis = {
