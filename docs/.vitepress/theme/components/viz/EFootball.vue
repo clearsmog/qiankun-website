@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
-import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+import { themeTokens, baseTooltip, baseGrid, prefersReducedMotion } from './echarts-setup.js'
 
 const props = defineProps({
   ranges: {
@@ -31,7 +31,7 @@ const option = computed(() => {
   const palette = t.palette
 
   return {
-    animationDuration: 800,
+    animationDuration: prefersReducedMotion() ? 0 : 800,
     tooltip: {
       ...baseTooltip(t),
       trigger: 'item',
@@ -63,7 +63,7 @@ const option = computed(() => {
     yAxis: {
       type: 'category',
       data: labels,
-      axisLabel: { color: t.text1, fontSize: 12, fontWeight: 650 },
+      axisLabel: { color: t.text1, fontSize: 12, fontWeight: 600 }, // matches --font-weight-semibold
       axisLine: { show: false },
       axisTick: { show: false },
     },

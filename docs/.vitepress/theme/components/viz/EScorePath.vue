@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
-import { themeTokens, baseTooltip, baseGrid, hexToRgba } from './echarts-setup.js'
+import { themeTokens, baseTooltip, baseGrid, hexToRgba, prefersReducedMotion } from './echarts-setup.js'
 
 const props = defineProps({
   points: {
@@ -34,7 +34,7 @@ const option = computed(() => {
   const scores = props.points.map((p) => p.score)
 
   return {
-    animationDuration: 900,
+    animationDuration: prefersReducedMotion() ? 0 : 900,
     tooltip: {
       ...baseTooltip(t),
       trigger: 'axis',
@@ -55,7 +55,7 @@ const option = computed(() => {
       nameLocation: 'middle',
       nameGap: 26,
       nameTextStyle: { color: t.text2, fontSize: 11, fontWeight: 600 }, // 600 = semibold token's value as a plain number; ECharts can't read CSS vars
-      axisLabel: { color: t.text2, fontSize: 11, fontWeight: 650 },
+      axisLabel: { color: t.text2, fontSize: 11, fontWeight: 600 }, // matches --font-weight-semibold
       axisLine: { lineStyle: { color: t.divider } },
       axisTick: { show: false },
     },

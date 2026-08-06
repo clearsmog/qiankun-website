@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 import VizEChart from './VizEChart.vue'
-import { themeTokens, baseTooltip, baseGrid } from './echarts-setup.js'
+import { themeTokens, baseTooltip, baseGrid, prefersReducedMotion } from './echarts-setup.js'
 
 const props = defineProps({
   edges: { type: Array, required: true }, // n+1 bin edges
@@ -52,7 +52,7 @@ const option = computed(() => {
     : []
 
   return {
-    animationDuration: 700,
+    animationDuration: prefersReducedMotion() ? 0 : 700,
     tooltip: {
       ...baseTooltip(t),
       trigger: 'axis',
