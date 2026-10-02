@@ -11,6 +11,14 @@ Work samples intended for **hiring managers and interviewers**. Each page is a c
 ## Featured
 
 <div class="project-grid">
+  <a href="/projects/european-power-fundamentals" class="project-card">
+    <span class="project-tag">Energy markets · Power fundamentals</span>
+    <span class="project-title">European Power Fundamentals</span>
+    <span class="project-desc">
+      Hourly prices, load and renewable output for Germany, Spain and France since 2023 show German solar now capturing about half of the baseload price and Spanish negative-price hours rising from zero to 747 in nine months. A merit-order regression explains 66–77% of German price variance, and an hour-by-hour spark spread shows a gas plant's margin has moved into the morning and evening ramps.
+    </span>
+    <span class="project-meta">Independent energy-market research · Python · October 2026</span>
+  </a>
   <a href="/projects/lng-spa-valuation" class="project-card">
     <span class="project-tag">Energy trading · Derivatives &amp; optimisation</span>
     <span class="project-title">LNG SPA Real-Option Valuation</span>

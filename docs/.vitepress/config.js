@@ -205,6 +205,10 @@ export default defineConfig({
           items: [
             { text: "Overview", link: "/projects/" },
             {
+              text: "European Power Fundamentals",
+              link: "/projects/european-power-fundamentals",
+            },
+            {
               text: "LNG SPA Valuation",
               link: "/projects/lng-spa-valuation",
             },

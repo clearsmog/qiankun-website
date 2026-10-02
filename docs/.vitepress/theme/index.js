@@ -21,6 +21,7 @@ import EHeatmap from './components/viz/EHeatmap.vue'
 import EHistogram from './components/viz/EHistogram.vue'
 import EGroupBar from './components/viz/EGroupBar.vue'
 import ECombo from './components/viz/ECombo.vue'
+import EScatter from './components/viz/EScatter.vue'
 import './custom.css'
 
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
@@ -51,5 +52,6 @@ export default {
     app.component('EHistogram', EHistogram)
     app.component('EGroupBar', EGroupBar)
     app.component('ECombo', ECombo)
+    app.component('EScatter', EScatter)
   },
 }

@@ -15,6 +15,7 @@ const props = defineProps({
   ySuffix: { type: String, default: '' },
   yName: { type: String, default: '' }, // value-axis title incl. unit, e.g. "Revenue ($B)"
   smooth: { type: Boolean, default: true },
+  symbols: { type: Boolean, default: true }, // false hides point markers on dense series (they still appear on hover)
 })
 
 const { isDark } = useData()
@@ -85,7 +86,7 @@ const option = computed(() => {
         smooth: props.smooth,
         symbol: 'circle',
         symbolSize: 8,
-        showSymbol: true,
+        showSymbol: props.symbols,
         lineStyle: { width: 3, color },
         itemStyle: { color, borderColor: t.bg, borderWidth: 2 },
         areaStyle: area
