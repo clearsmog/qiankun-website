@@ -1,19 +1,20 @@
 ---
-gsd_state_version: 1.0
+gsd_state_version: "1.0"
 milestone: v1.0
-milestone_name: milestone
 current_phase: 4
 current_phase_name: Position & Design
 status: deployed
 stopped_at: Deployed to production — Phase 4 complete (12/12 incl. extensions), site live at qiankun.co.uk
-last_updated: "2026-08-06T15:35:00.000Z"
+last_updated: "2026-10-06T12:14:40.439Z"
 last_activity: 2026-08-06
 last_activity_desc: Pushed 3d0fa5f..de625a0 to origin/main; Cloudflare Pages deploy succeeded; live checks pass (new hero, LNG page, redirects, og-image.png). Extensions beyond original 10 plans — 04-11 addenda sweep, 04-12 LNG SPA case study (user-approved scope override; compliance rules in 04-12-SUMMARY.md), editLink removal, real social handles (clearsmog / kenny0908). Remaining user-gated items — 01-01 disable Amplify auto-build (AWS console), 01-03 Cloudflare Web Analytics swap (GA still live). 375px visual sweep deferred (window resize unavailable in session).
+state_head: 0246550b2aaa2e42232b6137bed2c30e38d70759
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 20
   completed_plans: 17
+milestone_name: milestone
 ---
 
 # Project State
@@ -41,7 +42,7 @@ Phase 2 (Content Deletion & Redirects) is complete, with two `verification: back
 to post-deploy (see Deferred Verification below). Phase 1 (Technical Foundations) remains parked at
 plan 2 of 4 — see Deferred Verification below. Neither blocks Phase 4.
 
-Last activity: 2026-08-06 — Completed 04-10 (Writing index + cross-page sweep) — Phase 4 complete 10/10
+Last activity: 2026-10-06 - Completed quick task 261006-idp: Update WorldQuant case study for consultant status
 
 Progress: [█████████░] 85%
 
@@ -151,6 +152,12 @@ Recent decisions affecting current work:
 - VitePress: pin `2.0.0-alpha.18` exactly. Do not downgrade to 1.6.4.
 - Analytics: replace Google Analytics (G-4PF046MSJJ) with Cloudflare Web Analytics (cookieless, no consent banner).
 - Deploy autonomy: pipeline changes proceed without per-change pause; local `npm run build` must pass before committing.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 261006-idp | Update WorldQuant case study for consultant status | 2026-10-06 | 0246550 | [261006-idp-update-worldquant-case-study-for-consult](./quick/261006-idp-update-worldquant-case-study-for-consult/) |
 
 ## Deferred Verification
 
