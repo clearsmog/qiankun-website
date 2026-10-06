@@ -47,9 +47,9 @@ Work samples intended for **hiring managers and interviewers**. Each page is a c
     <span class="project-tag">Systematic quant · FinTech</span>
     <span class="project-title">WorldQuant BRAIN Alpha Research</span>
     <span class="project-desc">
-      Reached Gold tier in the WorldQuant BRAIN Challenge with a ten-strategy ACTIVE book spanning quality, analyst, cash-flow, and options signals — best Sharpe ratio 2.91. A repeatable mining pipeline screens every candidate alpha for risk, turnover, and correlation to existing strategies before submission.
+      WorldQuant BRAIN research consultant with fourteen ACTIVE equity alphas across the US and Asia. Under the consultant standard (a ten-year in-sample window and correlation against every consultant’s alphas), the Asian alphas reach Sharpe ratios of 2.91 and 2.23. A tested research platform surveys, combines and pre-checks every candidate before submission.
     </span>
-    <span class="project-meta">WorldQuant BRAIN · Gold · 10 ACTIVE · 2026</span>
+    <span class="project-meta">WorldQuant BRAIN · Consultant · 14 ACTIVE · 2026</span>
   </a>
   <a href="/projects/board-diversity-esg" class="project-card">
     <span class="project-tag">ESG research · Empirical finance</span>

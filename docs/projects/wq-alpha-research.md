@@ -1,6 +1,6 @@
 ---
 title: WorldQuant BRAIN Alpha Research
-description: WorldQuant BRAIN Gold — ACTIVE equity alphas with Sharpe, Fitness, expressions, and score progression
+description: WorldQuant BRAIN research consultant. Fourteen ACTIVE equity alphas across the US and Asia, built on a tested research platform.
 date: 2026-07-01
 lastUpdated: true
 head:
@@ -9,15 +9,15 @@ head:
       content: WorldQuant BRAIN Alpha Research
   - - meta
     - property: og:description
-      content: WorldQuant BRAIN Gold — ACTIVE equity alphas with Sharpe, Fitness, expressions, and score progression
+      content: WorldQuant BRAIN research consultant. Fourteen ACTIVE equity alphas across the US and Asia, built on a tested research platform.
 ---
 
 <script setup>
 const metrics = [
-  { label: 'Challenge', value: 'Gold', hint: 'WorldQuant certificate' },
-  { label: 'Peak score', value: '9,932', hint: 'from 2,000 Bronze' },
-  { label: 'ACTIVE book', value: '10', hint: 'IS alphas live' },
-  { label: 'Best Sharpe', value: '2.91', hint: 'OI/equity + est. EPS' },
+  { label: 'Role', value: 'Consultant', hint: 'WorldQuant BRAIN, since Sep 2026' },
+  { label: 'ACTIVE book', value: '14', hint: 'US and Asia' },
+  { label: 'Best Sharpe, 10-yr IS', value: '2.91', hint: 'Asia, consultant standard' },
+  { label: 'Challenge', value: 'Gold', hint: 'peak score 9,932' },
 ]
 
 const scorePoints = [
@@ -28,52 +28,45 @@ const scorePoints = [
 ]
 
 const sharpeBars = [
-  { label: 'ZYnG1pV1', value: 2.91, sub: 'OI + est. EPS · TOP3000' },
-  { label: 'blq3YEkR', value: 2.53, sub: 'OI + 5d reverse' },
-  { label: 'N1roXeEL', value: 2.28, sub: 'OI + PCR options' },
-  { label: 'd50w58jK', value: 2.2, sub: 'FCF + reverse · diversifier' },
-  { label: 'd50Lv3Zv', value: 2.01, sub: 'Pure OI/equity' },
-  { label: 'mLbXoLmE', value: 1.85, sub: 'OI + EPS · TOP500' },
-  { label: 'N1rONo0L', value: 1.69, sub: 'Pure est. EPS · TOP2000' },
-  { label: 'akn233gw', value: 1.69, sub: 'OI + guidance · TOP1000' },
-  { label: 'RR80pQnn', value: 1.64, sub: 'PCR + reverse' },
-  { label: '3qRa0A96', value: 1.41, sub: 'Multi-leg composite', color: 'muted' },
-]
-
-const fitnessBars = [
-  { label: 'ZYnG1pV1', value: 2.18 },
-  { label: 'blq3YEkR', value: 1.81 },
-  { label: 'd50w58jK', value: 1.69 },
-  { label: 'N1roXeEL', value: 1.65 },
-  { label: 'N1rONo0L', value: 1.44 },
-  { label: 'd50Lv3Zv', value: 1.32 },
-  { label: 'mLbXoLmE', value: 1.17 },
-  { label: 'RR80pQnn', value: 1.14 },
-  { label: 'akn233gw', value: 1.1 },
-  { label: '3qRa0A96', value: 1.01, color: 'muted' },
+  { label: 'US 1', value: 3.03, sub: 'Quality + options + reversal', color: 'muted-strong' },
+  { label: 'Asia 1', value: 2.91, sub: 'Model forecast blend · 10-yr IS', color: 'positive' },
+  { label: 'US 2', value: 2.91, sub: 'Quality + analyst estimates', color: 'muted-strong' },
+  { label: 'US 3', value: 2.53, sub: 'Quality + short-term reversal', color: 'muted-strong' },
+  { label: 'US 4', value: 2.42, sub: 'Quality + options + reversal · TOP1000', color: 'muted-strong' },
+  { label: 'US 5', value: 2.28, sub: 'Quality + options', color: 'muted-strong' },
+  { label: 'Asia 2', value: 2.23, sub: 'Forecast + hedge + trend · 10-yr IS', color: 'positive' },
+  { label: 'US 6', value: 2.2, sub: 'Cash flow + reversal', color: 'muted-strong' },
+  { label: 'US 7', value: 2.01, sub: 'Pure quality', color: 'muted-strong' },
+  { label: 'US 8', value: 1.85, sub: 'Quality + analyst · TOP500', color: 'muted-strong' },
+  { label: 'US 9', value: 1.69, sub: 'Analyst estimates · TOP2000', color: 'muted-strong' },
+  { label: 'US 10', value: 1.69, sub: 'Quality + guidance · TOP1000', color: 'muted-strong' },
+  { label: 'US 11', value: 1.64, sub: 'Options + reversal', color: 'muted-strong' },
+  { label: 'US 12', value: 1.41, sub: 'Multi-leg composite', color: 'muted-strong' },
 ]
 
 const themes = [
-  { label: 'Quality / OI', value: 35 },
-  { label: 'Analyst', value: 20 },
-  { label: 'Hybrid reverse', value: 20 },
-  { label: 'Options / PCR', value: 15 },
-  { label: 'FCF', value: 10 },
+  { label: 'Quality-anchored blends (US)', value: 57 },
+  { label: 'Model-forecast blends (Asia)', value: 14 },
+  { label: 'Analyst estimates (US)', value: 7 },
+  { label: 'Cash flow + reversal (US)', value: 7 },
+  { label: 'Options + reversal (US)', value: 7 },
+  { label: 'Multi-leg composite (US)', value: 7 },
 ]
 
 const steps = [
-  { title: 'Field → expression', detail: '4.3k local fields; group_rank + ts_rank baselines' },
-  { title: 'Simulate & gate', detail: 'Sharpe · Fitness · TO · DD · concentration' },
-  { title: 'Daily-return corr', detail: 'Reject clones ≥ 0.7 vs ACTIVE book' },
-  { title: 'Submit → ACTIVE', detail: 'Confirm status; climb Bronze → Gold' },
+  { title: 'Survey', detail: 'One plain probe per dataset to find what carries signal on its own' },
+  { title: 'Screen recency', detail: 'Split each probe’s daily PnL into early and recent years' },
+  { title: 'Combine', detail: 'Pair strong, crowded signals with weaker, unusual ones' },
+  { title: 'Neutralise', detail: 'Strip common factor exposure to stand apart from the pool' },
+  { title: 'Pre-check, then submit', detail: 'Run the platform’s full check before spending a submission' },
 ]
 </script>
 
 # WorldQuant BRAIN Alpha Research
 
-Independent systematic equity research · WorldQuant BRAIN Challenge · 2026
+Systematic equity research · WorldQuant BRAIN research consultant · 2026
 
-This project reached Gold tier in the WorldQuant BRAIN Challenge — an independently verifiable, externally judged systematic-alpha competition — building a ten-strategy ACTIVE book with a best Sharpe ratio (a strategy's return per unit of risk taken) of 2.91. Each alpha is produced by a repeatable mining pipeline: generate a candidate signal from a 4,300-field universe, pass it through quality gates (Sharpe, fitness, turnover, drawdown, concentration), reject anything too similar to an existing strategy, then submit for ACTIVE status.
+After reaching Gold in the WorldQuant BRAIN Challenge, I was accepted as a BRAIN research consultant in September 2026. The book now holds fourteen ACTIVE alphas across the US and Asia. Consultant submissions are held to a stricter standard than the Challenge: a ten-year in-sample window instead of five, and a correlation test against every other consultant’s alphas rather than only my own. The two Asian alphas, both submitted under that standard, reach Sharpe ratios of 2.91 and 2.23.
 
 ![WorldQuant Challenge Gold Certificate](/projects/wq-alpha-research/gold-certificate-pdf.png)
 
@@ -82,76 +75,67 @@ This project reached Gold tier in the WorldQuant BRAIN Challenge — an independ
 <HeroMetrics :items="metrics" />
 
 <VizPanel
-  badge="Score journey"
-  title="Challenge score: Bronze → Silver → Gold track"
-  subtitle="Platform snapshots. Rank improved from ~25.8k to ~18.9k as scored alphas and ACTIVE count rose."
+  badge="Challenge"
+  title="Challenge score: Bronze to Silver to Gold"
+  subtitle="Platform snapshots from the Challenge phase. Rank improved from about 25.8k to 18.9k as scored alphas and the ACTIVE count rose."
   source="WorldQuant BRAIN platform"
   as-of="July 2026"
 >
   <EScorePath :points="scorePoints" x-name="Snapshot date (2026)" y-name="Challenge score (pts)" />
 </VizPanel>
 
-## ACTIVE book performance
+## ACTIVE book
 
-<VizGrid :cols="2">
-  <VizPanel badge="IS Sharpe" title="ACTIVE alphas ranked by Sharpe" subtitle="Hover bars for theme. Best: quality + analyst blend at 2.91." source="WorldQuant BRAIN platform" as-of="July 2026">
-    <EBar :items="sharpeBars" :max="3.2" x-name="Sharpe ratio (IS)" />
-  </VizPanel>
-  <VizPanel badge="Fitness" title="Turnover-adjusted quality (Fitness)" subtitle="The top Sharpe alphas hold their lead once turnover is penalised — returns aren't bought with churn." source="WorldQuant BRAIN platform" as-of="July 2026">
-    <EBar :items="fitnessBars" :max="2.4" x-name="Fitness (IS)" />
-  </VizPanel>
-</VizGrid>
-
-<VizPanel
-  badge="Diversification"
-  title="Book composition by economic theme"
-  subtitle="Not ten clones of the same OI/equity formula — axes chosen to pass self-correlation."
-  source="WorldQuant BRAIN platform"
-  as-of="July 2026"
->
-  <EDonut :items="themes" center-value="10" center-label="ACTIVE" unit="%" />
+<VizPanel badge="IS Sharpe" title="ACTIVE alphas ranked by Sharpe" subtitle="US alphas (grey) were scored on the Challenge’s five-year window; the Asian alphas (green) on the consultant ten-year window." source="WorldQuant BRAIN platform" as-of="October 2026">
+  <EBar :items="sharpeBars" :max="3.4" :height="460" x-name="Sharpe ratio (IS)" />
 </VizPanel>
 
-## Research loop
+<VizPanel badge="Diversification" title="Book composition by theme" subtitle="Share of the fourteen ACTIVE alphas. The 2026 additions moved the book beyond US quality factors into Asian forecast-based signals." source="WorldQuant BRAIN platform" as-of="October 2026">
+  <EDonut :items="themes" center-value="14" center-label="ACTIVE" unit="%" />
+</VizPanel>
+
+| Region | Universe | Theme | Sharpe | Fitness | Turnover | IS window |
+|---|---|---|---:|---:|---:|---|
+| US | TOP3000 | Quality + options + reversal | **3.03** | **2.50** | 13.5% | 5 years |
+| Asia | MINVOL10M | Model forecast blend | **2.91** | **1.66** | 22.7% | 10 years |
+| US | TOP3000 | Quality + analyst estimates | **2.91** | **2.18** | 18.6% | 5 years |
+| US | TOP3000 | Quality + short-term reversal | **2.53** | **1.81** | 20.7% | 5 years |
+| US | TOP1000 | Quality + options + reversal | **2.42** | **1.86** | 13.5% | 5 years |
+| US | TOP3000 | Quality + options | **2.28** | **1.65** | 9.8% | 5 years |
+| Asia | MINVOL10M | Forecast + hedge + trend | **2.23** | **1.14** | 24.5% | 10 years |
+| US | TOP3000 | Cash flow + reversal | **2.20** | **1.69** | 18.5% | 5 years |
+| US | TOP3000 | Pure quality | **2.01** | **1.32** | 6.3% | 5 years |
+| US | TOP500 | Quality + analyst | **1.85** | **1.17** | 20.5% | 5 years |
+| US | TOP2000 | Analyst estimates | **1.69** | **1.44** | 12.1% | 5 years |
+| US | TOP1000 | Quality + guidance | **1.69** | **1.10** | 6.0% | 5 years |
+| US | TOP3000 | Options + reversal | **1.64** | **1.14** | 20.7% | 5 years |
+| US | TOP3000 | Multi-leg composite | **1.41** | **1.01** | 3.6% | 5 years |
+
+Signal definitions are not published: they are the substance of the research, and a public formula is quickly copied, which raises its correlation with the consultant pool.
+
+## Research approach
 
 <ProcessRail :steps="steps" />
 
-**Finding that unlocked submits:** OI/equity clones with Sharpe ~2.8–3.0 often fail SELF_CORRELATION (daily corr 0.75–0.90). Wins change the axis — **FCF + reverse** (~0.37 corr) and **OI + 50% options PCR** (~0.66) — or move to TOP2000/1000/500 after TOP3000 saturates.
+**The longer window changed what works.** Re-run on the ten-year window with identical settings, one of the strongest US alphas fell from a Sharpe of 2.28 to 1.37. Every Challenge-era recipe had to be tested again rather than reused.
 
-## ACTIVE table
+**The strongest signal was not submittable on its own.** In Asia, the best single signal reached a Sharpe above 3, but it failed the consultant-pool correlation test at 0.78 because other consultants already trade it in plain form. Blending it with less-used signals and neutralising common factor exposure brought that correlation down to 0.51 and lifted the Sharpe to 2.91.
 
-| ID | Universe | Sharpe | Fitness | Return | TO | Theme |
-|---|---|---:|---:|---:|---:|---|
-| `ZYnG1pV1` | TOP3000 | **2.91** | **2.18** | 10.5% | 18.6% | OI/equity + est. EPS |
-| `blq3YEkR` | TOP3000 | **2.53** | **1.81** | 10.6% | 20.7% | OI/equity + 5d reverse |
-| `N1roXeEL` | TOP3000 | **2.28** | **1.65** | 6.5% | 9.8% | OI/equity + put/call OI |
-| `d50w58jK` | TOP3000 | **2.20** | **1.69** | 10.9% | 18.5% | FCF/equity + reverse |
-| `d50Lv3Zv` | TOP3000 | **2.01** | **1.32** | 5.4% | 6.3% | Pure OI/equity |
-| `mLbXoLmE` | TOP500 | **1.85** | **1.17** | 8.1% | 20.5% | OI + EPS (small univ.) |
-| `N1rONo0L` | TOP2000 | **1.69** | **1.44** | 9.1% | 12.1% | Pure est. EPS |
-| `akn233gw` | TOP1000 | **1.69** | **1.10** | 5.3% | 6.0% | OI + guidance |
-| `RR80pQnn` | TOP3000 | **1.64** | **1.14** | 9.9% | 20.7% | PCR + reverse |
-| `3qRa0A96` | TOP3000 | **1.41** | **1.01** | 6.4% | 3.6% | Multi-leg composite |
+**Recent years decide the last check.** Two otherwise passing blends failed the platform’s two-year stability test. Splitting each ingredient’s daily PnL into 2014–21 and 2022–23 showed which signals were fading and which were strengthening; adding one strengthening signal cleared the test. The local estimate matched the platform’s figure to two decimal places.
 
-## Expressions (selected)
+## Research platform
 
-```fastexpr
-/* Top Sharpe — ZYnG1pV1 */
-0.5 * group_rank(ts_rank(operating_income / equity, 126), subindustry)
-+ 0.5 * group_rank(ts_rank(est_eps / close, 126), industry)
+The work runs on a research platform I assembled from three open-source projects and extended for the consultant tier:
 
-/* Diversifier — d50w58jK (~0.37 corr vs pure OI) */
-0.6 * group_rank(ts_rank(free_cash_flow_reported_value / equity, 126), industry)
-+ 0.4 * group_rank(-ts_delta(close, 5), industry)
-
-/* Options hybrid — N1roXeEL */
-0.5 * group_rank(ts_rank(operating_income / equity, 126), subindustry)
-+ 0.5 * group_rank(-ts_rank(pcr_oi_270, 120), industry)
-```
+- a research database that records every candidate, simulation and submission, so no idea is simulated twice
+- a scheduler that keeps eight simulations running and recovers from network and platform errors
+- field catalogues for nine regions, with validation of every candidate before it reaches the platform
+- correlation gates against my own book, and the platform’s full submission check run before each submission, so refused candidates never use one of the four daily submission slots
+- about 680 automated tests
 
 ## Competencies
 
-Equity factor research · IS metrics · turnover control · portfolio self-correlation · multi-universe diversification · API automation
+Equity factor research · cross-regional signal discovery · factor neutralisation · out-of-sample robustness · portfolio correlation control · research automation and testing
 
 ---
 
