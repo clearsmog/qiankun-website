@@ -11,6 +11,14 @@ Work samples intended for **hiring managers and interviewers**. Each page is a c
 ## Featured
 
 <div class="project-grid">
+  <a href="/projects/rates-fx-desk-analytics" class="project-card">
+    <span class="project-tag">Rates &amp; FX derivatives · Risk and P&amp;L</span>
+    <span class="project-title">Rates and FX Desk Analytics</span>
+    <span class="project-desc">
+      A daily desk run on a synthetic book of SONIA and SOFR swaps, swaptions, cross-currency swaps and FX options: a delta ladder by par quote, a P&amp;L explain that predicts each day from the prior close's risk, and a fixings check against the published compounded indices. Over 38 business days of real market moves the risk explained all but 2.8% of the daily P&amp;L, and each of the 68 misses over threshold was traced to a measured cause.
+    </span>
+    <span class="project-meta">Personal build · Python, QuantLib, Excel VBA · November 2026</span>
+  </a>
   <a href="/projects/european-power-fundamentals" class="project-card">
     <span class="project-tag">Energy markets · Power fundamentals</span>
     <span class="project-title">European Power Fundamentals</span>

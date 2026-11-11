@@ -11,6 +11,7 @@ const props = defineProps({
   xName: { type: String, default: '' }, // category-axis title
   yName: { type: String, default: '' }, // value-axis title incl. unit
   height: { type: Number, default: 320 },
+  valueLabels: { type: Boolean, default: true }, // false on dense charts, where a number on every bar collides
 })
 
 const { isDark } = useData()
@@ -90,7 +91,7 @@ const option = computed(() => {
           },
         },
         label: {
-          show: true,
+          show: props.valueLabels,
           position: 'top',
           color: t.text2,
           fontSize: 10,

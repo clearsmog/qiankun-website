@@ -205,6 +205,10 @@ export default defineConfig({
           items: [
             { text: "Overview", link: "/projects/" },
             {
+              text: "Rates and FX Desk Analytics",
+              link: "/projects/rates-fx-desk-analytics",
+            },
+            {
               text: "European Power Fundamentals",
               link: "/projects/european-power-fundamentals",
             },
